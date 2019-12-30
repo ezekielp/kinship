@@ -6,7 +6,6 @@ const bcrypt = require("bcryptjs");
 const User = require("../../models/User");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
-const passport = require("passport");
 
 router.post("/signup", (req, res) => {
   const { errors, isValid } = validateSignupInput(req.body);
@@ -92,16 +91,4 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.get(
-  "/current",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json({
-      id: req.user.id,
-      email: req.user.email
-    });
-  }
-);
-
-//"token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMGEzMDZlMDA1ZjM1MTkyYjg0YWVmZSIsImlhdCI6MTU3NzcyNjE0NiwiZXhwIjoxNTc3NzI5NzQ2fQ.n9_J8vHSQQakm2lnJ38aaB-PwMoxNMUQD3w1AC7x5CE"
 module.exports = router;
