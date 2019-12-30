@@ -24,12 +24,6 @@ export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
 
-// NEED TO FIGURE OUT HOW WE'RE DOING BACKEND AUTH BEFORE
-// FINISHING THIS METHOD
-export const signup = user => dispatch => {
-    // return SessionAPIUtil.signup(user).then()
-}
-
 export const login = user => dispatch => {
     return SessionAPIUtil.login(user).then(res => {
         const { token } = res.data;
@@ -43,9 +37,18 @@ export const login = user => dispatch => {
     })
 }
 
+// NEED TO FIGURE OUT HOW WE'RE DOING BACKEND AUTH BEFORE
+// FINALIZING THIS METHOD
+export const signup = user => dispatch => {
+    return SessionAPIUtil.signup(user).then(res => {
+        login(user);
+    }), err => (
+        dispatch(receiveErrors(err.response.data))
+    )
+};
 
 export const logout = () => dispatch => {
     localStorage.removeItem('jwtToken');
-    APIUtil.setAuthToken(false);
+    SessionAPIUtil.setAuthToken(false);
     dispatch(logoutUser());
 };
