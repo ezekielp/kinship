@@ -4,7 +4,7 @@
 |-----------|---------|-------|
 |`id`|integer|required, primary key|
 |`email`|string|required, unique|
-|`passwordDigest`|string|required|
+|`password`|string|required|
 |`createdAt`|datetime|required|
 |`updatedAt`|datetime|required|
 
