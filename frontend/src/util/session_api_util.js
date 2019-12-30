@@ -8,3 +8,10 @@ export const setAuthToken = token => {
     }
 };
 
+export const signup = (userData) => {
+    // return axios.post // SIGNUP API ROUTE WILL GO HERE
+}
+
+export const login = (userData) => {
+    // return axios.post // LOGIN API ROUTE WILL GO HERE
+}
