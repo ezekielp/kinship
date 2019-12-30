@@ -10,7 +10,7 @@ class FriendsSidebar extends React.Component {
 
         return (
             <div className="friends-sidebar-container">
-                
+                                
             </div>
         )
     }
