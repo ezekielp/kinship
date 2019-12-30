@@ -1,0 +1,225 @@
+body {
+	margin: 0;
+	font-family: 'Kulim Park', sans-serif;
+}
+
+.landing-page {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 100vh;
+	width: 100vw;
+}
+
+.left-side {
+	position: relative;
+	border-right: 1px solid lightblue;
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr; 
+}
+
+.triangle {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		to bottom left,
+		rgb(255, 255, 255) 0%,
+		rgb(190, 240, 255) 50%,
+		rgb(190, 240, 255) 50%,
+		#999999 100%
+	);
+}
+
+.motto-catchphrase{
+  font-size: 24px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+	font-size: 24px;
+}
+
+.logo-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+	display: grid;
+	width: 480px;
+	height: 240px;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: 1fr 1fr 0.1fr 1fr 1fr;
+  background-color: rgba(255, 255, 2550, 0.75);
+  border-radius: 5px;
+}
+
+.first-f {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 6;
+	font-size: 200px;
+	padding-left: 4rem;
+  font-weight: bold;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.second-f {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 6;
+	transform: rotate(180deg);
+	font-size: 200px;
+	padding-left: 4rem;
+  font-weight: bold;
+  text-shadow: -5px -5px rgba(0, 0, 0, 0.25);
+}
+
+.friend {
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	background-color: rgba(120, 251, 255, 0.75);
+}
+
+.facts {
+	grid-row-start: 4;
+	grid-row-end: 5;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	background-color: rgba(255, 0, 0, 0.75);
+}
+
+.friend, .facts {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 36px;
+  width: 100%;transition
+	font-weight: bold;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.right-side {
+	width: 100%;
+	height: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 480px 1fr;
+  grid-template-rows: 1fr 480px 1fr; 
+}
+
+
+.friend-facts-1{
+  font-size: 36px;
+  transform: rotate(-45deg);
+  grid-column:2/3;
+  grid-row: 2/3;
+  pointer-events: none;
+}
+
+.friend-facts-2{
+  font-size: 36px;
+  transform: rotate(135deg);
+  grid-column:2/3;
+  grid-row: 2/3;
+  pointer-events: none;
+}
+
+.session-container{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+}
+
+.session-container span{
+  padding: 20px;
+}
+
+.signup-session-button{
+  background-color: rgba(255, 0, 0, 0.75);
+}
+
+.login-session-button{
+  background-color: rgba(120, 251, 255, 0.75);
+}
+
+.signup-session-button, .login-session-button{
+  font-family: 'Kulim Park', sans-serif;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 24px;
+  transition: background-color 3s ease;
+}
+
+.signup-session-button:hover, .login-session-button:hover{
+  cursor: pointer;
+}
+
+.signup-session-button:focus, .login-session-button:focus{
+  outline: none;
+}
+
+.f-1, .r, .i, .e, .n, .d, .f-2, .a, .c, .t, .s{
+  animation: friend-facts 2s alternate-reverse infinite;
+}
+
+.f-1{
+  animation-delay: -0.2s;
+}
+.r{
+  animation-delay: -0.4s;
+}
+.i{
+  animation-delay: -0.6s;
+}
+.e{
+  animation-delay: -0.8s;
+}
+.n{
+  animation-delay: -1s;
+}
+.d{
+  animation-delay: -1.2s;
+}
+.f-2{
+  animation-delay: -1.4s;
+}
+.a{
+  animation-delay: -1.6s;
+}
+.c{
+  animation-delay: -1.8s;
+}
+.t{
+  animation-delay: -2s;
+}
+.s{
+  animation-delay: -2.2s;
+}
+
+
+@keyframes friend-facts{
+  from{
+    /* font-size: 24px; */
+    opacity: 0;
+  }
+  to{
+    /* font-size: 26px; */
+    opacity: 1;
+  }
+}
