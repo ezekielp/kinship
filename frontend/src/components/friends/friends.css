@@ -1,5 +1,10 @@
 
 
+.friends-below-navbar-container {
+    display: flex;
+}
 
-
+.friend-cards-container {
+    display: flex;
+}
 
