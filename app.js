@@ -12,7 +12,6 @@ mongoose
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
-    
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -20,7 +19,7 @@ app.use(passport.initialize());
 passportAuth(passport);
 
 app.use("/api/users", users);
-// app.use("/api/friends", friends);
+app.use("/api/friends", friends);
 
 const port = process.env.PORT || 5000;
 
