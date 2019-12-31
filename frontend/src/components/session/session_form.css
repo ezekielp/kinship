@@ -1,0 +1,52 @@
+#email-input,
+#password-input,
+#password-confirmation-input {
+  width: 200px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+  font-size: 24px;
+}
+
+#email-input:focus,
+#password-input:focus,
+#password-confirmation-input:focus {
+  outline: none;
+}
+
+.session-submit-button{
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: red;
+  font-weight: bold;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+}
+.session-submit-button:focus, .go-back-button:focus{
+  outline: none;
+}
+
+.go-back-button{
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: rgba(120, 251, 255, 0.75);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+}
+
+.phase-in{
+  animation: phase-in 0.5s ease;
+}
+
+@keyframes phase-in{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
