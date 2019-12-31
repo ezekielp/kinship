@@ -41,6 +41,7 @@ export const login = user => dispatch => {
 // NEED TO FIGURE OUT HOW WE'RE DOING BACKEND AUTH BEFORE
 // FINALIZING THIS METHOD
 export const signup = user => dispatch => {
+    debugger
     return SessionAPIUtil.signup(user).then(res => {
         login(user);
     }), err => (

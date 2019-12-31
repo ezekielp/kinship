@@ -50,7 +50,7 @@ export const editFriend = (data) => (dispatch) => {
         .catch(err => console.log(err))
 }
 
-export const removeFriend = (id) => (dispatch) => {
+export const deleteFriend = (id) => (dispatch) => {
     return FRIENDAPIUtil.deleteFriend(id)
         .then(() => dispatch(removeFriend(id)))
         .catch(err => console.log(err))
