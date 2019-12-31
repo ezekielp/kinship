@@ -33,10 +33,38 @@
     border: 1px solid black;
     margin: 30px;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .friend-card-container ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+
+/* CREATE FRIEND PROFILE LINK CARD */
+
+.friend-create-link-card {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    /* box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.75) */
+}
+
+.friend-create-link-card:hover {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.75)
+}
+
+.friend-create-link-card-text {
+    font-size: 40px;
+}
+
+.friend-create-link-card-plus-sign {
+    font-size: 80px;
+    margin-top: -20px;
 }
