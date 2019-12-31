@@ -1,6 +1,7 @@
 body {
 	margin: 0;
-	font-family: 'Kulim Park', sans-serif;
+  /* font-family: 'Kulim Park', sans-serif; */
+  font-family: 'Permanent Marker', cursive;
 }
 
 .landing-page {
@@ -62,9 +63,10 @@ body {
 	grid-row-start: 1;
 	grid-row-end: 6;
 	font-size: 200px;
-	padding-left: 4rem;
+	/* padding-left: 4rem; */
   font-weight: bold;
   text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  margin-top: -60px;
 }
 
 .second-f {
@@ -74,9 +76,10 @@ body {
 	grid-row-end: 6;
 	transform: rotate(180deg);
 	font-size: 200px;
-	padding-left: 4rem;
+	/* padding-left: 4rem; */
   font-weight: bold;
   text-shadow: -5px -5px rgba(0, 0, 0, 0.25);
+  margin-bottom: -60px;
 }
 
 .friend {
@@ -113,6 +116,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 480px 1fr;
   grid-template-rows: 1fr 480px 1fr; 
+  overflow: hidden;
 }
 
 
@@ -158,7 +162,8 @@ body {
 }
 
 .signup-session-button, .login-session-button{
-  font-family: 'Kulim Park', sans-serif;
+  /* font-family: 'Kulim Park', sans-serif; */
+  font-family: 'Permanent Marker', cursive;
   width: 200px;
   height: 50px;
   border-radius: 10px;
@@ -175,7 +180,7 @@ body {
 }
 
 .f-1, .r, .i, .e, .n, .d, .f-2, .a, .c, .t, .s{
-  animation: friend-facts 2s alternate-reverse infinite;
+  animation: friend-facts 2s alternate infinite;
 }
 
 .f-1{
