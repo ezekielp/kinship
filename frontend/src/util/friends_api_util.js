@@ -24,7 +24,7 @@ export const createFriend = (data) => {
 }
 
 export const updateFriend = (data) => {
-    return axios.patch(`/api/friends/${data.id}`, data)
+    return axios.patch(`/api/friends/${data._id}`, data)
 }
 
 export const deleteFriend = (id) => {

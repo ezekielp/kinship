@@ -45,5 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchFriend = fetchFriend;
     window.login = login;
     window.signup = signup;
+    window.makeFriend = makeFriend;
+    window.editFriend = editFriend;
+    window.deleteFriend = deleteFriend;
 
 });
