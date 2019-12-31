@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
 	}
 
 	componentDidUpdate(prevProps, prevState){
-    if (this.props.signedIn === true){
+    if (this.props.isAuthenticated === true){
       this.props.history.push('/friends');
     }
 	  if (this.props.errors.length !== prevProps.errors.length){
@@ -50,11 +50,11 @@ class SessionForm extends React.Component {
 			password: this.state.password,
 			password2: this.state.password2
 		};
-
+    
     if (this.state.formType === "signup"){
-      this.props.signup(user, this.props.history);
+      this.props.signup(user);
     } else {
-      this.props.login(user, this.props.history);
+      this.props.login(user);
     }
 	}
 

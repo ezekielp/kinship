@@ -38,14 +38,25 @@ export const login = user => dispatch => {
     })
 }
 
-// NEED TO FIGURE OUT HOW WE'RE DOING BACKEND AUTH BEFORE
-// FINALIZING THIS METHOD
+// ! NEED TO FIGURE OUT HOW WE'RE DOING BACKEND AUTH BEFORE
+// ! FINALIZING THIS METHOD
+
 export const signup = user => dispatch => {
-    return SessionAPIUtil.signup(user).then(res => {
-        login(user);
-    }), err => (
-        dispatch(receiveErrors(err.response.data))
-    )
+    
+    return SessionAPIUtil.signup(user).then( ()=> {
+        debugger
+        login(user) 
+        debugger
+    } )
+
+    // then(res => {
+    //     console.log(user);
+    //     console.log(res);
+    //     login(user);
+    // }), err => {
+    //     console.log("its here");
+    //     dispatch(receiveErrors(err.response.data));
+    // }
 };
 
 export const logout = () => dispatch => {
