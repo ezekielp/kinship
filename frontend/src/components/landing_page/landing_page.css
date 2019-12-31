@@ -217,7 +217,11 @@ body {
   background-color: rgba(120, 250, 255, 0.75);
 }
 
-.signup-session-button, .login-session-button{
+.login-session-button{
+  /* background-color: rgba(120, 250, 255, 0.75); */
+}
+
+.signup-session-button, .login-session-button, .demo-login-button{
   /* font-family: 'Kulim Park', sans-serif; */
   font-family: 'Permanent Marker', cursive;
   width: 200px;
@@ -225,13 +229,14 @@ body {
   border-radius: 10px;
   font-size: 24px;
   transition: background-color 3s ease;
+  margin: 10px;
 }
 
-.signup-session-button:hover, .login-session-button:hover{
+.signup-session-button:hover, .login-session-button:hover, .demo-login-button:hover{
   cursor: pointer;
 }
 
-.signup-session-button:focus, .login-session-button:focus{
+.signup-session-button:focus, .login-session-button:focus, .demo-login-button:focus{
   outline: none;
 }
 

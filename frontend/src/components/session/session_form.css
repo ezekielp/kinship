@@ -18,7 +18,7 @@
   width: 100px;
   padding: 5px;
   border-radius: 5px;
-  margin: 20px;
+  margin-top: 30px;
   background-color: red;
   font-weight: bold;
   font-family: 'Permanent Marker', cursive;
@@ -26,6 +26,10 @@
 }
 .session-submit-button:focus, .go-back-button:focus{
   outline: none;
+}
+
+.session-submit-button:hover, .go-back-button:hover{
+  cursor: pointer;
 }
 
 .go-back-button{

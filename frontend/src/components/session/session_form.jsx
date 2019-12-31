@@ -13,8 +13,8 @@ class SessionForm extends React.Component {
       errors: {}
 		};
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-		// this.clearedErrors = false;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
 	}
 
 	componentDidUpdate(prevProps, prevState){
@@ -27,14 +27,6 @@ class SessionForm extends React.Component {
 	    })
 	  }
 	}
-
-	// componentWillReceiveProps(nextProps) {
-	// 	if (nextProps.signedIn === true) {
-	// 		this.props.history.push('/login');
-	// 	}
-
-	// 	this.setState({ errors: nextProps.errors });
-	// }
 
 	update(field) {
 		return (e) =>
@@ -69,7 +61,19 @@ class SessionForm extends React.Component {
 				}),
 			1000
 		);
-	}
+  }
+  
+  transitionIn(){ // go-back button
+
+  }
+
+  demoLogin(){
+		let user = {
+			email: "demo@user.com",
+			password: "123123123"
+    };
+    this.props.login(user);
+  }
 
 	render() {
 		let errors =
@@ -123,6 +127,12 @@ class SessionForm extends React.Component {
 							className="login-session-button"
 						>
 							Login!
+						</button>
+            <button
+							onClick={() => this.demoLogin()}
+							className="demo-login-button"
+						>
+							Demo-Login!
 						</button>
 					</div>
 				</div>
