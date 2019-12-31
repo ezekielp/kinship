@@ -10,7 +10,8 @@ class SessionForm extends React.Component {
 			email: '',
 			password: '',
 			password2: '',
-      errors: {}
+      errors: {},
+      transitionDirection: null
 		};
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,20 +52,18 @@ class SessionForm extends React.Component {
 	}
 
 	transitionOut(formType) {
-		this.setState({
-			formType: 'transition'
-		});
-		setTimeout(
-			() =>
-				this.setState({
-					formType: formType
-				}),
-			1000
-		);
-  }
-  
-  transitionIn(){ // go-back button
-
+    let td = (formType === "login" ||  formType === "signup") ? "open" : "close";
+    this.setState({
+      formType: 'transition',
+      transitionDirection: td
+    });
+    setTimeout(
+      () =>
+        this.setState({
+          formType: formType
+        }),
+      1000
+    );
   }
 
   demoLogin(){
@@ -86,6 +85,9 @@ class SessionForm extends React.Component {
 			) : null;
 
 		if (this.state.formType === null) {
+      if (this.state.transitionDirection === "close"){
+        console.log("close");
+      }
 			return (
 				<div className="right-side">
 					<div className="friend-facts-1">
@@ -137,8 +139,11 @@ class SessionForm extends React.Component {
 					</div>
 				</div>
 			);
-		}
+    }
 		if (this.state.formType === 'transition') {
+      if (this.state.transitionDirection === "open"){
+        console.log("open");
+      }
 			return (
 				<div className="right-side">
 					<div className="friend-facts-1 exit-up">
@@ -201,7 +206,7 @@ class SessionForm extends React.Component {
 						/>
 						<input type="submit" className="session-submit-button phase-in" value="Login!" />
 						<button
-							onClick={() => this.setState({ formType: null })}
+							onClick={() => this.transitionOut(null)}
 							className="go-back-button phase-in"
 						>
 							Go Back
@@ -243,7 +248,7 @@ class SessionForm extends React.Component {
 						/>
 						<input type="submit" className="session-submit-button phase-in" value="Signup!" />
 						<button
-							onClick={() => this.setState({ formType: null })}
+							onClick={() => this.transitionOut(null)}
 							className="go-back-button phase-in"
 						>
 							Go Back
