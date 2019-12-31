@@ -12,21 +12,26 @@ class FriendsIndex extends React.Component {
 
 
         return (
-            <div>
-                <NavbarContainer />
-                <div className="friends-below-navbar-container">
-                    <FriendsSidebar />
-                    <div className="friend-cards-container">
-                        <FriendsIndexItem />
-                        <FriendsIndexItem />
-                        <FriendsIndexItem />
-                        <FriendsIndexItem />
-                        <FriendsIndexItem />
-                        <FriendsIndexItem />
-                    </div>
+          <div>
+            <NavbarContainer />
+            <div className="friends-below-navbar-container">
+              <FriendsSidebar />
+              <div className="friend-cards-container">
+                <FriendsIndexItem />
+                <FriendsIndexItem />
+                <FriendsIndexItem />
+                <FriendsIndexItem />
+                <FriendsIndexItem />
+                <div className="friend-card-container friend-create-link-card">
+                  <div className="friend-create-link-card-text">
+                    Add a Friend
+                  </div>
+                  <div className="friend-create-link-card-plus-sign">+</div>
                 </div>
+              </div>
             </div>
-        )
+          </div>
+        );
     }
 }
 
