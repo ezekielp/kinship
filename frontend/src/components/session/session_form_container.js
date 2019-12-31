@@ -5,7 +5,8 @@ import {login, signup} from '../../actions/session_actions';
 const msp = (state) => {
   return {
     isAuthenticated: state.session.isAuthenticated,
-    errors: state.errors.session
+    errors: Object.values(state.errors.session),
+    state: state
   }
 }
 

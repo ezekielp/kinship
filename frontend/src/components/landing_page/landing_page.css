@@ -192,6 +192,21 @@ body {
   animation: box-out 1s ease;
 }
 
+.session-container-transition-reverse{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  animation: box-out 1s ease reverse;
+}
+
 @keyframes box-out{
   from{
     margin-left: 120px;
@@ -293,6 +308,9 @@ body {
 .exit-up{
   animation: exit-up 1s ease;
 }
+.enter-up{
+  animation: exit-up 1s ease reverse;
+}
 
 @keyframes exit-up{
   from{
@@ -315,6 +333,9 @@ body {
 
 .exit-down{
   animation: exit-down 1s ease;
+}
+.enter-down{
+  animation: exit-down 1s ease reverse;
 }
 
 @keyframes exit-down{
@@ -340,6 +361,10 @@ body {
   animation: phase-out 1s ease;
 }
 
+.phase-in-transition{
+  animation: phase-in 1s ease-out;
+}
+
 @keyframes phase-out {
   from{
     opacity: 1;
@@ -348,3 +373,12 @@ body {
     opacity: 0;
   }
 }
+
+/* @keyframes phase-in {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+} */
