@@ -42,7 +42,6 @@ export const login = user => dispatch => {
 // ! FINALIZING THIS METHOD
 
 export const signup = user => dispatch => {
-    
     return SessionAPIUtil.signup(user).then(res => {
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
