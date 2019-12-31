@@ -107,4 +107,24 @@ router.delete(
   }
 );
 
+// Search for friends
+router.get(
+  "/user/:user_id/search",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Friend.find({
+      name: { $regex: req.query.result, $options: "i" },
+      user: req.params.user_id
+    })
+      .then(friends => {
+        res.json(_normalized(friends));
+      })
+      .catch(err =>
+        res
+          .status(404)
+          .json({ nofriendsfound: "No friends found from the search." })
+      );
+  }
+);
+
 module.exports = router;
