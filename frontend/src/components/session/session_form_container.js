@@ -1,15 +1,18 @@
-import {connect} from 'react-redux'
-import SessionForm from'./session_form'
+import {connect} from 'react-redux';
+import SessionForm from'./session_form';
+import {login, signup} from '../../actions/session_actions';
 
 const msp = (state) => {
   return {
-
+    signedIn: state.session.isSignedIn,
+    errors: state.errors.session
   }
 }
 
 const mdp = (dispatch) => {
   return {
-
+    login: (user) => dispatch(login(user)),
+    signup: (user) => dispatch(signup(user))
   }
 }
 

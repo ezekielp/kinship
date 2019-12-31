@@ -13,13 +13,19 @@ body {
 
 .left-side {
 	position: relative;
-	border-right: 1px solid lightblue;
+	/* border-right: 1px solid lightblue; */
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr; 
+  /* background: linear-gradient(
+    to bottom,
+    rgba(190, 240, 255, 0.5) 50%,
+    rgba(255, 0, 0, 0.5) 100%
+  ); */
+  background-color: lightsteelblue;
 }
 
-.triangle {
+/* .triangle {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(
@@ -29,7 +35,7 @@ body {
 		rgb(190, 240, 255) 50%,
 		#999999 100%
 	);
-}
+} */
 
 .motto-catchphrase{
   font-size: 24px;
@@ -53,7 +59,7 @@ body {
 	height: 240px;
 	grid-template-columns: 1fr 3fr 1fr;
 	grid-template-rows: 1fr 1fr 0.1fr 1fr 1fr;
-  background-color: rgba(255, 255, 2550, 0.75);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 }
 
@@ -112,7 +118,11 @@ body {
 .right-side {
 	width: 100%;
 	height: 100%;
-  background-color: white;
+  background: linear-gradient(
+  to bottom,
+  rgba(255, 0, 0, 0.5) 0%,
+  rgba(190, 240, 255, 0.75) 50%
+);
   display: grid;
   grid-template-columns: 1fr 480px 1fr;
   grid-template-rows: 1fr 480px 1fr; 
@@ -141,12 +151,58 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 	align-items: center;
+}
+
+
+.session-container-null{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 50%;
+  height: 50%;
+  margin-left: 120px;
+}
+
+.session-container-transition{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  animation: box-out 1s ease;
+}
+
+@keyframes box-out{
+  from{
+    margin-left: 120px;
+    width: 50%;
+    height: 50%;
+  }
+  to{
+    margin-left: 0px;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .session-container span{
@@ -158,7 +214,7 @@ body {
 }
 
 .login-session-button{
-  background-color: rgba(120, 251, 255, 0.75);
+  background-color: rgba(120, 250, 255, 0.75);
 }
 
 .signup-session-button, .login-session-button{
@@ -226,5 +282,64 @@ body {
   to{
     /* font-size: 26px; */
     opacity: 1;
+  }
+}
+
+.exit-up{
+  animation: exit-up 1s ease;
+}
+
+@keyframes exit-up{
+  from{
+    font-size: 36px;
+    transform: rotate(-45deg);
+    grid-column:2/3;
+    grid-row: 2/3;
+    pointer-events: none;
+    opacity: 1;
+  }
+  to{
+    font-size: 36px;
+    transform: rotate(90deg);
+    grid-column:2/3;
+    grid-row: 2/3;
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+.exit-down{
+  animation: exit-down 1s ease;
+}
+
+@keyframes exit-down{
+  from{
+    font-size: 36px;
+    transform: rotate(135deg);
+    grid-column:2/3;
+    grid-row: 2/3;
+    pointer-events: none;
+    opacity: 1;
+  }
+  to{
+    font-size: 36px;
+    transform: rotate(270deg);
+    grid-column:2/3;
+    grid-row: 2/3;
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+.phase-out{
+  animation: phase-out 1s ease;
+}
+
+@keyframes phase-out {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
   }
 }

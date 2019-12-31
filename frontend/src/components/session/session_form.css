@@ -20,7 +20,6 @@
   border-radius: 5px;
   margin: 20px;
   background-color: red;
-  /* color: white; */
   font-weight: bold;
   font-family: 'Permanent Marker', cursive;
   font-size: 20px;
@@ -35,8 +34,19 @@
   border-radius: 5px;
   margin: 20px;
   background-color: rgba(120, 251, 255, 0.75);
-  /* color: white; */
-  /* font-weight: bold; */
   font-family: 'Permanent Marker', cursive;
   font-size: 20px;
+}
+
+.phase-in{
+  animation: phase-in 0.5s ease;
+}
+
+@keyframes phase-in{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }

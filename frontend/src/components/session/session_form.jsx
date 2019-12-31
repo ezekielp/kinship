@@ -1,13 +1,61 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './session_form.css';
 
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			formType: null
+			formType: null,
+			email: '',
+			password: '',
+			password2: '',
+      errors: {}
 		};
+
+		this.handleSubmit = this.handleSubmit.bind(this);
+		// this.clearedErrors = false;
+	}
+
+	componentDidUpdate(prevProps, prevState){
+    if (this.props.signedIn === true){
+      this.props.history.push('/friends');
+    }
+	  if (this.props.errors.length !== prevProps.errors.length){
+	    this.setState({
+	      errors: this.props.errors
+	    })
+	  }
+	}
+
+	// componentWillReceiveProps(nextProps) {
+	// 	if (nextProps.signedIn === true) {
+	// 		this.props.history.push('/login');
+	// 	}
+
+	// 	this.setState({ errors: nextProps.errors });
+	// }
+
+	update(field) {
+		return (e) =>
+			this.setState({
+				[field]: e.currentTarget.value
+			});
+	}
+
+	handleSubmit(e) {
+		e.preventDefault();
+		let user = {
+			email: this.state.email,
+			password: this.state.password,
+			password2: this.state.password2
+		};
+
+    if (this.state.formType === "signup"){
+      this.props.signup(user, this.props.history);
+    } else {
+      this.props.login(user, this.props.history);
+    }
 	}
 
 	transitionOut(formType) {
@@ -19,11 +67,20 @@ class SessionForm extends React.Component {
 				this.setState({
 					formType: formType
 				}),
-			1
+			1000
 		);
 	}
 
 	render() {
+		let errors =
+			this.state.errors.length !== 0 ? (
+				<ul>
+					{Object.keys(this.state.errors).map((error, i) => (
+						<li key={`error-${i}`}>{this.state.errors[error]}</li>
+					))}
+				</ul>
+			) : null;
+
 		if (this.state.formType === null) {
 			return (
 				<div className="right-side">
@@ -53,7 +110,7 @@ class SessionForm extends React.Component {
 						<span className="t">t</span>
 						<span className="s">s</span>
 					</div>
-					<div className="session-container">
+					<div className="session-container-null">
 						<button
 							onClick={() => this.transitionOut('signup')}
 							className="signup-session-button"
@@ -74,36 +131,38 @@ class SessionForm extends React.Component {
 		if (this.state.formType === 'transition') {
 			return (
 				<div className="right-side">
-					<div className="friend-facts-1">
-						<span className="f-1 exit-up">F</span>
-						<span className="r exit-up">r</span>
-						<span className="i exit-up">i</span>
-						<span className="e exit-up">e</span>
-						<span className="n exit-up">n</span>
-						<span className="d exit-up">d</span>
-						<span className="f-2 exit-up">F</span>
-						<span className="a exit-up">a</span>
-						<span className="c exit-up">c</span>
-						<span className="t exit-up">t</span>
-						<span className="s exit-up">s</span>
+					<div className="friend-facts-1 exit-up">
+						<span className="f-1">F</span>
+						<span className="r">r</span>
+						<span className="i">i</span>
+						<span className="e">e</span>
+						<span className="n">n</span>
+						<span className="d">d</span>
+						<span className="f-2">F</span>
+						<span className="a">a</span>
+						<span className="c">c</span>
+						<span className="t">t</span>
+						<span className="s">s</span>
 					</div>
-					<div className="friend-facts-2">
-						<span className="f-1 exit-down">F</span>
-						<span className="r  exit-down">r</span>
-						<span className="i exit-down">i</span>
-						<span className="e exit-down">e</span>
-						<span className="n exit-down">n</span>
-						<span className="d exit-down">d</span>
-						<span className="f-2 exit-down">F</span>
-						<span className="a exit-down">a</span>
-						<span className="c exit-down">c</span>
-						<span className="t exit-down">t</span>
-						<span className="s exit-down">s</span>
+					<div className="friend-facts-2 exit-down">
+						<span className="f">F</span>
+						<span className="r">r</span>
+						<span className="i">i</span>
+						<span className="e">e</span>
+						<span className="n">n</span>
+						<span className="d">d</span>
+						<span className="f-2">F</span>
+						<span className="a">a</span>
+						<span className="c">c</span>
+						<span className="t">t</span>
+						<span className="s">s</span>
 					</div>
-					<div className="session-container">
-						<button className="signup-session-button">Get Started!</button>
-						<span>Already have an account?</span>
-						<button className="login-session-button">Login!</button>
+					<div className="session-container-transition">
+						<button className="signup-session-button phase-out">
+							Get Started!
+						</button>
+						<span className="phase-out">Already have an account?</span>
+						<button className="login-session-button phase-out">Login!</button>
 					</div>
 				</div>
 			);
@@ -111,30 +170,75 @@ class SessionForm extends React.Component {
 		if (this.state.formType === 'login') {
 			return (
 				<div className="right-side">
-					<div className="session-container">
-						<label htmlFor="email-input">Email</label>
-						<input id="email-input" type="text" />
-						<label htmlFor="password-input">Password</label>
-						<input id="password-input" type="password" />
-            <button className="session-submit-button">Login!</button>
-						<button onClick={()=>this.setState({formType: null})} className="go-back-button">Go Back</button>
-					</div>
+					<form className="session-container" onSubmit={this.handleSubmit}>
+						<label className="phase-in" htmlFor="email-input">
+							Email
+						</label>
+						<input
+							className="phase-in"
+							id="email-input"
+							type="text"
+							onChange={this.update('email')}
+						/>
+						<label className="phase-in" htmlFor="password-input">
+							Password
+						</label>
+						<input
+							className="phase-in"
+							id="password-input"
+							type="password"
+							onChange={this.update('password')}
+						/>
+						<input type="submit" className="session-submit-button phase-in" value="Login!" />
+						<button
+							onClick={() => this.setState({ formType: null })}
+							className="go-back-button phase-in"
+						>
+							Go Back
+						</button>
+					</form>
 				</div>
 			);
 		}
 		if (this.state.formType === 'signup') {
 			return (
 				<div className="right-side">
-					<div className="session-container">
-						<label htmlFor="email-input">Email</label>
-						<input id="email-input" type="text" />
-						<label htmlFor="password-input">Password</label>
-						<input id="password-input" type="password" />
-						<label htmlFor="password-confirmation-input">Confirm Password</label>
-						<input id="password-confirmation-input" type="password" />
-						<button className="session-submit-button">Signup!</button>
-						<button onClick={()=>this.setState({formType: null})} className="go-back-button">Go Back</button>
-					</div>
+					<form className="session-container"  onSubmit={this.handleSubmit}>
+						<label className="phase-in" htmlFor="email-input">
+							Email
+						</label>
+						<input
+							className="phase-in"
+							id="email-input"
+							type="text"
+							onChange={this.update('email')}
+						/>
+						<label className="phase-in" htmlFor="password-input">
+							Password
+						</label>
+						<input
+							className="phase-in"
+							id="password-input"
+							type="password"
+							onChange={this.update('password')}
+						/>
+						<label className="phase-in" htmlFor="password-confirmation-input">
+							Confirm Password
+						</label>
+						<input
+							className="phase-in"
+							id="password-confirmation-input"
+							type="password"
+							onChange={this.update('password2')}
+						/>
+						<input type="submit" className="session-submit-button phase-in" value="Signup!" />
+						<button
+							onClick={() => this.setState({ formType: null })}
+							className="go-back-button phase-in"
+						>
+							Go Back
+						</button>
+					</form>
 				</div>
 			);
 		}
