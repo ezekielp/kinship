@@ -6,13 +6,21 @@ const passport = require("passport");
 const Friend = require("../../models/Friend");
 const validateFriendInput = require("../../validation/friends");
 
+function _normalized(friends) {
+  const normalizedObj = {};
+  friends.forEach((friend) => {
+    normalizedObj[friend._id] = friend;
+  });
+  return normalizedObj;
+}
+
 // A user's index of friends
 router.get(
   "/user/:user_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Friend.find({ user: req.params.user_id })
-      .then(friends => res.json(friends))
+      .then(friends => res.json(_normalized(friends)))
       .catch(err =>
         res
           .status(404)
@@ -83,9 +91,8 @@ router.patch(
     }
 
     Friend.findByIdAndUpdate(req.params.id, req.body, (err) => {
-      if (err) res.send(err);
-    })
-      .then(friend => res.json(friend));
+      if (err) res.status(400).send(err);
+    }).then(friend => res.json(friend));
   }
 );
 
@@ -95,9 +102,8 @@ router.delete(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Friend.findByIdAndDelete(req.params.id, (err) => {
-      if (err) res.send(err);
-    })
-      .then(() => res.json({Success: "Deleted"}));
+      if (err) res.status(400).send(err);
+    }).then(() => res.json({Success: "Deleted"}));
   }
 );
 
