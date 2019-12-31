@@ -5,8 +5,8 @@ module.exports = function validateFriendInput(data) {
   let errors = {};
 
   data.name = validText(data.name) ? data.name : "";
-  data.dateOfBirth = validText(data.dateOfBirth.toString())
-    ? data.dateOfBirth.toString()
+  data.dateOfBirth = validText(data.dateOfBirth)
+    ? data.dateOfBirth
     : "";
 
   if (!Validator.isLength(data.name, { min: 2, max: 50 })) {

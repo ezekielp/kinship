@@ -5,6 +5,7 @@ const db = require('./config/keys').mongoURI;
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+const friends = require("./routes/api/friends");
 const passportAuth = require("./config/passport");
 
 mongoose
