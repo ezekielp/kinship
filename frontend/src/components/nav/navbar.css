@@ -1,6 +1,25 @@
 .navbar-container {
     height: 60px;
     width: 100%;
-    background-color: red;
-    opacity: 75%;
+    background-color: rgba(255, 0, 0, 0.75);
+    display: flex;
+}
+
+.navbar-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-container {
+    display: flex;
+    font-size: 32px;
+    padding-left: 25px;
+}
+
+.navbar-logo-first-F {
+
+}
+
+.navbar-logo-second-F {
+    transform: rotate(180deg);
 }
