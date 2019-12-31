@@ -7,7 +7,8 @@ const friendsReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_FRIENDS:
             return action.friends.data
         case RECEIVE_FRIEND:
-            return Object.assign({}, oldState, {[action.friend.data.id]: action.friend.data})
+            debugger
+            return Object.assign({}, oldState, {[action.friend.data._id]: action.friend.data})
         case REMOVE_FRIEND:
             delete newState[action.friendId.data] 
             return newState;
@@ -15,5 +16,7 @@ const friendsReducer = (oldState = {}, action) => {
             return oldState;
     }
 }
+// let userid = "5e0a306e005f35192b84aefe"
+// let friend = 
 
 export default friendsReducer;
