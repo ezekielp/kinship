@@ -5,7 +5,7 @@ export const RECEIVE_FRIEND = "RECEIVE_FRIEND";
 export const REMOVE_FRIEND = "REMOVE_FRIEND";
 
 
-const receiveAllFriends = () => {
+const receiveAllFriends = (friends) => {
     return {
         type: RECEIVE_ALL_FRIENDS,
         friends
@@ -26,8 +26,8 @@ const removeFriend = (friendId) => {
     }
 }
 
-export const fetchFriends = () => (dispatch) => {
-    return FRIENDAPIUtil.fetchFriends()
+export const fetchFriends = (id) => (dispatch) => {
+    return FRIENDAPIUtil.fetchFriends(id)
         .then(friends => dispatch(receiveAllFriends(friends)))
         .catch(err => console.log(err))
 }
