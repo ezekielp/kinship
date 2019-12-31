@@ -52,10 +52,11 @@ class SessionForm extends React.Component {
 	}
 
 	transitionOut(formType) {
-		let td = formType === 'login' || formType === 'signup' ? 'open' : 'close';
+    let td = formType === 'login' || formType === 'signup' ? 'open' : 'close';
+    this.props.clearErrors();
 		this.setState({
 			formType: 'transition',
-			transitionDirection: td
+      transitionDirection: td,
 		});
 		setTimeout(
 			() =>
@@ -196,6 +197,7 @@ class SessionForm extends React.Component {
 			return (
 				<div className="right-side">
 					<form className="session-container" onSubmit={this.handleSubmit}>
+            {errors}
 						<label className="phase-in" htmlFor="email-input">
 							Email
 						</label>
@@ -226,7 +228,6 @@ class SessionForm extends React.Component {
 							Go Back
 						</button>
 					</form>
-          {errors}
 				</div>
 			);
 		}
@@ -234,6 +235,7 @@ class SessionForm extends React.Component {
 			return (
 				<div className="right-side">
 					<form className="session-container" onSubmit={this.handleSubmit}>
+            {errors}
 						<label className="phase-in" htmlFor="email-input">
 							Email
 						</label>
@@ -273,7 +275,6 @@ class SessionForm extends React.Component {
 							Go Back
 						</button>
 					</form>
-          {errors}
 				</div>
 			);
 		}
