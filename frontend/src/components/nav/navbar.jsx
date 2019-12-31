@@ -1,13 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import "./navbar.css";
 
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+          loggedIn: this.props.loggedIn
+        }
+
+        this.handleLogout = this.handleLogout.bind(this);
+    }
+
+    handleLogout() {
+      this.props.logout();
+      this.setState({
+        loggedIn: false
+      });
     }
 
     render() {
+      if (!this.state.loggedIn) {
+        return <Redirect to="/" />;
+      }
+
         return (
           <div className="navbar-container">
             <Link to="/friends" className="navbar-logo-link">
@@ -18,7 +35,7 @@ class Navbar extends React.Component {
             </Link>
             <div
                 className="navbar-logout-btn" 
-                onClick={() => this.props.logout()}>Logout
+                onClick={() => this.handleLogout()}>Logout
                 </div>
           </div>
         );
