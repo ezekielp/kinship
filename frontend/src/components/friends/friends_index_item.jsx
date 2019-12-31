@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default FriendsIndexItem = (props) => {
+const FriendsIndexItem = (props) => {
     return (
         <div className="friend-card-container">
             
         </div>
     )
 }
+
+export default FriendsIndexItem;

@@ -1,4 +1,5 @@
 import React from 'react';
+import './friends.css';
 
 class FriendsSidebar extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class FriendsSidebar extends React.Component {
 
         return (
             <div className="friends-sidebar-container">
-                                
+
             </div>
         )
     }
