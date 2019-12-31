@@ -43,20 +43,16 @@ export const login = user => dispatch => {
 
 export const signup = user => dispatch => {
     
-    return SessionAPIUtil.signup(user).then( ()=> {
-        debugger
-        login(user) 
-        debugger
-    } )
-
-    // then(res => {
-    //     console.log(user);
-    //     console.log(res);
-    //     login(user);
-    // }), err => {
-    //     console.log("its here");
-    //     dispatch(receiveErrors(err.response.data));
-    // }
+    return SessionAPIUtil.signup(user).then(res => {
+        const { token } = res.data;
+        localStorage.setItem('jwtToken', token);
+        SessionAPIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded));
+    })
+    .catch(err => {
+        dispatch(receiveErrors(err.response.data));
+    })
 };
 
 export const logout = () => dispatch => {
