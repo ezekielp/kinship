@@ -7,11 +7,10 @@ class Navbar extends React.Component {
         super(props);
 
         this.state = {
-          // justLoggedOut: false,
           loggedIn: this.props.loggedIn
         }
 
-        
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     handleLogout() {
@@ -22,11 +21,6 @@ class Navbar extends React.Component {
     }
 
     render() {
-      // if (this.state.justLoggedOut) {
-      //   this.setState({ justLoggedOut: false });
-      //   return <Redirect to="/" />;
-      // }
-      
       if (!this.state.loggedIn) {
         return <Redirect to="/" />;
       }
@@ -41,7 +35,7 @@ class Navbar extends React.Component {
             </Link>
             <div
                 className="navbar-logout-btn" 
-                onClick={() => this.props.logout()}>Logout
+                onClick={() => this.handleLogout()}>Logout
                 </div>
           </div>
         );
