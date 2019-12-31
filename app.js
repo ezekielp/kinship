@@ -5,6 +5,7 @@ const db = require('./config/keys').mongoURI;
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+const friends = require("./routes/api/friends");
 const passportAuth = require("./config/passport");
 
 mongoose
@@ -12,7 +13,6 @@ mongoose
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
-    
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -20,7 +20,7 @@ app.use(passport.initialize());
 passportAuth(passport);
 
 app.use("/api/users", users);
-// app.use("/api/friends", friends);
+app.use("/api/friends", friends);
 
 const port = process.env.PORT || 5000;
 

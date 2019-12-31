@@ -14,12 +14,13 @@
 |-----------|---------|-------|
 |`id`|integer|required, primary key|
 |`name`|string|required|
-|`user`|ObjectId|required, reference User model|
+|`user`|ObjectId|ref "User"|
 |`dateOfBirth`|date||
 |`children`|array||
 |`siblings`|array||
 |`pets`|array||
 |`parents`|array||
+|`hobbies`|array||
 |`currentCity`|string||
 |`currentCityYears`|number||
 |`pastCity`|string||
@@ -30,7 +31,6 @@
 |`gradSchoolYears`|number||
 |`employmentHistory`|string||
 |`currentEmploymentStatus`|string|only five options|
-|`hobbies`|array||
 |`notes`|string||
 |`createdAt`|datetime|required|
 |`updatedAt`|datetime|required|
