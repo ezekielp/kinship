@@ -68,3 +68,32 @@
     font-size: 80px;
     margin-top: -20px;
 }
+
+
+
+/* FRIEND SHOW PAGE */
+
+.friend-show-container {
+    width: 100%;
+    height: auto;
+    margin: 40px;
+}
+
+.friend-show-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#friend-show-name-text {
+    font-size: 35px;
+}
+
+.friend-show-container ul li {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
