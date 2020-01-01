@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
 		if (this.state.formType === null) {
 			return (
 				<div className="right-side">
-					<div className="friend-facts-1">
+					{/* <div className="friend-facts-1">
 						<span className="f-1">F</span>
 						<span className="r">r</span>
 						<span className="i">i</span>
@@ -111,7 +111,7 @@ class SessionForm extends React.Component {
 						<span className="c">c</span>
 						<span className="t">t</span>
 						<span className="s">s</span>
-					</div>
+					</div> */}
 					<div className="session-container-null">
 						<button
 							onClick={() => this.transitionOut('signup')}
@@ -137,7 +137,6 @@ class SessionForm extends React.Component {
 			);
 		}
 		if (this.state.formType === 'transition') {
-      // console.log("transitioning");
 			let td1;let td2;let td3;let td4;let td5;let td6;let td7;
 			if (this.state.transitionDirection === 'close') {
 				td1 = 'friend-facts-1 enter-up';
@@ -158,7 +157,7 @@ class SessionForm extends React.Component {
 			}
 			return (
 				<div className="right-side">
-					<div className={td1}>
+					{/* <div className={td1}>
 						<span className="f-1">F</span>
 						<span className="r">r</span>
 						<span className="i">i</span>
@@ -183,7 +182,7 @@ class SessionForm extends React.Component {
 						<span className="c">c</span>
 						<span className="t">t</span>
 						<span className="s">s</span>
-					</div>
+					</div> */}
 					<div className={td5}>
 						<button className={td3}>Get Started!</button>
 						<span className={td7}>Already have an account?</span>
