@@ -8,8 +8,21 @@ class FriendsIndex extends React.Component {
         super(props);
     }
 
-    render() {
+    componentDidMount() {
+      this.props.fetchFriends(this.props.userId);
+    }
 
+    render() {
+      const { friends } = this.props;
+
+      if (!friends) return null;
+
+      const friendProfileLis = friends.map((friend, idx) => {
+        return <FriendsIndexItem
+                  key={idx}
+                  friend={friend}
+                  />
+      })
 
         return (
           <div>
@@ -17,17 +30,28 @@ class FriendsIndex extends React.Component {
             <div className="friends-below-navbar-container">
               <FriendsSidebar />
               <div className="friend-cards-container">
+                <ul>
+                  {friendProfileLis}
+                  <li>
+                    <div className="friend-card-container friend-create-link-card">
+                      <div className="friend-create-link-card-text">
+                        Add a Friend
+                      </div>
+                      <div className="friend-create-link-card-plus-sign">+</div>
+                    </div>
+                  </li>
+                </ul>
+                {/* <FriendsIndexItem />
                 <FriendsIndexItem />
                 <FriendsIndexItem />
                 <FriendsIndexItem />
-                <FriendsIndexItem />
-                <FriendsIndexItem />
-                <div className="friend-card-container friend-create-link-card">
+                <FriendsIndexItem /> */}
+                {/* <div className="friend-card-container friend-create-link-card">
                   <div className="friend-create-link-card-text">
                     Add a Friend
                   </div>
                   <div className="friend-create-link-card-plus-sign">+</div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
