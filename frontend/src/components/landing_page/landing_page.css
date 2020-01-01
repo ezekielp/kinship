@@ -1,14 +1,10 @@
 body {
 	margin: 0;
-  /* font-family: 'Gochi Hand', cursive; */
-  /* font-family: 'Jockey One', sans-serif; */
   font-family: 'Encode Sans Expanded', sans-serif;
-  /* font-family: 'Sue Ellen Francisco', cursive; */
-  /* font-family: 'Lexend Peta', sans-serif; */
 }
-/* #d50000; dark red*/
-/* #E1E2E1;  white*/
+
 .landing-page {
+  position: relative;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	height: 100vh;
@@ -20,20 +16,21 @@ body {
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr; 
-  background-color: #d50000;
+  background-color: #ff7315;
 }
 
 .motto-catchphrase{
   font-size: 24px;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
   grid-row-start: 4;
   grid-row-end: 5;
   display: flex;
   justify-content: center;
 	align-items: center;
   font-size: 24px;
-  color: #E1E2E1;
+  color: #f4f4f4;
+  padding: 10px;
 }
 
 .logo-container {
@@ -41,13 +38,13 @@ body {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
-	display: grid;
 	width: 480px;
 	height: 240px;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	/* grid-template-rows: 1fr 1fr 1fr; */
-  background-color: #E1E2E1;
+  background-color: #f4f4f4;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title-container{
@@ -78,16 +75,17 @@ body {
 	grid-row-end: 3;
 	grid-column-start: 2;
 	grid-column-end: 3;
-  color: #F5F5F6;
-  background-color: #9c0000;
+  color: #f4f4f4;
+  background-color: #3a3535;
 }
 
 .facts {
 	grid-row-start: 4;
 	grid-row-end: 5;
 	grid-column-start: 2;
-	grid-column-end: 3;
-	background-color: #ff5131;
+  grid-column-end: 3;
+  color: #f4f4f4;
+	background-color: #3a3535;
 }
 
 .friend, .facts {
@@ -104,7 +102,7 @@ body {
 .right-side {
 	width: 100%;
 	height: 100%;
-  background-color: #F5F5F6;
+  background-color: #f4f4f4;
   display: grid;
   grid-template-columns: 1fr 480px 1fr;
   grid-template-rows: 1fr 480px 1fr; 
@@ -133,7 +131,7 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: #E1E2E1;
+  background-color: #ff7315;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -147,7 +145,7 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: #E1E2E1;
+  background-color: #ff7315;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -164,7 +162,7 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: #E1E2E1;
+  background-color: #ff7315;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -179,7 +177,7 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: #E1E2E1;
+  background-color: #ff7315;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -207,15 +205,18 @@ body {
 }
 
 .signup-session-button{
-  background-color: #00e5ff;
+  background-color: #3a3535;
+  color: #f4f4f4;
 }
 
 .login-session-button{
-  background-color: #6effff;
+  background-color: #3a3535;
+  color: #f4f4f4;
 }
 
 .demo-login-button{
-  background-color: #00b2cc;
+  background-color: #3a3535;
+  color: #f4f4f4;
 }
 
 .signup-session-button, .login-session-button, .demo-login-button{
@@ -234,56 +235,6 @@ body {
 
 .signup-session-button:focus, .login-session-button:focus, .demo-login-button:focus{
   outline: none;
-}
-
-.f-1, .r, .i, .e, .n, .d, .f-2, .a, .c, .t, .s{
-  animation: friend-facts 2s alternate infinite;
-}
-
-.f-1{
-  animation-delay: -0.2s;
-}
-.r{
-  animation-delay: -0.4s;
-}
-.i{
-  animation-delay: -0.6s;
-}
-.e{
-  animation-delay: -0.8s;
-}
-.n{
-  animation-delay: -1s;
-}
-.d{
-  animation-delay: -1.2s;
-}
-.f-2{
-  animation-delay: -1.4s;
-}
-.a{
-  animation-delay: -1.6s;
-}
-.c{
-  animation-delay: -1.8s;
-}
-.t{
-  animation-delay: -2s;
-}
-.s{
-  animation-delay: -2.2s;
-}
-
-
-@keyframes friend-facts{
-  from{
-    /* font-size: 24px; */
-    opacity: 0;
-  }
-  to{
-    /* font-size: 26px; */
-    opacity: 1;
-  }
 }
 
 .exit-up{
@@ -352,5 +303,33 @@ body {
   }
   to{
     opacity: 0;
+  }
+}
+
+
+.transition-page{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ff7315;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr; 
+  animation: sweep-left 1s ease-in forwards 3s;
+}
+
+@keyframes sweep-left{
+  0%{
+    width: 100%;
+  }
+  90%{
+    opacity: 1;
+    width: 50%;
+  }
+  100%{
+    width: 50%;
+    opacity: 0;
+    display: none;
   }
 }
