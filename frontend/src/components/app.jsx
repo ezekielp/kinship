@@ -17,7 +17,7 @@ const App = () => (
             <ProtectedRoute exact path="/friends" component={FriendsIndexContainer} />
             <ProtectedRoute exact path = "/friends/:friendId" component = {FriendShowContainer} />
             <ProtectedRoute path="/friends/:friendId/edit" component = {EditFriendContainer} />
-            <Route path="/friends/new" component = {CreateFriendContainer} />
+            <Route path="/friends/new" component={CreateFriendContainer} />
             <AuthRoute path="/" component={LandingPage} />
         </Switch>
     </>
