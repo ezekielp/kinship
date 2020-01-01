@@ -1,11 +1,34 @@
 import React from 'react';
 
-const FriendsIndexItem = (props) => {
+const FriendsIndexItem = ({friend}) => {
+
+    const ageFromDOB = DOB => {
+      const yearsOldInMilliseconds = Date.now() - DOB.getTime();
+      const yearsOldInSeconds = yearsOldInMilliseconds / 1000;
+      const yearsOldInMinutes = yearsOldInSeconds / 60;
+      const yearsOldInHours = yearsOldInMinutes / 60;
+      const yearsOldInDays = yearsOldInHours / 24;
+      return Math.floor(yearsOldInDays / 365);
+    }
+
+    let ageLi = <></>;
+    if (friend.dateOfBirth) {
+      ageLi = <li><span>{ageFromDOB}</span>years old</li>
+    }
+
+    let currentCityLi = <></>;
+    if (friend.currentCity) {
+      currentCityLi = <li>Lives in <span>{friend.currentCity}</span></li>
+    }
+
+    const summaryInfo = (
+      <li></li>
+    )
+
     return (
       <div className="friend-card-container">
-        {/* I guess here we should always have NAME, but then we just map the first however-many (5?) info fields associated with a friend profile? */}
         <ul>
-          <li>Name</li>
+          <li>{friend.name}</li>
           <li>Age</li>
           <li>Birthday</li>
           <li>Where [Name] lives</li>
