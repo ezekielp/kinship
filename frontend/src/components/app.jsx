@@ -8,15 +8,18 @@ import FriendShowContainer from './friends/friend_show_container';
 import Modal from './modal/modal';
 
 const App = () => (
-    <>
-        <Modal />
-        <Switch>
-            <Route exact path="/friends" component={FriendsIndexContainer} />
-            {/* <ProtectedRoute exact path="/friends" component={FriendsIndex} /> */}
-            <Route exact path="/friends/dummy_show" component={FriendShowContainer} />
-            <AuthRoute path="/" component={LandingPage} />
-        </Switch>
-    </>
+  <>
+    <Modal />
+    <Switch>
+      <ProtectedRoute
+        exact
+        path="/friends/:friendId"
+        component={FriendShowContainer}
+      />
+      <ProtectedRoute exact path="/friends" component={FriendsIndexContainer} />
+      <AuthRoute path="/" component={LandingPage} />
+    </Switch>
+  </>
 );
 
 export default App;
