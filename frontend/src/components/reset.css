@@ -1,5 +1,5 @@
 html, body, section, article,
-h1, h2, p, strong, em, a {
+h1, h2, p, strong, em, a, ul, li {
   margin: 0;
   border: 0;
   padding: 0;
@@ -10,4 +10,13 @@ h1, h2, p, strong, em, a {
   text-align: inherit;
   color: inherit;
   background: transparent;
+  list-style: none;
+}
+
+ul, li {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  list-style: none;
 }

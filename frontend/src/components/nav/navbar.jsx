@@ -29,14 +29,17 @@ class Navbar extends React.Component {
           <div className="navbar-container">
             <Link to="/friends" className="navbar-logo-link">
               <div className="navbar-logo-container">
-                <div className="navbar-logo-first-F">F</div>
-                <div className="navbar-logo-second-F">F</div>
+                {/* <div>kinship</div> */}
+                <span className="navbar-logo-kin">kin</span>
+                <span className="navbar-logo-ship">ship</span>
               </div>
             </Link>
             <div
-                className="navbar-logout-btn" 
-                onClick={() => this.handleLogout()}>Logout
-                </div>
+              className="navbar-logout-btn"
+              onClick={() => this.handleLogout()}
+            >
+              Logout
+            </div>
           </div>
         );
     }
