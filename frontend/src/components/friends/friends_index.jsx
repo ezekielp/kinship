@@ -32,18 +32,26 @@ class FriendsIndex extends React.Component {
               <div className="friend-cards-container">
                 <ul>
                   {friendProfileLis}
+                  <li>
+                    <div className="friend-card-container friend-create-link-card">
+                      <div className="friend-create-link-card-text">
+                        Add a Friend
+                      </div>
+                      <div className="friend-create-link-card-plus-sign">+</div>
+                    </div>
+                  </li>
                 </ul>
                 {/* <FriendsIndexItem />
                 <FriendsIndexItem />
                 <FriendsIndexItem />
                 <FriendsIndexItem />
                 <FriendsIndexItem /> */}
-                <div className="friend-card-container friend-create-link-card">
+                {/* <div className="friend-card-container friend-create-link-card">
                   <div className="friend-create-link-card-text">
                     Add a Friend
                   </div>
                   <div className="friend-create-link-card-plus-sign">+</div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -11,12 +11,16 @@ const FriendsIndexItem = ({friend}) => {
       return Math.floor(yearsOldInDays / 365);
     }
 
-    let ageLi = <></>;
+    let ageLi = <div></div>;
     if (friend.dateOfBirth) {
-      ageLi = <li><span>{ageFromDOB}</span>years old</li>
+      ageLi = (
+        <li>
+          <span>{ageFromDOB(new Date(friend.dateOfBirth))}</span>years old
+        </li>
+      );
     }
 
-    let currentCityLi = <></>;
+    let currentCityLi = <div></div>;
     if (friend.currentCity) {
       currentCityLi = <li>Lives in <span>{friend.currentCity}</span></li>
     }
@@ -28,10 +32,9 @@ const FriendsIndexItem = ({friend}) => {
     return (
       <div className="friend-card-container">
         <ul>
-          <li>{friend.name}</li>
-          <li>Age</li>
-          <li>Birthday</li>
-          <li>Where [Name] lives</li>
+          <li className="friend-index-item-name">{friend.name}</li>
+          {ageLi}
+          {currentCityLi}
         </ul>
       </div>
     );

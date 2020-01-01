@@ -3,8 +3,9 @@ import FriendsIndex from './friends_index';
 import { fetchFriends } from '../../actions/friends_actions';
 
 const msp = state => {
+    let userId = state.session.user ? state.session.user.id : null;
     return {
-        userId: state.session.user.id, 
+        userId,
         friends: Object.values(state.entities.friends)
     }
 }

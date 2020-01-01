@@ -8,8 +8,10 @@
 
 .friends-sidebar-container {
     height: auto;
+    min-height: 800px;
     width: 300px;
-    background-color: rgba(0, 0, 0, .05);
+    border-right: 1px solid black;
+    /* background-color: #3A3535; */
 }
 
 .friends-sidebar-header {
@@ -17,9 +19,10 @@
     margin-left: 25px;
     font-size: 26px;
     font-weight: 600;
+    color: black;
 }
 
-.friend-cards-container {
+.friend-cards-container ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -36,10 +39,19 @@
     border-radius: 10px;
 }
 
+
+/* FRIEND INDEX ITEMS */
+
 .friend-card-container ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: block;
+    text-align: center;
+}
+
+.friend-index-item-name {
+
 }
 
 
