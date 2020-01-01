@@ -1,0 +1,22 @@
+
+
+.make-a-friend-background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #ff7315;
+    opacity: 0.5;
+    /* TODO change placement and add transition animations */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.make-a-friend-container{
+    width: 50%;
+    height: 50%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}

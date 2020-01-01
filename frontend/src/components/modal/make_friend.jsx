@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
+import './make_friend.css';
 
 class MakeAFriend extends React.Component {
 	constructor(props) {
@@ -14,7 +15,9 @@ class MakeAFriend extends React.Component {
 		}
 
 		return (
-            <div></div>
+            <div>
+                <button onClick={()=>this.props.closeModal}>Close Modal</button>
+            </div>
 		);
 	}
 }
