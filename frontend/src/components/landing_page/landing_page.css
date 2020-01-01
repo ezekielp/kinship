@@ -1,13 +1,8 @@
 body {
 	margin: 0;
-  /* font-family: 'Gochi Hand', cursive; */
-  /* font-family: 'Jockey One', sans-serif; */
   font-family: 'Encode Sans Expanded', sans-serif;
-  /* font-family: 'Sue Ellen Francisco', cursive; */
-  /* font-family: 'Lexend Peta', sans-serif; */
 }
-/* #d50000; dark red*/
-/* #E1E2E1;  white*/
+
 .landing-page {
   position: relative;
 	display: grid;
@@ -43,11 +38,8 @@ body {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
-	/* display: grid; */
 	width: 480px;
 	height: 240px;
-	/* grid-template-columns: 1fr 1fr 1fr 1fr; */
-	/* grid-template-rows: 1fr 1fr 1fr; */
   background-color: #f4f4f4;
   border-radius: 5px;
   display: flex;
@@ -243,56 +235,6 @@ body {
 
 .signup-session-button:focus, .login-session-button:focus, .demo-login-button:focus{
   outline: none;
-}
-
-.f-1, .r, .i, .e, .n, .d, .f-2, .a, .c, .t, .s{
-  animation: friend-facts 2s alternate infinite;
-}
-
-.f-1{
-  animation-delay: -0.2s;
-}
-.r{
-  animation-delay: -0.4s;
-}
-.i{
-  animation-delay: -0.6s;
-}
-.e{
-  animation-delay: -0.8s;
-}
-.n{
-  animation-delay: -1s;
-}
-.d{
-  animation-delay: -1.2s;
-}
-.f-2{
-  animation-delay: -1.4s;
-}
-.a{
-  animation-delay: -1.6s;
-}
-.c{
-  animation-delay: -1.8s;
-}
-.t{
-  animation-delay: -2s;
-}
-.s{
-  animation-delay: -2.2s;
-}
-
-
-@keyframes friend-facts{
-  from{
-    /* font-size: 24px; */
-    opacity: 0;
-  }
-  to{
-    /* font-size: 26px; */
-    opacity: 1;
-  }
 }
 
 .exit-up{
