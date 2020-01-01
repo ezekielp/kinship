@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './dropdown.css';
 
-export default class dropdown extends Component {
+class Dropdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,13 +25,14 @@ export default class dropdown extends Component {
   }
 
   _dropdownList() {
-    const { arr } = this.props;
+    const { arr, cb } = this.props;
     if (this.state.showDropdown) {
-      const items = arr.map((el, i) => {
-        <section key={i}>
-          {el}
-        </section>
-      });
+      const items = arr.map((el, i) => (
+          <section key={i} onClick={cb}>
+            {el}
+          </section>
+        )
+      );
 
       return (
         <div className="dropdown-items-container">
@@ -39,7 +40,7 @@ export default class dropdown extends Component {
         </div>
       )
     }
-    
+    return null;
   }
 
   render() {
@@ -49,10 +50,12 @@ export default class dropdown extends Component {
         onBlur={() => this.hideDropdown()}
         onFocus={() => this.showDropdown()}
         tabIndex="0">
-      >
-        <header>Add a field</header>
+
+        <header onMouseDown={() => this.toggleDropdown()}>Add a field</header>
         {this._dropdownList()}
       </div>
     )
   }
 }
+
+export default Dropdown;
