@@ -86,32 +86,6 @@ class SessionForm extends React.Component {
 		if (this.state.formType === null) {
 			return (
 				<div className="right-side">
-					{/* <div className="friend-facts-1">
-						<span className="f-1">F</span>
-						<span className="r">r</span>
-						<span className="i">i</span>
-						<span className="e">e</span>
-						<span className="n">n</span>
-						<span className="d">d</span>
-						<span className="f-2">F</span>
-						<span className="a">a</span>
-						<span className="c">c</span>
-						<span className="t">t</span>
-						<span className="s">s</span>
-					</div>
-					<div className="friend-facts-2">
-						<span className="f-1">F</span>
-						<span className="r">r</span>
-						<span className="i">i</span>
-						<span className="e">e</span>
-						<span className="n">n</span>
-						<span className="d">d</span>
-						<span className="f-2">F</span>
-						<span className="a">a</span>
-						<span className="c">c</span>
-						<span className="t">t</span>
-						<span className="s">s</span>
-					</div> */}
 					<div className="session-container-null">
 						<button
 							onClick={() => this.transitionOut('signup')}
@@ -137,18 +111,14 @@ class SessionForm extends React.Component {
 			);
 		}
 		if (this.state.formType === 'transition') {
-			let td1;let td2;let td3;let td4;let td5;let td6;let td7;
+			let td3;let td4;let td5;let td6;let td7;
 			if (this.state.transitionDirection === 'close') {
-				td1 = 'friend-facts-1 enter-up';
-				td2 = 'friend-facts-2 enter-down';
 				td3 = 'signup-session-button phase-in-transition';
 				td4 = 'login-session-button phase-in-transition';
         td5 = 'session-container-transition-reverse';
         td6 = "demo-login-button phase-in-transition";
         td7= "phase-in-transition";
 			} else {
-				td1 = 'friend-facts-1 exit-up';
-				td2 = 'friend-facts-2 exit-down';
 				td3 = 'signup-session-button phase-out';
 				td4 = 'login-session-button phase-out';
         td5 = 'session-container-transition';
@@ -157,32 +127,6 @@ class SessionForm extends React.Component {
 			}
 			return (
 				<div className="right-side">
-					{/* <div className={td1}>
-						<span className="f-1">F</span>
-						<span className="r">r</span>
-						<span className="i">i</span>
-						<span className="e">e</span>
-						<span className="n">n</span>
-						<span className="d">d</span>
-						<span className="f-2">F</span>
-						<span className="a">a</span>
-						<span className="c">c</span>
-						<span className="t">t</span>
-						<span className="s">s</span>
-					</div>
-					<div className={td2}>
-						<span className="f">F</span>
-						<span className="r">r</span>
-						<span className="i">i</span>
-						<span className="e">e</span>
-						<span className="n">n</span>
-						<span className="d">d</span>
-						<span className="f-2">F</span>
-						<span className="a">a</span>
-						<span className="c">c</span>
-						<span className="t">t</span>
-						<span className="s">s</span>
-					</div> */}
 					<div className={td5}>
 						<button className={td3}>Get Started!</button>
 						<span className={td7}>Already have an account?</span>
