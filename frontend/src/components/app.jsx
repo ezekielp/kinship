@@ -8,9 +8,9 @@ import FriendShowContainer from './friends/friend_show_container';
 
 const App = () => (
     <Switch>
-        <Route exact path="/friends" component={FriendsIndexContainer} />
-        {/* <ProtectedRoute exact path="/friends" component={FriendsIndex} /> */}
         <Route exact path="/friends/dummy_show" component={FriendShowContainer} />
+        <ProtectedRoute exact path="/friends/:friendId" component={FriendShowContainer} />
+        <ProtectedRoute exact path="/friends" component={FriendsIndexContainer} />
         <AuthRoute path="/" component={LandingPage} />
     </Switch>
 );
