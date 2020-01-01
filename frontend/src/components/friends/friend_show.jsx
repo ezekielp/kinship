@@ -8,6 +8,7 @@ class FriendShow extends React.Component {
 
         this.renderAge = this.renderAge.bind(this);
         this.renderCurrentCity = this.renderCurrentCity.bind(this);
+        this.renderSiblings = this.renderSiblings.bind(this);
     }
 
     componentDidMount() {
@@ -30,6 +31,7 @@ class FriendShow extends React.Component {
         if (friend.dateOfBirth) {
           ageLi = (
             <li>
+                <span className="friend-show-age-tag">age</span>
               <span>{ageFromDOB(new Date(friend.dateOfBirth))}</span> years old
             </li>
           );
@@ -58,6 +60,7 @@ class FriendShow extends React.Component {
         if (friend.currentCity) {
           currentCityLi = (
             <li>
+              <span className="friend-show-location-tag">location</span>
               Lives in <span>{friend.currentCity} </span>
               {currentCityYears}
             </li>
@@ -65,6 +68,33 @@ class FriendShow extends React.Component {
         }
         
         return currentCityLi;
+    }
+
+    renderSiblings() {
+        const { friend } = this.props;
+
+        let siblingsLi = <></>;
+        if (friend.siblings) {
+            let { siblings } = friend;
+            let siblingsText;
+            if (siblings.length === 1) {
+                siblingsText = siblings;
+            } else if (siblings.length === 2) {
+                siblingsText = siblings.join(" and ");
+            } else {
+                siblingsText = siblings.slice(0, siblings.length - 1).join(", ") + " and " + siblings[siblings.length - 1];
+            }
+            siblingsLi = (
+              <li>
+                <span className="friend-show-siblings-tag">siblings</span>
+                Has siblings{" "}
+                <span className="friend-show-siblings-text">
+                  {siblingsText}
+                </span>
+              </li>
+            );
+        }
+        return siblingsLi;
     }
 
     render() {
@@ -83,7 +113,7 @@ class FriendShow extends React.Component {
                   <li id="friend-show-name-text">{friend.name}</li>
                   {this.renderAge()}
                   {this.renderCurrentCity()}
-                  {/* {currentCityLi} */}
+                  {this.renderSiblings()}
                 </ul>
               </div>
             </div>

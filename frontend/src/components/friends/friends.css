@@ -109,3 +109,30 @@
     font-size: 20px;
 }
 
+.friend-show-age-tag {
+    background-color: #FF7314;
+    font-weight: 600;
+    padding: 1px 6px 7px 7px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.friend-show-location-tag {
+    background-color: #FF7314;
+    font-weight: 600;
+    padding: 3px 6px 6px 8px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.friend-show-siblings-tag {
+    background-color: #FF7314;
+    font-weight: 600;
+    padding: 3px 6px 6px 8px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.friend-show-siblings-text {
+    font-weight: 600;
+}
