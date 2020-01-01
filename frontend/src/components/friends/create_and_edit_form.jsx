@@ -1,4 +1,5 @@
 import React from 'react';
+import Dropdown from '../dropdown/dropdown';
 
 class CreateEditForm extends React.Component {
     constructor(props){
@@ -29,23 +30,23 @@ class CreateEditForm extends React.Component {
             employmentHistory: "",
             currentEmploymentStatus: "",
             notes: "",
-            dateOfBirth_show: null,
-            children_show: null,
-            siblings_show: null,
-            pets_show: null,
-            parents_show: null,
-            hobbies_show: null,
-            currentCity_show: null,
-            currentCityYears_show: null,
-            pastCity_show: null,
-            pastCityYears_show: null,
-            undergradSchool_show: null,
-            undergradSchoolYears_show: null,
-            gradSchool_show: null,
-            gradSchoolYears_show: null,
-            employmentHistory_show: null,
-            currentEmploymentStatus_show: null,
-            notes_show: null,
+            dateOfBirth_show: undefined,
+            children_show: undefined,
+            siblings_show: undefined,
+            pets_show: undefined,
+            parents_show: undefined,
+            hobbies_show: undefined,
+            currentCity_show: undefined,
+            currentCityYears_show: undefined,
+            pastCity_show: undefined,
+            pastCityYears_show: undefined,
+            undergradSchool_show: undefined,
+            undergradSchoolYears_show: undefined,
+            gradSchool_show: undefined,
+            gradSchoolYears_show: undefined,
+            employmentHistory_show: undefined,
+            currentEmploymentStatus_show: undefined,
+            notes_show: undefined,
             // input: 0
         }
         this.inputField = this.inputField.bind(this);
@@ -53,6 +54,7 @@ class CreateEditForm extends React.Component {
         // this.field= this.field.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.showInput = this.showInput.bind(this);
     }
 
     componentDidMount() {
@@ -80,7 +82,10 @@ class CreateEditForm extends React.Component {
                 currentEmploymentStatus: friend.currentEmploymentStatus,
                 notes: friend.notes,
                 // input: 0,
-            })
+            }, () => this.setState({
+                dateOfBirth_show: this.state.dateOfBirth ? true : undefined
+            }) )
+
             // let newState = this.props.friend
             // newState["input"] = 0
         //     newState["children"] = newState["children"].join(",")
@@ -218,8 +223,17 @@ class CreateEditForm extends React.Component {
     // }
 
     showInput(category) {
-        this.setState({[category]: true})
+        return () => this.setState({[category]: true})
     }
+
+    arrayFields () {
+        const currentState = Object.assign({}, this.state)
+        const array = Object.keys(currentState)
+
+        return array.filter(ele => currentState[ele] === undefined);
+    }
+
+    
 
 
     render() {
@@ -249,6 +263,7 @@ class CreateEditForm extends React.Component {
                     {this.inputField("notes_show")}
                     {/* <div>{this.field()}</div> 
                     <button onClick={this.addField}>+ Add Field</button> */}
+                    <Dropdown arr={this.arrayFields()} cb={this.showInput} />
                     <input type="submit" value="Submit" onClick={this.handleSubmit}/>
                 </form> 
             </div>

@@ -28,7 +28,7 @@ class Dropdown extends Component {
     const { arr, cb } = this.props;
     if (this.state.showDropdown) {
       const items = arr.map((el, i) => (
-          <section key={i} onClick={cb}>
+          <section key={i} onClick={cb(el)}>
             {el}
           </section>
         )
