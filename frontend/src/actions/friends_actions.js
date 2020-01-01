@@ -45,6 +45,7 @@ export const makeFriend = (data) => (dispatch) => {
 }
 
 export const editFriend = (data) => (dispatch) => {
+    debugger
     return FRIENDAPIUtil.updateFriend(data)
         .then(friend => dispatch(receiveFriend(friend)))
         .catch(err => console.log(err))

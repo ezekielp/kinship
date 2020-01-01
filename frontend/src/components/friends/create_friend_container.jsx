@@ -4,7 +4,8 @@ import CreateEditForm from './create_and_edit_form';
 
 const mapStateToProps = (state) => {
     return {
-        formType: "create"
+        userId: state.session.user.id,
+        formType: "Create"
     }
 } 
 

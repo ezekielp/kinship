@@ -24,6 +24,7 @@ export const createFriend = (data) => {
 }
 
 export const updateFriend = (data) => {
+    debugger;
     return axios.patch(`/api/friends/${data._id}`, data)
 }
 

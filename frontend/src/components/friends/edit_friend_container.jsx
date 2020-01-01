@@ -1,7 +1,8 @@
+import React from 'react';
 import {connect} from 'react-redux';
 import {editFriend} from '../../actions/friends_actions';
 import CreateEditForm from './create_and_edit_form';
-import { fetchFriends } from '../../util/friends_api_util';
+import { fetchFriend } from '../../actions/friends_actions';
 
 
 class EditFriendForm extends React.Component {
