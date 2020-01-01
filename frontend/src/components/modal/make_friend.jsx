@@ -9,6 +9,7 @@ class MakeAFriend extends React.Component {
 	}
 
 	render() {
+		const modal = this.props.modal;
 
 		if (!modal) {
 			return null;
@@ -16,7 +17,7 @@ class MakeAFriend extends React.Component {
 
 		return (
             <div>
-                <button onClick={()=>this.props.closeModal}>Close Modal</button>
+                <button className="close-make-friend-button" onClick={()=>this.props.closeModal()}>Close Modal</button>
             </div>
 		);
 	}

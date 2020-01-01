@@ -6,12 +6,22 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: #ff7315;
-    opacity: 0.5;
+    background-color: rgba(255, 115, 21, 0.8);
     /* TODO change placement and add transition animations */
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+    animation: smooth-in 1s ease;
+}
+
+@keyframes smooth-in{
+    from{
+        background-color: rgba(255, 115, 21, 0);
+    }
+    to{
+        background-color: rgba(255, 115, 21, 0.8);
+    }
 }
 
 .make-a-friend-container{
@@ -19,4 +29,45 @@
     height: 50%;
     background-color: #f4f4f4;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: open-up 1s ease;
+}
+
+@keyframes open-up{
+    from{
+        width: 10%;
+        height: 10%;
+    }
+    to{
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.close-make-friend-button{
+    width: 200px;
+    height: 100px;
+    background-color: #3a3535;
+    color: #f4f4f4;
+    font-size: 24px;
+    border-radius: 10px;
+    animation: phase-in 2s ease;
+}
+
+.close-make-friend-button:focus{
+    outline: none;
+}
+.close-make-friend-button:hover{
+    cursor: pointer;
+}
+
+@keyframes phase-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
