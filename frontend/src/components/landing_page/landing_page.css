@@ -1,9 +1,13 @@
 body {
 	margin: 0;
-  /* font-family: 'Kulim Park', sans-serif; */
-  font-family: 'Permanent Marker', cursive;
+  /* font-family: 'Gochi Hand', cursive; */
+  /* font-family: 'Jockey One', sans-serif; */
+  font-family: 'Encode Sans Expanded', sans-serif;
+  /* font-family: 'Sue Ellen Francisco', cursive; */
+  /* font-family: 'Lexend Peta', sans-serif; */
 }
-
+/* #d50000; dark red*/
+/* #E1E2E1;  white*/
 .landing-page {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -13,79 +17,60 @@ body {
 
 .left-side {
 	position: relative;
-	/* border-right: 1px solid lightblue; */
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr; 
-  /* background: linear-gradient(
-    to bottom,
-    rgba(190, 240, 255, 0.5) 50%,
-    rgba(255, 0, 0, 0.5) 100%
-  ); */
-  background-color: lightsteelblue;
+  grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr; 
+  background-color: #d50000;
 }
-
-/* .triangle {
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(
-		to bottom left,
-		rgb(255, 255, 255) 0%,
-		rgb(190, 240, 255) 50%,
-		rgb(190, 240, 255) 50%,
-		#999999 100%
-	);
-} */
 
 .motto-catchphrase{
   font-size: 24px;
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
   display: flex;
   justify-content: center;
 	align-items: center;
-	font-size: 24px;
+  font-size: 24px;
+  color: #E1E2E1;
 }
 
 .logo-container {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
 	display: grid;
 	width: 480px;
 	height: 240px;
-	grid-template-columns: 1fr 3fr 1fr;
-	grid-template-rows: 1fr 1fr 0.1fr 1fr 1fr;
-  background-color: rgba(0, 0, 0, 0.25);
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	/* grid-template-rows: 1fr 1fr 1fr; */
+  background-color: #E1E2E1;
   border-radius: 5px;
 }
 
-.first-f {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 1;
-	grid-row-end: 6;
-	font-size: 200px;
-	/* padding-left: 4rem; */
-  font-weight: bold;
-  text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
-  margin-top: -60px;
+.title-container{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.second-f {
-	grid-column-start: 3;
-	grid-column-end: 4;
-	grid-row-start: 1;
-	grid-row-end: 6;
-	transform: rotate(180deg);
-	font-size: 200px;
-	/* padding-left: 4rem; */
-  font-weight: bold;
+.first-f{
+  grid-column: 2/3;
+  font-size: 120px;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  font-family: 'Pacifico', cursive;
+}
+.second-f{
+  grid-column: 3/4;
+  transform: rotate(180deg);
+	font-size: 120px;
   text-shadow: -5px -5px rgba(0, 0, 0, 0.25);
-  margin-bottom: -60px;
+  font-family: 'Pacifico', cursive;
 }
 
 .friend {
@@ -93,7 +78,8 @@ body {
 	grid-row-end: 3;
 	grid-column-start: 2;
 	grid-column-end: 3;
-	background-color: rgba(120, 251, 255, 0.75);
+  color: #F5F5F6;
+  background-color: #9c0000;
 }
 
 .facts {
@@ -101,7 +87,7 @@ body {
 	grid-row-end: 5;
 	grid-column-start: 2;
 	grid-column-end: 3;
-	background-color: rgba(255, 0, 0, 0.75);
+	background-color: #ff5131;
 }
 
 .friend, .facts {
@@ -118,11 +104,7 @@ body {
 .right-side {
 	width: 100%;
 	height: 100%;
-  background: linear-gradient(
-  to bottom,
-  rgba(255, 0, 0, 0.5) 0%,
-  rgba(190, 240, 255, 0.75) 50%
-);
+  background-color: #F5F5F6;
   display: grid;
   grid-template-columns: 1fr 480px 1fr;
   grid-template-rows: 1fr 480px 1fr; 
@@ -151,7 +133,7 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: #E1E2E1;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -165,7 +147,7 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: #E1E2E1;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -182,7 +164,7 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: #E1E2E1;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -190,6 +172,21 @@ body {
   align-items: center;
   align-self: center;
   animation: box-out 1s ease;
+}
+
+.session-container-transition-reverse{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: #E1E2E1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  animation: box-out 1s ease reverse;
 }
 
 @keyframes box-out{
@@ -210,28 +207,32 @@ body {
 }
 
 .signup-session-button{
-  background-color: rgba(255, 0, 0, 0.75);
+  background-color: #00e5ff;
 }
 
 .login-session-button{
-  background-color: rgba(120, 250, 255, 0.75);
+  background-color: #6effff;
 }
 
-.signup-session-button, .login-session-button{
-  /* font-family: 'Kulim Park', sans-serif; */
-  font-family: 'Permanent Marker', cursive;
+.demo-login-button{
+  background-color: #00b2cc;
+}
+
+.signup-session-button, .login-session-button, .demo-login-button{
+  font-family: 'Encode Sans Expanded', sans-serif;
   width: 200px;
   height: 50px;
   border-radius: 10px;
   font-size: 24px;
   transition: background-color 3s ease;
+  margin: 10px;
 }
 
-.signup-session-button:hover, .login-session-button:hover{
+.signup-session-button:hover, .login-session-button:hover, .demo-login-button:hover{
   cursor: pointer;
 }
 
-.signup-session-button:focus, .login-session-button:focus{
+.signup-session-button:focus, .login-session-button:focus, .demo-login-button:focus{
   outline: none;
 }
 
@@ -288,6 +289,9 @@ body {
 .exit-up{
   animation: exit-up 1s ease;
 }
+.enter-up{
+  animation: exit-up 1s ease reverse;
+}
 
 @keyframes exit-up{
   from{
@@ -311,6 +315,9 @@ body {
 .exit-down{
   animation: exit-down 1s ease;
 }
+.enter-down{
+  animation: exit-down 1s ease reverse;
+}
 
 @keyframes exit-down{
   from{
@@ -333,6 +340,10 @@ body {
 
 .phase-out{
   animation: phase-out 1s ease;
+}
+
+.phase-in-transition{
+  animation: phase-in 1s ease-out;
 }
 
 @keyframes phase-out {

@@ -10,31 +10,24 @@ class SessionForm extends React.Component {
 			email: '',
 			password: '',
 			password2: '',
-      errors: {}
+			errors: this.props.errors,
+			transitionDirection: null
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
-		// this.clearedErrors = false;
+		this.demoLogin = this.demoLogin.bind(this);
 	}
 
-	componentDidUpdate(prevProps, prevState){
-    if (this.props.isAuthenticated === true){
-      this.props.history.push('/friends');
-    }
-	  if (this.props.errors.length !== prevProps.errors.length){
-	    this.setState({
-	      errors: this.props.errors
-	    })
-	  }
+	componentDidUpdate(prevProps, prevState) {
+		if (this.props.isAuthenticated === true) {
+			this.props.history.push('/friends');
+		}
+		if (this.props.errors.length !== prevProps.errors.length) {
+			this.setState({
+				errors: this.props.errors
+      });
+		}
 	}
-
-	// componentWillReceiveProps(nextProps) {
-	// 	if (nextProps.signedIn === true) {
-	// 		this.props.history.push('/login');
-	// 	}
-
-	// 	this.setState({ errors: nextProps.errors });
-	// }
 
 	update(field) {
 		return (e) =>
@@ -50,17 +43,20 @@ class SessionForm extends React.Component {
 			password: this.state.password,
 			password2: this.state.password2
 		};
-    
-    if (this.state.formType === "signup"){
-      this.props.signup(user);
-    } else {
-      this.props.login(user);
-    }
+
+		if (this.state.formType === 'signup') {
+			this.props.signup(user);
+		} else {
+			this.props.login(user);
+		}
 	}
 
 	transitionOut(formType) {
+    let td = formType === 'login' || formType === 'signup' ? 'open' : 'close';
+    this.props.clearErrors();
 		this.setState({
-			formType: 'transition'
+			formType: 'transition',
+      transitionDirection: td,
 		});
 		setTimeout(
 			() =>
@@ -71,16 +67,22 @@ class SessionForm extends React.Component {
 		);
 	}
 
+	demoLogin() {
+		let user = {
+			email: 'demo@user.com',
+			password: '123123123'
+		};
+		this.props.login(user);
+	}
+
 	render() {
 		let errors =
-			this.state.errors.length !== 0 ? (
-				<ul>
-					{Object.keys(this.state.errors).map((error, i) => (
-						<li key={`error-${i}`}>{this.state.errors[error]}</li>
-					))}
-				</ul>
-			) : null;
-
+			(this.props.errors.length > 0) ? (
+				<div className="errors-popup">
+          <span>{this.props.errors[0]}</span>
+        </div>
+      ) : null;
+  
 		if (this.state.formType === null) {
 			return (
 				<div className="right-side">
@@ -124,14 +126,39 @@ class SessionForm extends React.Component {
 						>
 							Login!
 						</button>
+						<button
+							onClick={() => this.demoLogin()}
+							className="demo-login-button"
+						>
+							Demo-Login!
+						</button>
 					</div>
 				</div>
 			);
 		}
 		if (this.state.formType === 'transition') {
+      // console.log("transitioning");
+			let td1;let td2;let td3;let td4;let td5;let td6;let td7;
+			if (this.state.transitionDirection === 'close') {
+				td1 = 'friend-facts-1 enter-up';
+				td2 = 'friend-facts-2 enter-down';
+				td3 = 'signup-session-button phase-in-transition';
+				td4 = 'login-session-button phase-in-transition';
+        td5 = 'session-container-transition-reverse';
+        td6 = "demo-login-button phase-in-transition";
+        td7= "phase-in-transition";
+			} else {
+				td1 = 'friend-facts-1 exit-up';
+				td2 = 'friend-facts-2 exit-down';
+				td3 = 'signup-session-button phase-out';
+				td4 = 'login-session-button phase-out';
+        td5 = 'session-container-transition';
+        td6 = "demo-login-button phase-out";
+        td7= "phase-out";
+			}
 			return (
 				<div className="right-side">
-					<div className="friend-facts-1 exit-up">
+					<div className={td1}>
 						<span className="f-1">F</span>
 						<span className="r">r</span>
 						<span className="i">i</span>
@@ -144,7 +171,7 @@ class SessionForm extends React.Component {
 						<span className="t">t</span>
 						<span className="s">s</span>
 					</div>
-					<div className="friend-facts-2 exit-down">
+					<div className={td2}>
 						<span className="f">F</span>
 						<span className="r">r</span>
 						<span className="i">i</span>
@@ -157,12 +184,11 @@ class SessionForm extends React.Component {
 						<span className="t">t</span>
 						<span className="s">s</span>
 					</div>
-					<div className="session-container-transition">
-						<button className="signup-session-button phase-out">
-							Get Started!
-						</button>
-						<span className="phase-out">Already have an account?</span>
-						<button className="login-session-button phase-out">Login!</button>
+					<div className={td5}>
+						<button className={td3}>Get Started!</button>
+						<span className={td7}>Already have an account?</span>
+						<button className={td4}>Login!</button>
+						<button className={td6}>Demo-Login!</button>
 					</div>
 				</div>
 			);
@@ -171,6 +197,7 @@ class SessionForm extends React.Component {
 			return (
 				<div className="right-side">
 					<form className="session-container" onSubmit={this.handleSubmit}>
+            {errors}
 						<label className="phase-in" htmlFor="email-input">
 							Email
 						</label>
@@ -189,9 +216,13 @@ class SessionForm extends React.Component {
 							type="password"
 							onChange={this.update('password')}
 						/>
-						<input type="submit" className="session-submit-button phase-in" value="Login!" />
+						<input
+							type="submit"
+							className="session-submit-button phase-in"
+							value="Login!"
+						/>
 						<button
-							onClick={() => this.setState({ formType: null })}
+							onClick={() => this.transitionOut(null)}
 							className="go-back-button phase-in"
 						>
 							Go Back
@@ -203,7 +234,8 @@ class SessionForm extends React.Component {
 		if (this.state.formType === 'signup') {
 			return (
 				<div className="right-side">
-					<form className="session-container"  onSubmit={this.handleSubmit}>
+					<form className="session-container" onSubmit={this.handleSubmit}>
+            {errors}
 						<label className="phase-in" htmlFor="email-input">
 							Email
 						</label>
@@ -231,9 +263,13 @@ class SessionForm extends React.Component {
 							type="password"
 							onChange={this.update('password2')}
 						/>
-						<input type="submit" className="session-submit-button phase-in" value="Signup!" />
+						<input
+							type="submit"
+							className="session-submit-button phase-in"
+							value="Signup!"
+						/>
 						<button
-							onClick={() => this.setState({ formType: null })}
+							onClick={() => this.transitionOut(null)}
 							className="go-back-button phase-in"
 						>
 							Go Back
