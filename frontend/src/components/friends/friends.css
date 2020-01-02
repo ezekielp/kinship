@@ -38,12 +38,15 @@
     width: 100%;
 }
 
+.friend-card-outer-container {
+    margin: 30px;
+}
+
 .friend-card-container {
     box-sizing: border-box;
     height: 250px;
     width: 250px;
     border: 1px solid black;
-    margin: 30px;
     padding: 20px;
     border-radius: 10px;
     animation: loading 3s;
@@ -73,6 +76,11 @@
     padding: 0;
     display: block;
     text-align: center;
+    height: 206px;
+}
+
+.friend-card-container ul li:not(:first-child) {
+    margin-bottom: 15px;
 }
 
 .friend-index-item-name {
@@ -115,6 +123,23 @@
     filter: invert(46%) sepia(77%) saturate(731%) hue-rotate(346deg) brightness(101%) contrast(104%);
 }
 
+/* .friend-card-container ul::after {
+    content: "click for more details";
+    text-align: center;
+    opacity: 0%;
+} */
+
+.friend-card-container ul::after:hover {
+    content: "click for more details";
+    text-align: center;
+    opacity: 50%;
+}
+
+.friend-card-click-for-details {
+    text-align: center;
+    opacity: 50%;
+}
+
 
 /* CREATE FRIEND PROFILE LINK CARD */
 
@@ -122,6 +147,7 @@
     text-align: center;
     cursor: pointer;
     transition: 0.5s;
+    color: #393535;
     /* box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.75) */
 }
 

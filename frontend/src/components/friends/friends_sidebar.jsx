@@ -39,8 +39,7 @@ class FriendsSidebar extends React.Component {
             dateOptions
         ).format(DOB);
         const birthDay = DOB.getUTCDate();
-        const birthYear = DOB.getUTCFullYear();
-        return `${birthMonth} ${birthDay}, ${birthYear}`;
+        return `${birthMonth} ${birthDay}`;
     }
 
     renderUpcomingBirthdays() {
