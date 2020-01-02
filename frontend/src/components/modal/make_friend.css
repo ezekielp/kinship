@@ -26,7 +26,7 @@
 
 .make-a-friend-container{
     width: 652px;
-    height: 350px;
+    height: auto;
     background-color: #f4f4f4;
     border-radius: 10px;
     display: flex;
@@ -80,8 +80,8 @@
    background-color: transparent;
    position: absolute;
    top: 4px;
-    right: -4px;
-    z-index: 20;
+   right: -4px;
+   z-index: 20;
 }
 
 .close-make-friend-button:focus{
@@ -109,7 +109,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 700;
-
+    padding-top: 10px;
 }
 
 

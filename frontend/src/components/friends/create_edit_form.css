@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-
 }
 
 .input {
@@ -12,27 +11,10 @@
     text-align: center;
     background-color:  #f4f4f4;
     height: 20px;
-    -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;
-    color: -internal-light-dark-color(black, white);
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    -webkit-appearance: textfield;
-    background-color: -internal-light-dark-color(white, black);
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    margin: 0em;
     font: 400 11px system-ui;
     padding: 1px;
     border-width: 2px;
-    border-style: inset;
-    border-color: initial;
-    border-image: initial;
-    
 }
 
 .submit-button {
@@ -42,7 +24,6 @@
     height: 42px;
     width: 281px;
     font-size: 16px;
-    
 }
 
 @keyframes open-up{
@@ -85,8 +66,16 @@
 
 
 .create-friend-container {
-    animation: open-up 1s ease;
+    animation: phase-in 2s ease;
     min-height: auto;
+}
+
+.input, .textarea{
+    animation: phase-in 2s ease;
+}
+
+.input:focus, .textarea:focus{
+    outline: none;
 }
 
 .dropdown-submit-container {
@@ -99,6 +88,7 @@
     /* border-top: 2px solid black; */
     padding-top: 10px;
 }
+
 
 .textarea {
     height: 100px;
