@@ -2,6 +2,27 @@ import React from 'react';
 import Dropdown from '../dropdown/dropdown';
 import './create_edit_form.css';
 
+const CONVERTFEILDS = {
+    name: "Name:",
+    dateOfBirth: "Birthday:",
+    children: "Children:",
+    siblings: "Siblings:",
+    pets: "Pets:",
+    parents: "Parents",
+    hobbies: "Hobbies:",
+    currentCity: "Current City:",
+    currentCityYears: "Years at Residence:",
+    pastCity: "Previous Residence:",
+    pastCityYears: "Previous Residence Years:",
+    undergradSchool: "Undergrad:",
+    undergradSchoolYears: "Undergrad Years:",
+    gradSchool: "Grad School:",
+    gradSchoolYears: "Grad School Years:",
+    employmentHistory: "Employment History:",
+    currentEmploymentStatus: "Employment Status:",
+    notes: "Employment Status:",
+}
+
 class CreateEditForm extends React.Component {
     constructor(props){
         super(props)
@@ -125,46 +146,7 @@ class CreateEditForm extends React.Component {
 
 
     fieldLabel (category) {
-        switch (category) {
-            case "name":
-                return "Name:"
-            case "dateOfBirth":
-                return "Birthday:"
-            case "children":
-                return "Children:"
-            case "siblings":
-                return "Siblings:"
-            case "pets":
-                return "Pets:"
-            case "parents":
-                return "Parents:"
-            case "hobbies":
-                return "Hobbies:"
-            case "currentCity":
-                return "Current City:"
-            case "currentCityYears":
-                return "Years at Residence:"
-            case "pastCity":
-                return "Previous Residence:"
-            case "pastCityYears":
-                return "Previous Residence Years:"
-            case "undergradSchool":
-                return "Undergrad:"
-            case "undergradSchoolYears":
-                return "Undergrad Years:"
-            case "gradSchool":
-                return "Grad School:"
-            case "gradSchoolYears":
-                return "Grad School Years:"
-            case "employmentHistory":
-                return "Employment History:"
-            case "currentEmploymentStatus":
-                return "Employment Status:"
-            case "notes":
-                return "Notes:"
-            default:
-                return category
-        }
+        return CONVERTFEILDS[category]
     }
 
     handleSubmit(e) {

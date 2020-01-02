@@ -19,6 +19,7 @@ class MakeAFriend extends React.Component {
 
 		return (
             <div>
+				<div className="header"></div>
 				<CreateFriendContainer/>
                 {/* <button className="close-make-friend-button" onClick={()=>this.props.closeModal()}>Close Modal</button> */}
 				<button className="close-make-friend-button" onClick={() => this.props.closeModal()}><img className="close-image" src={closeImage} alt=""/></button>

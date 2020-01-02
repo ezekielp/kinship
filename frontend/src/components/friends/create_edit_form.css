@@ -1,14 +1,16 @@
-div.input-container {
+.input-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
+    width:80%;
 }
 
 .input {
     border-radius: 10px;
     width: 50%;
     text-align: center;
+    height: 20px;
 }
 
 .submit-button {
@@ -52,16 +54,20 @@ div.input-container {
 .create-edit-form {
     width: 100%;
     min-width: 550px;
-    height: 100%;
+    height: 350px;
+    margin: 0 auto;
+    padding: 10px 0;
+    overflow-y: scroll;
 }
 
 .create-friend-container {
     animation: open-up 1s ease;
+    min-height: auto;
 }
 
 .dropdown-submit-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
     min-width: 550px;
 }
