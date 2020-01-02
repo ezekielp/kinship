@@ -68,7 +68,27 @@
 }
 
 .friend-index-item-name {
+}
 
+.friend-index-item-buttons {
+    margin: -20px -20px 10px -20px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 25px;
+}
+
+.friend-index-item-buttons > i {
+    margin-right: 5px;
+}
+
+.friend-index-item-buttons > i:last-of-type {
+    margin-right: 10px;
+}
+
+.friend-index-item-buttons > i:hover {
+    filter: invert(46%) sepia(77%) saturate(731%) hue-rotate(346deg) brightness(101%) contrast(104%);
 }
 
 

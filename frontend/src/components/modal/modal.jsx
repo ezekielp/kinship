@@ -28,10 +28,16 @@ class Modal extends React.Component {
 		
 		switch (modal) {
 			case 'make-a-friend':
-				component = <MakeAFriend />;
+				component = <MakeAFriend formType="Create"/>;
 				background = 'make-a-friend-background';
-                container = 'make-a-friend-container';
-                clickEffect = doNothing;
+				container = 'make-a-friend-container';
+				clickEffect = doNothing;
+				break;
+			case 'edit-a-friend':
+				component = <MakeAFriend formType="Edit"/>;
+				background = 'make-a-friend-background';
+				container = 'make-a-friend-container';
+				clickEffect = doNothing;
 				break;
 			case 'transition-screen':
 				component = <TransitionScreen />;

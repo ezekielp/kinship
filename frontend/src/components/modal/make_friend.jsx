@@ -11,19 +11,20 @@ class MakeAFriend extends React.Component {
 	}
 
 	render() {
-		const modal = this.props.modal;
-
+		const { modal, formType} = this.props;
 		if (!modal) {
 			return null;
 		}
 
 		return (
-            <div>
-				<div className="header"></div>
+			<div>
+				<div className="header">{formType === "Create" ? "Make Friend" : "Edit Friend"}</div>
 				<CreateFriendContainer/>
-                {/* <button className="close-make-friend-button" onClick={()=>this.props.closeModal()}>Close Modal</button> */}
-				<button className="close-make-friend-button" onClick={() => this.props.closeModal()}><img className="close-image" src={closeImage} alt=""/></button>
-            </div>
+				{/* <button className="close-make-friend-button" onClick={()=>this.props.closeModal()}>Close Modal</button> */}
+				<button className="close-make-friend-button" onClick={() => this.props.closeModal()}>
+					<i className="fas fa-times close-image"></i>
+				</button>
+			</div>
 		);
 	}
 }
