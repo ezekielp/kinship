@@ -41,12 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store} />, root);
 
     window.store = store;
-    window.fetchFriends = fetchFriends;
-    window.fetchFriend = fetchFriend;
-    window.login = login;
-    window.signup = signup;
-    window.makeFriend = makeFriend;
-    window.editFriend = editFriend;
-    window.deleteFriend = deleteFriend;
+    // window.fetchFriends = fetchFriends;
+    // window.fetchFriend = fetchFriend;
+    // window.login = login;
+    // window.signup = signup;
+    // window.makeFriend = makeFriend;
+    // window.editFriend = editFriend;
+    // window.deleteFriend = deleteFriend;
 
 });
