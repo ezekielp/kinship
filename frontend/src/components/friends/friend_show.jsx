@@ -133,23 +133,6 @@ class FriendShow extends React.Component {
           </>
         );
       }
-      // if (friend.pastCityYears && friend.pastCity && friend.pastCity !== "") {
-      //   pastCityText = `Lived in ${friend.pastCity} for ${friend.pastCityYears} years`
-      // } else if (friend.pastCity && friend.pastCity !== "") {
-      //   const { pastCity } = friend;
-      //   pastCityLi = (
-      //     <>
-      //       <li className="friend-show-li">
-      //         <div className="friend-show-div">
-      //           <span className="friend-show-pastcity-tag friend-show-tag">
-      //             hometown
-      //           </span>
-      //         </div>
-      //         <div className="friend-show-text">{pastCity}</div>
-      //       </li>
-      //     </>
-      //   );
-      // }
 
       return pastCityLi;        
     }
