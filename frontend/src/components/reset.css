@@ -20,3 +20,7 @@ ul, li {
   outline: 0;
   list-style: none;
 }
+
+:focus {
+  outline: none;
+}
