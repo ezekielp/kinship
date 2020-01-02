@@ -69,8 +69,8 @@ class FriendsSidebar extends React.Component {
             <div className="friends-sidebar-container">
                 <h2 className="friends-sidebar-header">Dashboard</h2>
                 <div className="friends-sidebar-birthdays-container">
-                    <h3 className="friends-sidebar-birthdays-header">Upcoming birthdays</h3>
-                    {this.renderUpcomingBirthdays()}
+                    {/* <h3 className="friends-sidebar-birthdays-header">Upcoming birthdays</h3>
+                    {this.renderUpcomingBirthdays()} */}
                 </div>
             </div>
         )
