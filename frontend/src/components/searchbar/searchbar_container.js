@@ -3,7 +3,7 @@ import Searchbar from './searchbar';
 
 const msp = state => {
     return {
-        
+        friends: Object.values(state.entities.friends)
     }
 }
 

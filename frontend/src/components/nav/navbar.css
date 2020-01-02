@@ -16,7 +16,7 @@
     display: flex;
     font-size: 25px;
     padding: 7px 7px 7px 10px;
-    background-color: white;
+    background-color: #f4f4f4;
     margin-left: 24px;
 }
 
@@ -30,4 +30,7 @@
 .navbar-logout-btn {
     margin-right: 25px;
     cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }
