@@ -11,17 +11,16 @@ class SessionForm extends React.Component {
 			password: '',
 			password2: '',
 			errors: this.props.errors,
-			transitionDirection: null
+			transitionDirection: null,
+			disabled: false
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.demoLogin = this.demoLogin.bind(this);
+		this.fillInCredentials = this.fillInCredentials.bind(this);
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (this.props.isAuthenticated === true) {
-			this.props.history.push('/friends');
-		}
 		if (this.props.errors.length !== prevProps.errors.length) {
 			this.setState({
 				errors: this.props.errors
@@ -37,42 +36,84 @@ class SessionForm extends React.Component {
 	}
 
 	handleSubmit(e) {
-		e.preventDefault();
-		let user = {
-			email: this.state.email,
-			password: this.state.password,
-			password2: this.state.password2
-		};
+		if (!this.state.disabled){
+			this.setState({disabled: true});
+			setTimeout(() => {
+				this.setState({disabled: false});
+			}, 1000);
+			e.preventDefault();
+			let user = {
+				email: this.state.email,
+				password: this.state.password,
+				password2: this.state.password2
+			};
 
-		if (this.state.formType === 'signup') {
-			this.props.signup(user);
-		} else {
-			this.props.login(user);
+			if (this.state.formType === 'signup') {
+				this.props.signup(user);
+				this.props.openModal("transition-screen");
+			} else {
+				this.props.login(user);
+				this.props.openModal("transition-screen");
+			}
 		}
 	}
 
 	transitionOut(formType) {
-    let td = formType === 'login' || formType === 'signup' ? 'open' : 'close';
-    this.props.clearErrors();
-		this.setState({
-			formType: 'transition',
-      transitionDirection: td,
-		});
-		setTimeout(
-			() =>
-				this.setState({
-					formType: formType
-				}),
-			1000
-		);
+	if (!this.state.disabled){
+		let td = formType === 'login' || formType === 'signup' ? 'open' : 'close';
+		this.props.clearErrors();
+			this.setState({
+				formType: 'transition',
+		transitionDirection: td,
+			});
+			setTimeout(
+				() =>
+					this.setState({
+						formType: formType
+					}),
+				1000
+			);
+		}
 	}
 
 	demoLogin() {
+		this.setState({disabled: true});
+		this.transitionOut('login');
 		let user = {
 			email: 'demo@user.com',
 			password: '123123123'
 		};
-		this.props.login(user);
+		setTimeout(() => {
+			this.fillInCredentials();
+		}, 1500);
+		setTimeout(() => {
+			this.props.login(user);
+		}, 3000);
+	}
+
+	fillInCredentials(){
+		const username = "demo@user.com".split("");
+		const password = "password".split("");
+
+		let inputUser="";
+		let inputPass="";
+		for (let i=0; i < username.length; i++){
+			setTimeout(() => {
+				inputUser = inputUser.concat(username[i]);
+				this.inputEmail.value=inputUser;
+			}, i*50);
+		}
+		setTimeout(() => {
+			for (let j=0; j < password.length; j++){
+				setTimeout(() => {
+					inputPass = inputPass.concat(password[j]);
+					this.inputPassword.value = inputPass;
+				}, j*50);
+			}
+		}, 600);
+		setTimeout(() => {
+			this.props.openModal("transition-screen");
+		}, 900);
 	}
 
 	render() {
@@ -115,15 +156,15 @@ class SessionForm extends React.Component {
 			if (this.state.transitionDirection === 'close') {
 				td3 = 'signup-session-button phase-in-transition';
 				td4 = 'login-session-button phase-in-transition';
-        td5 = 'session-container-transition-reverse';
-        td6 = "demo-login-button phase-in-transition";
-        td7= "phase-in-transition";
+				td5 = 'session-container-transition-reverse';
+				td6 = "demo-login-button phase-in-transition";
+				td7= "phase-in-transition";
 			} else {
 				td3 = 'signup-session-button phase-out';
 				td4 = 'login-session-button phase-out';
-        td5 = 'session-container-transition';
-        td6 = "demo-login-button phase-out";
-        td7= "phase-out";
+				td5 = 'session-container-transition';
+				td6 = "demo-login-button phase-out";
+				td7= "phase-out";
 			}
 			return (
 				<div className="right-side">
@@ -148,6 +189,7 @@ class SessionForm extends React.Component {
 							className="phase-in"
 							id="email-input"
 							type="text"
+							ref={(email) => this.inputEmail = email}
 							onChange={this.update('email')}
 						/>
 						<label className="phase-in" htmlFor="password-input">
@@ -157,6 +199,7 @@ class SessionForm extends React.Component {
 							className="phase-in"
 							id="password-input"
 							type="password"
+							ref={(password) => this.inputPassword = password}
 							onChange={this.update('password')}
 						/>
 						<input

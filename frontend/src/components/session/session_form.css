@@ -59,7 +59,13 @@
 	}
 }
 
+.session-container{
+	position: relative;
+}
+
 .errors-popup {
+	position: absolute;
+	top: 10px;
 	background-color: rgba(0, 0, 0, 0.5);
 	height: 50px;
 	border-radius: 10px;
@@ -67,6 +73,18 @@
 	justify-content: center;
 	align-items: center;
 	font-size: 20px;
-  color: white;
-  animation: phase-in 0.5s ease;
+    color: white;
+    animation: errors-phase-in 2s ease ;
+}
+
+@keyframes errors-phase-in {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
