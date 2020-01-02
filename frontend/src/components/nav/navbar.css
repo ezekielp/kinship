@@ -16,8 +16,9 @@
     display: flex;
     font-size: 25px;
     padding: 7px 7px 7px 10px;
-    background-color: white;
+    background-color: #f4f4f4;
     margin-left: 24px;
+    border-radius: 5px;
 }
 
 .navbar-logo-kin {
@@ -30,4 +31,8 @@
 .navbar-logout-btn {
     margin-right: 25px;
     cursor: pointer;
+    color: #f4f4f4;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #3a3535;
 }

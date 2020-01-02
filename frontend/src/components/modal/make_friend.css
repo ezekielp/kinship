@@ -33,6 +33,8 @@
     justify-content: center;
     align-items: center;
     animation: open-up 1s ease;
+    position: relative;
+    padding: 10px, 0px;
 }
 
 @keyframes open-up{
@@ -46,7 +48,7 @@
     }
 }
 
-.close-make-friend-button{
+/* .close-make-friend-button{
     width: 200px;
     height: 100px;
     background-color: #3a3535;
@@ -54,14 +56,14 @@
     font-size: 24px;
     border-radius: 10px;
     animation: phase-in 2s ease;
-}
+} */
 
-.close-make-friend-button:focus{
+/* .close-make-friend-button:focus{
     outline: none;
 }
 .close-make-friend-button:hover{
     cursor: pointer;
-}
+} */
 
 @keyframes phase-in{
     from{
@@ -71,3 +73,38 @@
         opacity: 1;
     }
 }
+
+.close-make-friend-button{
+   border: none;
+   background-color: transparent;
+   position: absolute;
+   top: 4px;
+    right: -4px;
+    z-index: 20;
+}
+
+.close-make-friend-button:focus{
+    outline: none;
+}
+.close-make-friend-button:hover{
+    cursor: pointer;
+}
+
+.close-image {
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+}
+
+.close-image:hover {
+    filter: invert(46%) sepia(77%) saturate(731%) hue-rotate(346deg) brightness(101%) contrast(104%);
+}
+
+.header {
+    border-bottom: 2px solid black;
+    margin: -80px -51px 10px -51px;
+    height: 40px;
+}
+
+
+
