@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
+import { withRouter } from 'react-router-dom';
 
 class FriendShow extends React.Component {
     constructor(props) {
@@ -383,7 +384,7 @@ class FriendShow extends React.Component {
 
         if (!this.props.friend) return null;
 
-        const { friend } = this.props;
+        const { friend, openModal, deleteFriend, history } = this.props;
         
         return (
           <div>
@@ -392,7 +393,20 @@ class FriendShow extends React.Component {
               <FriendsSidebar />
               <div className="friend-show-container">
                 <ul>
-                  <li id="friend-show-name-text">{friend.name}</li>
+                  <li id="friend-show-name-text">
+                    {friend.name}
+                    <div className="friend-show-name-buttons-container">
+                      <div onClick={(e) => {
+                        e.preventDefault();
+                        openModal({ type: 'edit-a-friend', friendId: friend._id })
+                      }}>Edit</div>
+                      <div onClick={(e) => {
+                        e.preventDefault();
+                        deleteFriend(friend._id);
+                        history.push('/friends');
+                      }}>Delete</div>
+                    </div>
+                  </li>
                   {this.renderAge()}
                   {this.renderBirthday()}
                   {this.renderCurrentCity()}
@@ -409,4 +423,4 @@ class FriendShow extends React.Component {
     }
 }
 
-export default FriendShow;
+export default withRouter(FriendShow);
