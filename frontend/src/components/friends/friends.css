@@ -6,6 +6,9 @@
     height: auto;
 }
 
+
+/* FRIENDS INDEX SIDEBAR */
+
 .friends-sidebar-container {
     height: auto;
     min-height: 800px;
@@ -13,15 +16,20 @@
     min-width: 300px;
     border-right: 1px solid black;
     background-color: #3A3535;
+    color: white;
+    padding-left: 25px;
 }
 
 .friends-sidebar-header {
     margin-top: 25px;
-    margin-left: 25px;
     font-size: 26px;
     font-weight: 600;
-    color: white;
 }
+
+.friends-sidebar-birthdays-header {
+    font-weight: 400;
+}
+
 
 .friend-cards-container ul {
     display: flex;
@@ -156,6 +164,48 @@
 #friend-show-name-text {
     font-size: 35px;
     font-weight: 600;
+    display: flex;
+}
+
+.friend-show-name-buttons-container {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.friend-show-name-buttons-container > div {
+    width: 100px;
+    height: 35px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.friend-show-name-buttons-container > div:first-of-type {
+    border: 2px solid #FC7314;
+}
+
+.friend-show-name-buttons-container > div:last-of-type {
+    border: 2px solid rgb(194, 23, 0);
+}
+
+.friend-show-name-buttons-container > div:first-of-type:hover {
+    background-color: #FC7314;
+    color: white;
+    border: 2px solid rgb(190, 190, 190);
+}
+
+.friend-show-name-buttons-container > div:last-of-type:hover {
+    background-color: rgb(194, 23, 0);
+    color: white;
+    border: 2px solid rgb(190, 190, 190);
 }
 
 #friend-show-hobbies-text {
