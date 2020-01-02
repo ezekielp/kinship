@@ -34,11 +34,9 @@ class FriendShow extends React.Component {
           ageLi = (
             <li className="friend-show-li">
               <div className="friend-show-tag friend-show-age-tag">age</div>
-              {/* <span className="friend-show-age-tag">age</span> */}
               <div className="friend-show-text">
                 {ageFromDOB(new Date(friend.dateOfBirth))} years old
               </div>
-              {/* <span>{ageFromDOB(new Date(friend.dateOfBirth))}</span> years old */}
             </li>
           );
         }
@@ -63,8 +61,6 @@ class FriendShow extends React.Component {
             <div className="friend-show-text">
               {birthMonth} {birthDay}, {birthYear}
             </div>
-            {/* <span className="friend-show-birthday-tag">birthday</span> */}
-            {/* {birthMonth} {birthDay}, {birthYear} */}
           </li>
         );
       }
@@ -96,9 +92,6 @@ class FriendShow extends React.Component {
               <div className="friend-show-tag friend-show-location-tag">location</div>
               <div className="friend-show-text">Lives in <span>{friend.currentCity} </span>
               {currentCityYears}</div>
-              {/* <span className="friend-show-location-tag">location</span>
-              Lives in <span>{friend.currentCity} </span>
-              {currentCityYears} */}
             </li>
           );
         }
@@ -121,11 +114,15 @@ class FriendShow extends React.Component {
                 siblingsText = siblings.slice(0, siblings.length - 1).join(", ") + " and " + siblings[siblings.length - 1];
             }
             siblingsLi = (
-              <li>
-                <span className="friend-show-siblings-tag">siblings</span>
+              <li className="friend-show-li">
+                <div className="friend-show-siblings-tag friend-show-tag">
+                  siblings
+                </div>
+                <div className="friend-show-text">{siblingsText}</div>
+                {/* <span className="friend-show-siblings-tag">siblings</span>
                 <span className="friend-show-siblings-text">
                   {siblingsText}
-                </span>
+                </span> */}
               </li>
             );
         }
