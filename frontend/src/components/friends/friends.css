@@ -6,6 +6,9 @@
     height: auto;
 }
 
+
+/* FRIENDS INDEX SIDEBAR */
+
 .friends-sidebar-container {
     height: auto;
     min-height: 800px;
@@ -13,15 +16,20 @@
     min-width: 300px;
     border-right: 1px solid black;
     background-color: #3A3535;
+    color: white;
+    padding-left: 25px;
 }
 
 .friends-sidebar-header {
     margin-top: 25px;
-    margin-left: 25px;
     font-size: 26px;
     font-weight: 600;
-    color: white;
 }
+
+.friends-sidebar-birthdays-header {
+    font-weight: 400;
+}
+
 
 .friend-cards-container ul {
     display: flex;

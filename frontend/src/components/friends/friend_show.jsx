@@ -134,23 +134,6 @@ class FriendShow extends React.Component {
           </>
         );
       }
-      // if (friend.pastCityYears && friend.pastCity && friend.pastCity !== "") {
-      //   pastCityText = `Lived in ${friend.pastCity} for ${friend.pastCityYears} years`
-      // } else if (friend.pastCity && friend.pastCity !== "") {
-      //   const { pastCity } = friend;
-      //   pastCityLi = (
-      //     <>
-      //       <li className="friend-show-li">
-      //         <div className="friend-show-div">
-      //           <span className="friend-show-pastcity-tag friend-show-tag">
-      //             hometown
-      //           </span>
-      //         </div>
-      //         <div className="friend-show-text">{pastCity}</div>
-      //       </li>
-      //     </>
-      //   );
-      // }
 
       return pastCityLi;        
     }
@@ -384,13 +367,13 @@ class FriendShow extends React.Component {
 
         if (!this.props.friend) return null;
 
-        const { friend, openModal, deleteFriend, history } = this.props;
+        const { friend, friends, openModal, deleteFriend, history } = this.props;
         
         return (
           <div>
             <NavbarContainer />
             <div className="friends-below-navbar-container">
-              <FriendsSidebar />
+              <FriendsSidebar friends={friends} />
               <div className="friend-show-container">
                 <ul>
                   <li id="friend-show-name-text">

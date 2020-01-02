@@ -4,7 +4,9 @@ import FriendShow from './friend_show';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+    debugger;
     return {
+        friends: Object.values(state.entities.friends),
         friend: state.entities.friends[ownProps.match.params.friendId]
     };
 };
