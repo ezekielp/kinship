@@ -153,7 +153,7 @@
 
 #friend-show-name-text {
     font-size: 35px;
-    /* margin-bottom: 20px; */
+    font-weight: 600;
 }
 
 #friend-show-hobbies-text {
@@ -169,7 +169,7 @@
     height: 1px;
     border: none;
     background-color: lightgray;
-    margin: 20px 0 30px 0;
+    margin: 20px 0 25px 0;
 }
 
 .friend-show-age-tag, .friend-show-location-tag, .friend-show-siblings-tag, .friend-show-birthday-tag, .friend-show-hobbies-tag, .friend-show-tag {
@@ -181,6 +181,20 @@
     animation: float-effect 3s;
     transform: translateY(0px);
 }
+
+.friend-show-div {
+    transition: all 3s;
+    animation: float-effect 3s;
+    transform: translateY(0px);
+    margin-top: 3px;
+}
+
+.friend-show-div:hover {
+    transform: translateY(-5px);
+    transition: all 2s;
+    cursor: pointer;
+}
+
 
 .friend-show-age-tag {
     padding: 1px 6px 7px 7px;
@@ -212,22 +226,10 @@
     margin-top: 3px;
 }
 
-.friend-show-location-tag {
+.friend-show-tag {
     padding: 3px 6px 6px 8px;
 }
 
-.friend-show-siblings-tag {
-    padding: 3px 6px 6px 8px;
-}
-
-.friend-show-birthday-tag {
-    padding: 3px 6px 6px 8px;
-}
-
-.friend-show-hobbies-tag {
-    padding: 3px 6px 6px 8px;
-}
-
-.friend-show-siblings-text {
-    /* font-weight: 600; */
+.friend-show-header {
+    font-size: 21px;
 }
