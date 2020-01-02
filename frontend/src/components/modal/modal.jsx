@@ -35,7 +35,7 @@ class Modal extends React.Component {
 				clickEffect = doNothing;
 				break;
 			case 'edit-a-friend':
-				component = <MakeAFriend formType="Edit" friendId={modal.friendId}/>;
+				component = <MakeAFriend closeModal={this.props.closeModal} formType="Edit" friendId={modal.friendId}/>;
 				background = 'make-a-friend-background';
 				container = 'make-a-friend-container';
 				clickEffect = doNothing;

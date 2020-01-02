@@ -13,7 +13,7 @@ class FriendsIndex extends React.Component {
     }
 
     render() {
-      const { friends } = this.props;
+      const { friends, openModal, deleteFriend} = this.props;
 
       if (!friends) return null;
 
@@ -21,8 +21,8 @@ class FriendsIndex extends React.Component {
         return <FriendsIndexItem
                   key={idx}
                   friend={friend}
-                  openModal={this.props.openModal}
-                  deleteFriend={this.props.deleteFriend}
+                  openModal={openModal}
+                  deleteFriend={deleteFriend}
                   />
       })
 

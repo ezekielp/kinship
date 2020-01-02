@@ -14,7 +14,7 @@ class EditFriendForm extends React.Component {
 
     render () {
 
-        const { friend, formType, action} = this.props
+        const { friend, formType, action, closeModal} = this.props
 
         if (!friend) return null;
 
@@ -23,6 +23,7 @@ class EditFriendForm extends React.Component {
                 action={action}
                 formType={formType}
                 friend={friend}
+                closeModal={closeModal}
             />
         )
     }
@@ -41,8 +42,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchFriend: (id) => dispatch(fetchFriend(id)),
-        action: (data) => dispatch(editFriend(data)),
-        closeModal: () => dispatch(closeModal())
+        action: (data) => dispatch(editFriend(data))
 
     }
 }
