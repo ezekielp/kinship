@@ -31,7 +31,8 @@
 .navbar-logout-btn {
     margin-right: 25px;
     cursor: pointer;
-    border: 1px solid black;
+    color: #f4f4f4;
     border-radius: 5px;
     padding: 5px;
+    background-color: #3a3535;
 }

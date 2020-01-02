@@ -13,9 +13,9 @@ body {
 }
 
 /* might need to delete this later */
-::-webkit-scrollbar {
-  display: none;
-}
+/* ::-webkit-scrollbar {
+  display: block;
+} */
 
 .left-side {
 	position: relative;

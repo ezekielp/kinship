@@ -1,5 +1,6 @@
 import React from 'react';
 import './searchbar.css';
+import { withRouter } from "react-router";
 
 class Searchbar extends React.Component {
 	constructor(props){
@@ -7,12 +8,6 @@ class Searchbar extends React.Component {
 		this.state={
 			queryString: "",
 			queryResult: null
-			// queryResult: [
-			// 	{name: "Zeke", id: 10},
-			// 	{name: "Tae", id: 9},
-			// 	{name: "Kenel", id: 12},
-			// 	{name: "Andrew", id: 15}
-			// ]
 		}
 
 		this.clearQuery = this.clearQuery.bind(this);
@@ -22,7 +17,8 @@ class Searchbar extends React.Component {
 
 	clearQuery(){
 		this.setState({
-			queryString: ""
+			queryString: "",
+			queryResult: null
 		})
 	}
 
@@ -39,17 +35,15 @@ class Searchbar extends React.Component {
 	componentDidUpdate(prevProps, prevState){
 		if (prevState.queryString != this.state.queryString){
 			if (this.state.queryString !== ""){
-				// console.log(this.state.queryString);
-				// fill in queryResult here comparing with this.props.friends array
-				// let queryResult = [];
-				// this.props.friends.forEach((friend)=>{
-					// if (friend.name.includes(this.state.queryString)){
-						// queryResult.push(friend)
-					// }
-				// })
-				//this.setState({
-					// queryResult: (queryString.length > 0) ? (queryResult}) : null) 
-				// })
+				let queryResult = [];
+				this.props.friends.forEach((friend)=>{
+					if (friend.name.includes(this.state.queryString)){
+						queryResult.push(friend)
+					}
+				})
+				this.setState({
+					queryResult: (queryResult.length > 0) ? (queryResult) : null
+				})
 			}
 		}
 	}
@@ -59,8 +53,9 @@ class Searchbar extends React.Component {
 		(<ul className="friend-search-result-list">
 			{this.state.queryResult.map((friend)=>(
 				<li
-				key={friend.id}
-				className="friend-search-result-item">
+				key={friend._id}
+				className="friend-search-result-item"
+				onMouseDown={()=>this.props.history.push(`/friends/${friend._id}`)}>
 				{friend.name}
 				</li>
 			))}
@@ -86,4 +81,4 @@ class Searchbar extends React.Component {
 	}
 }
 
-export default Searchbar;
+export default withRouter(Searchbar);
