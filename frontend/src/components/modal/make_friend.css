@@ -6,7 +6,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(255, 115, 21, 0.8);
+    background-color: #3a3535d8;
     /* TODO change placement and add transition animations */
     display: flex;
     justify-content: center;
