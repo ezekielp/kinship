@@ -366,13 +366,13 @@ class FriendShow extends React.Component {
 
         if (!this.props.friend) return null;
 
-        const { friend } = this.props;
+        const { friend, friends } = this.props;
         
         return (
           <div>
             <NavbarContainer />
             <div className="friends-below-navbar-container">
-              <FriendsSidebar />
+              <FriendsSidebar friends={friends} />
               <div className="friend-show-container">
                 <ul>
                   <li id="friend-show-name-text">{friend.name}</li>

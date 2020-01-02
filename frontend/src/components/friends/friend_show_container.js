@@ -3,7 +3,9 @@ import { fetchFriend, editFriend, deleteFriend } from '../../actions/friends_act
 import FriendShow from './friend_show';
 
 const msp = (state, ownProps) => {
+    debugger;
     return {
+        friends: Object.values(state.entities.friends),
         friend: state.entities.friends[ownProps.match.params.friendId]
     }
 }
