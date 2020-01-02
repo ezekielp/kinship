@@ -27,12 +27,17 @@ class Dropdown extends Component {
   _dropdownList() {
     const { arr, cb } = this.props;
     if (this.state.showDropdown) {
-      const items = arr.map((el, i) => (
-          <section key={i} onClick={cb(el)}>
-            {el}
+      const items = arr.map((el, i) => {
+        const newEl = el.replace("_show", "");
+        return (
+          <section key={i} onClick={() => {
+            cb(el);
+            this.hideDropdown();
+          }}>
+            {newEl}
           </section>
         )
-      );
+      });
 
       return (
         <div className="dropdown-items-container">
