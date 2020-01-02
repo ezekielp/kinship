@@ -203,9 +203,10 @@ class CreateEditForm extends React.Component {
             // } else if (inputFieldCategory === "notes") {
                 return (
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <label htmlFor={inputFieldCategory}>{this.fieldLabel(inputFieldCategory) + ":"}</label>
                         <textarea 
                             className="input textarea"
+                            id={inputFieldCategory}
                             onChange={this.handleInput(inputFieldCategory)}
                             value={this.state[inputFieldCategory]} 
                         />
@@ -220,9 +221,10 @@ class CreateEditForm extends React.Component {
             ) {
                 return (
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <label htmlFor={inputFieldCategory}>{this.fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="text"
                             className="input"
+                            id={inputFieldCategory}
                             placeholder={`separate input by comma`}
                             onChange={this.handleInput(inputFieldCategory)}
                             value={this.state[inputFieldCategory]}
@@ -231,8 +233,11 @@ class CreateEditForm extends React.Component {
                 )
 
             } else if (inputFieldCategory === "dateOfBirth") {
-                const date = this.state[inputFieldCategory].split("T")[0]
-                return (
+                const date = (this.state[inputFieldCategory]) ? 
+                this.state[inputFieldCategory].split("T")[0] :
+                "";
+                
+                return ( // Date of Birth
                     <div className="input-container">
                         <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="date"
@@ -243,11 +248,12 @@ class CreateEditForm extends React.Component {
                     </div>
                 )
             } else {
-                return (
+                return ( // Others
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <label htmlFor={inputFieldCategory}>{this.fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="text" 
                             className="input"
+                            id={inputFieldCategory}
                             onChange={this.handleInput(inputFieldCategory)}
                             value={this.state[inputFieldCategory]}
                         />
@@ -303,9 +309,10 @@ class CreateEditForm extends React.Component {
             <div className="create-friend-container">
                 <form className="create-edit-form">
                     <div className="input-container">
-                        <label>Name:</label>
+                        <label htmlFor="name">Name:</label>
                         <input type="text" 
                             className="input"
+                            id="name"
                             value={this.state.name} 
                             onChange={this.handleInput("name")}
                         />
