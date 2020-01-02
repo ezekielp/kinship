@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {editFriend} from '../../actions/friends_actions';
 import CreateEditForm from './create_and_edit_form';
 import { fetchFriend } from '../../actions/friends_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 
 class EditFriendForm extends React.Component {
@@ -13,7 +14,7 @@ class EditFriendForm extends React.Component {
 
     render () {
 
-        const { friend, formType, action} = this.props
+        const { friend, formType, action, closeModal} = this.props
 
         if (!friend) return null;
 
@@ -22,6 +23,7 @@ class EditFriendForm extends React.Component {
                 action={action}
                 formType={formType}
                 friend={friend}
+                closeModal={closeModal}
             />
         )
     }
@@ -41,6 +43,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchFriend: (id) => dispatch(fetchFriend(id)),
         action: (data) => dispatch(editFriend(data))
+
     }
 }
 

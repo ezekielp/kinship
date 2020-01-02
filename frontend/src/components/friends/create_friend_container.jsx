@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import { makeFriend } from '../../actions/friends_actions';
 import CreateEditForm from './create_and_edit_form';
+import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: (data) => dispatch(makeFriend(data))
+        action: (data) => dispatch(makeFriend(data)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 
