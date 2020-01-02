@@ -316,7 +316,7 @@ class CreateEditForm extends React.Component {
     // }
 
     showInput(category) {
-        return () => this.setState({[category]: true})
+        this.setState({[category]: true})
     }
 
     arrayFields () {

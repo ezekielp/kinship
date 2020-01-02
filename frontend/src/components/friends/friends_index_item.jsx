@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FriendsIndexItem = ({friend}) => {
 
@@ -30,13 +31,15 @@ const FriendsIndexItem = ({friend}) => {
     )
 
     return (
-      <div className="friend-card-container">
-        <ul>
-          <li className="friend-index-item-name">{friend.name}</li>
-          {ageLi}
-          {currentCityLi}
-        </ul>
-      </div>
+      <Link to={`/friends/${friend._id}`}>
+        <div className="friend-card-container">
+          <ul>
+            <li className="friend-index-item-name">{friend.name}</li>
+            {ageLi}
+            {currentCityLi}
+          </ul>
+        </div>
+      </Link>
     );
 }
 

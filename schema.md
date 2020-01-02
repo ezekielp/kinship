@@ -2,7 +2,7 @@
 
 |Property|Schema Type|Details|
 |-----------|---------|-------|
-|`id`|integer|required, primary key|
+|`_id`|integer|required, primary key|
 |`email`|string|required, unique|
 |`password`|string|required|
 |`createdAt`|datetime|required|
@@ -12,7 +12,7 @@
 
 |Property|Schema Type|Details|
 |-----------|---------|-------|
-|`id`|integer|required, primary key|
+|`_id`|integer|required, primary key|
 |`name`|string|required|
 |`user`|ObjectId|ref "User"|
 |`dateOfBirth`|date||
@@ -30,7 +30,7 @@
 |`gradSchool`|string||
 |`gradSchoolYears`|number||
 |`employmentHistory`|string||
-|`currentEmploymentStatus`|string|only five options|
+|`currentEmploymentStatus`|string|five options: Self-employed, Employed, Unemployed (looking for a job), Unemployed (not looking for a job), Student |
 |`notes`|string||
 |`createdAt`|datetime|required|
 |`updatedAt`|datetime|required|
