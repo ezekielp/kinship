@@ -34,7 +34,13 @@ const FriendsIndexItem = ({friend}) => {
       <Link to={`/friends/${friend._id}`}>
         <div className="friend-card-container">
           <ul>
-            <li className="friend-index-item-name">{friend.name}</li>
+            <li className="friend-index-item-name">
+              {friend.name}
+              <div className="friend-index-item-buttons">
+                <i className="fas fa-edit"></i>
+                <i className="fas fa-minus-square"></i>
+              </div>
+            </li>
             {ageLi}
             {currentCityLi}
           </ul>
