@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {editFriend} from '../../actions/friends_actions';
 import CreateEditForm from './create_and_edit_form';
 import { fetchFriend } from '../../actions/friends_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 
 class EditFriendForm extends React.Component {
@@ -39,7 +40,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchFriend: (id) => dispatch(fetchFriend(id)),
-        action: (data) => dispatch(editFriend(data))
+        action: (data) => dispatch(editFriend(data)),
+        closeModal: () => dispatch(closeModal())
+
     }
 }
 

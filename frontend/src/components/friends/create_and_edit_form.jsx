@@ -7,6 +7,7 @@ import CONVERTFEILDS from '../../util/convert_feilds';
 
 
 
+
 class CreateEditForm extends React.Component {
     constructor(props){
         super(props)
@@ -165,6 +166,8 @@ class CreateEditForm extends React.Component {
             friend["user"] = this.props.userId
             this.props.action(friend)
         }
+        this.props.closeModal()
+        
     }
 
     // returnListItems(category) {
