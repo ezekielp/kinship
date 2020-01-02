@@ -34,8 +34,8 @@
     align-items: center;
     animation: open-up 1s ease;
     position: relative;
-    padding: 10px, 0px;
     padding-top: 80px;
+    padding-bottom: 10px;
 }
 
 @keyframes open-up{

@@ -30,7 +30,7 @@ class FriendsIndex extends React.Component {
           <div>
             <NavbarContainer />
             <div className="friends-below-navbar-container">
-              <FriendsSidebar />
+              <FriendsSidebar friends={this.props.friends} />
               <div className="friend-cards-container">
                 <ul>
                   {friendProfileLis}
