@@ -105,6 +105,11 @@
     border-bottom: 2px solid black;
     margin: -80px -51px 10px -51px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+
 }
 
 

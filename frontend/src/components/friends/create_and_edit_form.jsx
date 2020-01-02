@@ -20,7 +20,7 @@ const CONVERTFEILDS = {
     gradSchoolYears: "Grad School Years:",
     employmentHistory: "Employment History:",
     currentEmploymentStatus: "Employment Status:",
-    notes: "Employment Status:",
+    notes: "Notes:",
 }
 
 class CreateEditForm extends React.Component {
@@ -218,7 +218,7 @@ class CreateEditForm extends React.Component {
                     <div className="input-container">
                         <label>{this.fieldLabel(inputFieldCategory)}</label>
                         <textarea 
-                            className="input"
+                            className="input textarea"
                             onChange={this.handleInput(inputFieldCategory)}
                             value={this.state[inputFieldCategory]} 
                         />
@@ -248,7 +248,7 @@ class CreateEditForm extends React.Component {
                 return (
                     <div className="input-container">
                         <label>{this.fieldLabel(inputFieldCategory)}</label>
-                        <input type="text"
+                        <input type="date"
                             className="input"
                             onChange={this.handleInput(inputFieldCategory)}
                             value={date}

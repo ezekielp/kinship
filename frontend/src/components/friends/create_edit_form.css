@@ -71,3 +71,8 @@
     width: 80%;
     min-width: 550px;
 }
+
+.textarea {
+    height: 100px;
+    text-align: start;
+}
