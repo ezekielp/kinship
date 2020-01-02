@@ -2,15 +2,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
-    width:80%;
+    margin-bottom: 20px;
+
 }
 
 .input {
     border-radius: 10px;
     width: 50%;
     text-align: center;
+    background-color:  #f4f4f4;
     height: 20px;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(white, black);
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 11px system-ui;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    
 }
 
 .submit-button {
@@ -54,11 +76,13 @@
 .create-edit-form {
     width: 100%;
     min-width: 550px;
-    height: 350px;
+    height: 300px;
     margin: 0 auto;
     padding: 10px 0;
     overflow-y: scroll;
+    margin-bottom: 53px;
 }
+
 
 .create-friend-container {
     animation: open-up 1s ease;
@@ -70,4 +94,52 @@
     justify-content: space-between;
     width: 80%;
     min-width: 550px;
+    position: absolute;
+    bottom: 10px;
+    /* border-top: 2px solid black; */
+    padding-top: 10px;
 }
+
+.textarea {
+    height: 100px;
+    text-align: start;
+    background-color:  #f4f4f4;
+    border-color: initial;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(white, black);
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 11px system-ui;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+.line {
+    height: 2px;
+    width: 652px;
+    background-color: black;
+    position: absolute;
+    bottom: 61px;
+    left: 0px;
+    z-index: 200;
+}
+
+.dropdown-submit-container-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
