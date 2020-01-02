@@ -90,9 +90,14 @@
     cursor: pointer;
 }
 
-.close-image{
+.close-image {
     width: 30px;
     height: 30px;
+    font-size: 24px;
+}
+
+.close-image:hover {
+    filter: invert(46%) sepia(77%) saturate(731%) hue-rotate(346deg) brightness(101%) contrast(104%);
 }
 
 .header {
