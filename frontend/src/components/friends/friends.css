@@ -70,24 +70,38 @@
 .friend-index-item-name {
 }
 
-.friend-index-item-buttons {
+.friend-index-item-header {
     margin: -20px -20px 10px -20px;
     border-bottom: 1px solid black;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 25px;
+    height: 40px;
+    font-size: 19px;
+    /* text-overflow:ellipsis; */
+    white-space:nowrap;
+    /* overflow-x: hidden; */
 }
 
-.friend-index-item-buttons > i {
+.friend-index-item-header > p {
+    padding: 0 10px;
+    display: inline-flex;
+    justify-self: flex-start;
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.friend-index-item-header > i {
     margin-right: 5px;
 }
 
-.friend-index-item-buttons > i:last-of-type {
+.friend-index-item-header > i:last-of-type {
     margin-right: 10px;
 }
 
-.friend-index-item-buttons > i:hover {
+.friend-index-item-header > i:hover {
     filter: invert(46%) sepia(77%) saturate(731%) hue-rotate(346deg) brightness(101%) contrast(104%);
 }
 
