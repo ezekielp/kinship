@@ -14,12 +14,12 @@ const App = () => (
     <>
         <Modal />
         <Switch>
+            <Route path="/friends/:friendId/edit" component = {EditFriendContainer} />
+            <Route path="/friends/new" component = {CreateFriendContainer} />
             <Route exact path="/friends" component={FriendsIndexContainer} />
             {/* <ProtectedRoute exact path="/friends" component={FriendsIndex} /> */}
             <Route exact path="/friends/dummy_show" component={FriendShowContainer} />
             <AuthRoute path="/" component={LandingPage} />
-            <Route path="/friends/:friendId/edit" component = {EditFriendContainer} />
-            <Route path="/friends/new" component = {CreateFriendContainer} />
         </Switch>
     </>
 );
