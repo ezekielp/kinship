@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
 import Logo from '../landing_page/logo';
+import './logout_confirmation.css';
 
-class TransitionScreen extends React.Component {
+
+class LogoutConfirmation extends React.Component {
 
   constructor(props){
     super(props);
@@ -25,11 +27,13 @@ class TransitionScreen extends React.Component {
     }
 
 		return (
-            <>
-                <Logo />
-                <span>Are you sure you want to logout?</span>
-                <button onClick={this.handleLogout}>Yes</button>
+            <>  
+              <div className="logout-logo-container"><Logo /></div>
+              <span>Are you sure you want to logout?</span>
+              <div className="logout-button-container">
                 <button onClick={this.props.closeModal}>No</button>
+                <button onClick={this.handleLogout}>Yes</button>
+              </div>
             </>
 		);
 	}
@@ -48,4 +52,4 @@ const mdp = (dispatch) => {
 	};
 };
 
-export default connect(msp, mdp)(TransitionScreen);
+export default connect(msp, mdp)(LogoutConfirmation);

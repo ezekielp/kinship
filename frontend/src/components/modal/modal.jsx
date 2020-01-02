@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import MakeAFriend from './make_friend';
 import TransitionScreen from './transition_screen';
+import LogoutConfirmmation from './logout_confirmation';
 
 class Modal extends React.Component {
 
@@ -43,6 +44,12 @@ class Modal extends React.Component {
 				component = <TransitionScreen />;
 				background = 'transition-screen-background';
 				container = 'transition-screen-container';
+				clickEffect = doNothing;
+				break;
+			case 'logout-confirmation':
+				component = <LogoutConfirmmation />;
+				background = 'logout-confirmation-background';
+				container = 'logout-confirmation-container';
 				clickEffect = doNothing;
 				break;
 			default:
