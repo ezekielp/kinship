@@ -6,7 +6,7 @@ import MakeAFriend from './make_friend';
 class Modal extends React.Component {
 
 	render() {
-		const { modal, openModal, closeModal, postId } = this.props;
+		const { modal, openModal, closeModal } = this.props;
 
 		if (!modal) { //! checks if UI state is null
 			return null;
