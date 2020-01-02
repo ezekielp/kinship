@@ -11,6 +11,10 @@
     font-size: 18px;
 }
 
+.searchbar-input-field:focus{
+    outline: none;
+}
+
 .searchbar-clear-field{
     position: absolute;
     top: 8px;

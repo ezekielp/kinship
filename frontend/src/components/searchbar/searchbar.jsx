@@ -37,13 +37,15 @@ class Searchbar extends React.Component {
 			if (this.state.queryString !== ""){
 				let queryResult = [];
 				this.props.friends.forEach((friend)=>{
-					if (friend.name.includes(this.state.queryString)){
+					if (friend.name.toLowerCase().includes(this.state.queryString.toLowerCase())){
 						queryResult.push(friend)
 					}
 				})
 				this.setState({
 					queryResult: (queryResult.length > 0) ? (queryResult) : null
 				})
+			} else {
+				this.setState({queryResult: null});
 			}
 		}
 	}
