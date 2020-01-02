@@ -13,7 +13,7 @@ class FriendsIndex extends React.Component {
     }
 
     render() {
-      const { friends } = this.props;
+      const { friends, openModal, deleteFriend} = this.props;
 
       if (!friends) return null;
 
@@ -21,6 +21,8 @@ class FriendsIndex extends React.Component {
         return <FriendsIndexItem
                   key={idx}
                   friend={friend}
+                  openModal={openModal}
+                  deleteFriend={deleteFriend}
                   />
       })
 
@@ -34,7 +36,7 @@ class FriendsIndex extends React.Component {
                   {friendProfileLis}
                   <li>
                     <div 
-                    onClick={()=>this.props.openModal("make-a-friend")}
+                    onClick={()=>this.props.openModal({type: "make-a-friend"})}
                     className="friend-card-container friend-create-link-card">
                       <div className="friend-create-link-card-text">
                         Add a Friend
@@ -43,17 +45,6 @@ class FriendsIndex extends React.Component {
                     </div>
                   </li>
                 </ul>
-                {/* <FriendsIndexItem />
-                <FriendsIndexItem />
-                <FriendsIndexItem />
-                <FriendsIndexItem />
-                <FriendsIndexItem /> */}
-                {/* <div className="friend-card-container friend-create-link-card">
-                  <div className="friend-create-link-card-text">
-                    Add a Friend
-                  </div>
-                  <div className="friend-create-link-card-plus-sign">+</div>
-                </div> */}
               </div>
             </div>
           </div>

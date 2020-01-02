@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './dropdown.css';
+import CONVERTFEILDS from '../../util/convert_feilds';
+
+
 
 class Dropdown extends Component {
   constructor(props) {
@@ -34,7 +37,7 @@ class Dropdown extends Component {
             cb(el);
             this.hideDropdown();
           }}>
-            {newEl}
+            {CONVERTFEILDS[newEl]}
           </section>
         )
       });

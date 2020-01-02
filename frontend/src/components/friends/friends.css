@@ -78,24 +78,38 @@
 .friend-index-item-name {
 }
 
-.friend-index-item-buttons {
+.friend-index-item-header {
     margin: -20px -20px 10px -20px;
     border-bottom: 1px solid black;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 25px;
+    height: 40px;
+    font-size: 19px;
+    /* text-overflow:ellipsis; */
+    white-space:nowrap;
+    /* overflow-x: hidden; */
 }
 
-.friend-index-item-buttons > i {
+.friend-index-item-header > p {
+    padding: 0 10px;
+    display: inline-flex;
+    justify-self: flex-start;
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.friend-index-item-header > i {
     margin-right: 5px;
 }
 
-.friend-index-item-buttons > i:last-of-type {
+.friend-index-item-header > i:last-of-type {
     margin-right: 10px;
 }
 
-.friend-index-item-buttons > i:hover {
+.friend-index-item-header > i:hover {
     filter: invert(46%) sepia(77%) saturate(731%) hue-rotate(346deg) brightness(101%) contrast(104%);
 }
 
@@ -147,7 +161,7 @@
 
 #friend-show-name-text {
     font-size: 35px;
-    /* margin-bottom: 20px; */
+    font-weight: 600;
 }
 
 #friend-show-hobbies-text {
@@ -163,7 +177,7 @@
     height: 1px;
     border: none;
     background-color: lightgray;
-    margin: 20px 0 30px 0;
+    margin: 20px 0 25px 0;
 }
 
 .friend-show-age-tag, .friend-show-location-tag, .friend-show-siblings-tag, .friend-show-birthday-tag, .friend-show-hobbies-tag, .friend-show-tag {
@@ -175,6 +189,20 @@
     animation: float-effect 3s;
     transform: translateY(0px);
 }
+
+.friend-show-div {
+    transition: all 3s;
+    animation: float-effect 3s;
+    transform: translateY(0px);
+    margin-top: 3px;
+}
+
+.friend-show-div:hover {
+    transform: translateY(-5px);
+    transition: all 2s;
+    cursor: pointer;
+}
+
 
 .friend-show-age-tag {
     padding: 1px 6px 7px 7px;
@@ -206,22 +234,10 @@
     margin-top: 3px;
 }
 
-.friend-show-location-tag {
+.friend-show-tag {
     padding: 3px 6px 6px 8px;
 }
 
-.friend-show-siblings-tag {
-    padding: 3px 6px 6px 8px;
-}
-
-.friend-show-birthday-tag {
-    padding: 3px 6px 6px 8px;
-}
-
-.friend-show-hobbies-tag {
-    padding: 3px 6px 6px 8px;
-}
-
-.friend-show-siblings-text {
-    /* font-weight: 600; */
+.friend-show-header {
+    font-size: 21px;
 }
