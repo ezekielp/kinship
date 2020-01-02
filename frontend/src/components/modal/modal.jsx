@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import MakeAFriend from './make_friend';
 import TransitionScreen from './transition_screen';
+import LogoutConfirmation from './logout_confirmation';
 
 class Modal extends React.Component {
 
@@ -26,7 +27,7 @@ class Modal extends React.Component {
 			setTimeout(closeModal, 500);
 		}
 		
-		switch (modal) {
+		switch (modal.type) {
 			case 'make-a-friend':
 				component = <MakeAFriend formType="Create"/>;
 				background = 'make-a-friend-background';
@@ -34,7 +35,7 @@ class Modal extends React.Component {
 				clickEffect = doNothing;
 				break;
 			case 'edit-a-friend':
-				component = <MakeAFriend formType="Edit"/>;
+				component = <MakeAFriend formType="Edit" friendId={modal.friendId}/>;
 				background = 'make-a-friend-background';
 				container = 'make-a-friend-container';
 				clickEffect = doNothing;
@@ -43,6 +44,12 @@ class Modal extends React.Component {
 				component = <TransitionScreen />;
 				background = 'transition-screen-background';
 				container = 'transition-screen-container';
+				clickEffect = doNothing;
+				break;
+			case 'logout-confirmation':
+				component = <LogoutConfirmation />;
+				background = 'logout-confirmation-background';
+				container = 'logout-confirmation-container';
 				clickEffect = doNothing;
 				break;
 			default:

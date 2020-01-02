@@ -9,7 +9,7 @@ import { closeModal } from '../../actions/modal_actions';
 class EditFriendForm extends React.Component {
 
     componentDidMount () {
-        this.props.fetchFriend(this.props.match.params.friendId)
+        this.props.fetchFriend(this.props.friend._id);
     }
 
     render () {
@@ -31,8 +31,9 @@ class EditFriendForm extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => {
+    const friendId = ownProps.match ? ownProps.match.params.friendId : ownProps.friendId;
     return {
-        friend: state.entities.friends[ownProps.match.params.friendId],
+        friend: state.entities.friends[friendId],
         formType: "Update"
     }
 }

@@ -15,10 +15,7 @@ class Navbar extends React.Component {
     }
 
     handleLogout() {
-      this.props.logout();
-      this.setState({
-        loggedIn: false
-      });
+      this.props.openModal({type: 'logout-confirmation'});
     }
 
     render() {

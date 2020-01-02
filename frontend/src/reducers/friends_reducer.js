@@ -9,7 +9,7 @@ const friendsReducer = (oldState = {}, action) => {
         case RECEIVE_FRIEND:
             return Object.assign({}, oldState, {[action.friend.data._id]: action.friend.data})
         case REMOVE_FRIEND:
-            delete newState[action.friendId.data] 
+            delete newState[action.friendId];
             return newState;
         default:
             return oldState;

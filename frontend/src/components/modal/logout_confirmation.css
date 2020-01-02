@@ -1,0 +1,63 @@
+.logout-confirmation-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: logout-confirmation 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 115, 21, 0.8);
+    z-index: 5;
+}
+
+.logout-confirmation-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logout-logo-container{
+  background-color: #f4f4f4;
+  width: 480px;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.logout-confirmation-container span{
+  color: #f4f4f4;
+  font-size: 24px;
+  background-color: #3a3535;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.logout-button-container{
+  width: 480px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logout-confirmation-container button{
+  background-color: #ff7315;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+@keyframes logout-confirmation {
+  0%{
+    transform: translateY(100vh);
+  }
+  100%{
+    transform: translateY(0vh);
+  }
+}
