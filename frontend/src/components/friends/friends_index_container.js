@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FriendsIndex from './friends_index';
-import { fetchFriends } from '../../actions/friends_actions';
+import { fetchFriends, deleteFriend } from '../../actions/friends_actions';
 import {openModal} from '../../actions/modal_actions';
 
 const msp = state => {
@@ -8,14 +8,15 @@ const msp = state => {
     return {
         userId,
         friends: Object.values(state.entities.friends)
-    }
-}
+    };
+};
 
 const mdp = dispatch => {
     return {
         fetchFriends: userId => dispatch(fetchFriends(userId)),
-        openModal: (modal)=> dispatch(openModal(modal))
-    }
-}
+        openModal: (modal)=> dispatch(openModal(modal)),
+        deleteFriend: (friendId) => dispatch(deleteFriend(friendId))
+    };
+};
 
 export default connect(msp, mdp)(FriendsIndex);

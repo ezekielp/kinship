@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import './make_friend.css';
 import CreateFriendContainer from '../friends/create_friend_container';
-import closeImage from '../../images/delete-button.png';
+import EditFriendContainer from '../friends/edit_friend_container';
 
 class MakeAFriend extends React.Component {
 	constructor(props) {
@@ -11,16 +11,15 @@ class MakeAFriend extends React.Component {
 	}
 
 	render() {
-		const { modal, formType} = this.props;
+		const { modal, formType, friendId } = this.props;
 		if (!modal) {
 			return null;
 		}
-
+		const formComp = formType === "Create" ? <CreateFriendContainer /> : <EditFriendContainer friendId={friendId} />
 		return (
 			<div>
 				<div className="header">{formType === "Create" ? "Make Friend" : "Edit Friend"}</div>
-				<CreateFriendContainer/>
-				{/* <button className="close-make-friend-button" onClick={()=>this.props.closeModal()}>Close Modal</button> */}
+				{formComp}
 				<button className="close-make-friend-button" onClick={() => this.props.closeModal()}>
 					<i className="fas fa-times close-image"></i>
 				</button>
