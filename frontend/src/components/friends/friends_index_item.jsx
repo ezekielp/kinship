@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { limitChars } from '../../util/text_util';
 
-const FriendsIndexItem = ({friend}) => {
+const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
 
     const ageFromDOB = DOB => {
       const yearsOldInMilliseconds = Date.now() - DOB.getTime();
@@ -34,11 +35,19 @@ const FriendsIndexItem = ({friend}) => {
       <Link to={`/friends/${friend._id}`}>
         <div className="friend-card-container">
           <ul>
-            <li className="friend-index-item-buttons">
-              <i className="fas fa-edit"></i>
-              <i className="fas fa-times"></i>
+            <li className="friend-index-item-header">
+              <p className="friend-index-item-name">{limitChars(friend.name, 15)}</p>
+              <i className="fas fa-edit"
+                onClick={(e) => {
+                e.preventDefault();
+                openModal({type: 'edit-a-friend', friendId: friend._id});
+              }}></i>
+              <i className="fas fa-times"
+                onClick={(e) => {
+                  e.preventDefault();
+                  deleteFriend(friend._id);
+              }}></i>
             </li>
-            <li className="friend-index-item-name">{friend.name}</li>
             {ageLi}
             {currentCityLi}
           </ul>

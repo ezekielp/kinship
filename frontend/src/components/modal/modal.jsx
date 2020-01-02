@@ -27,7 +27,7 @@ class Modal extends React.Component {
 			setTimeout(closeModal, 500);
 		}
 		
-		switch (modal) {
+		switch (modal.type) {
 			case 'make-a-friend':
 				component = <MakeAFriend formType="Create"/>;
 				background = 'make-a-friend-background';
@@ -35,7 +35,7 @@ class Modal extends React.Component {
 				clickEffect = doNothing;
 				break;
 			case 'edit-a-friend':
-				component = <MakeAFriend formType="Edit"/>;
+				component = <MakeAFriend formType="Edit" friendId={modal.friendId}/>;
 				background = 'make-a-friend-background';
 				container = 'make-a-friend-container';
 				clickEffect = doNothing;

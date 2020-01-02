@@ -1,27 +1,11 @@
 import React from 'react';
 import Dropdown from '../dropdown/dropdown';
 import './create_edit_form.css';
+import CONVERTFEILDS from '../../util/convert_feilds';
 
-const CONVERTFEILDS = {
-    name: "Name:",
-    dateOfBirth: "Birthday:",
-    children: "Children:",
-    siblings: "Siblings:",
-    pets: "Pets:",
-    parents: "Parents",
-    hobbies: "Hobbies:",
-    currentCity: "Current City:",
-    currentCityYears: "Years at Residence:",
-    pastCity: "Previous Residence:",
-    pastCityYears: "Previous Residence Years:",
-    undergradSchool: "Undergrad:",
-    undergradSchoolYears: "Undergrad Years:",
-    gradSchool: "Grad School:",
-    gradSchoolYears: "Grad School Years:",
-    employmentHistory: "Employment History:",
-    currentEmploymentStatus: "Employment Status:",
-    notes: "Employment Status:",
-}
+
+
+
 
 class CreateEditForm extends React.Component {
     constructor(props){
@@ -216,9 +200,9 @@ class CreateEditForm extends React.Component {
             // } else if (inputFieldCategory === "notes") {
                 return (
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory)}</label>
+                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
                         <textarea 
-                            className="input"
+                            className="input textarea"
                             onChange={this.handleInput(inputFieldCategory)}
                             value={this.state[inputFieldCategory]} 
                         />
@@ -233,7 +217,7 @@ class CreateEditForm extends React.Component {
             ) {
                 return (
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory)}</label>
+                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="text"
                             className="input"
                             placeholder={`separate input by comma`}
@@ -247,8 +231,8 @@ class CreateEditForm extends React.Component {
                 const date = this.state[inputFieldCategory].split("T")[0]
                 return (
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory)}</label>
-                        <input type="text"
+                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <input type="date"
                             className="input"
                             onChange={this.handleInput(inputFieldCategory)}
                             value={date}
@@ -258,7 +242,7 @@ class CreateEditForm extends React.Component {
             } else {
                 return (
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory)}</label>
+                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="text" 
                             className="input"
                             onChange={this.handleInput(inputFieldCategory)}
@@ -340,13 +324,17 @@ class CreateEditForm extends React.Component {
                     {this.inputField("notes_show")}
                     {/* <div>{this.field()}</div> 
                     <button onClick={this.addField}>+ Add Field</button> */}
-                    <div className="dropdown-submit-container">
-                        <Dropdown arr={this.arrayFields()} cb={this.showInput} />
-                        <input type="submit" 
-                            value="Submit" 
-                            className="submit-button"
-                            onClick={this.handleSubmit}
-                        />
+            
+                    <div className="dropdown-submit-container-wrapper">
+                        <div className="line"></div>
+                        <div className="dropdown-submit-container">
+                            <Dropdown arr={this.arrayFields()} cb={this.showInput} />
+                            <input type="submit" 
+                                value="Submit" 
+                                className="submit-button"
+                                onClick={this.handleSubmit}
+                            />
+                        </div>
                     </div>
                 </form> 
             </div>
