@@ -9,6 +9,7 @@ class FriendShow extends React.Component {
         this.renderAge = this.renderAge.bind(this);
         this.renderBirthday = this.renderBirthday.bind(this);
         this.renderCurrentCity = this.renderCurrentCity.bind(this);
+        this.renderHometown = this.renderHometown.bind(this);
         this.renderHobbies = this.renderHobbies.bind(this);
         this.renderSiblings = this.renderSiblings.bind(this);
         this.renderParents = this.renderParents.bind(this);
@@ -104,6 +105,53 @@ class FriendShow extends React.Component {
         }
         
         return currentCityLi;
+    }
+
+    renderHometown() {
+      const { friend } = this.props;
+
+      let pastCityText;
+      let pastCityLi = <></>;
+
+      if (friend.pastCity && friend.pastCity !== "") {
+        const { pastCity } = friend;
+        if (friend.pastCityYears) {
+          pastCityText = `Lived in ${pastCity} for ${friend.pastCityYears} years`;
+        } else {
+          pastCityText = pastCity;
+        }
+        pastCityLi = (
+          <>
+            <li className="friend-show-li">
+              <div className="friend-show-div">
+                <span className="friend-show-pastcity-tag friend-show-tag">
+                  hometown
+                </span>
+              </div>
+              <div className="friend-show-text">{pastCityText}</div>
+            </li>
+          </>
+        );
+      }
+      // if (friend.pastCityYears && friend.pastCity && friend.pastCity !== "") {
+      //   pastCityText = `Lived in ${friend.pastCity} for ${friend.pastCityYears} years`
+      // } else if (friend.pastCity && friend.pastCity !== "") {
+      //   const { pastCity } = friend;
+      //   pastCityLi = (
+      //     <>
+      //       <li className="friend-show-li">
+      //         <div className="friend-show-div">
+      //           <span className="friend-show-pastcity-tag friend-show-tag">
+      //             hometown
+      //           </span>
+      //         </div>
+      //         <div className="friend-show-text">{pastCity}</div>
+      //       </li>
+      //     </>
+      //   );
+      // }
+
+      return pastCityLi;        
     }
 
     renderSiblings() {
@@ -348,6 +396,7 @@ class FriendShow extends React.Component {
                   {this.renderAge()}
                   {this.renderBirthday()}
                   {this.renderCurrentCity()}
+                  {this.renderHometown()}
                   {this.renderFamily()}
                   {this.renderEducation()}
                   {this.renderHobbies()}
