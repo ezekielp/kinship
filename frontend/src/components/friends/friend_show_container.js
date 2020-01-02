@@ -1,21 +1,21 @@
 import { connect } from 'react-redux';
-import { fetchFriend, editFriend, deleteFriend } from '../../actions/friends_actions';
+import { fetchFriend, deleteFriend } from '../../actions/friends_actions';
 import FriendShow from './friend_show';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    debugger;
     return {
         friends: Object.values(state.entities.friends),
         friend: state.entities.friends[ownProps.match.params.friendId]
-    }
-}
+    };
+};
 
 const mdp = dispatch => {
     return {
-        fetchFriend: friendId => dispatch(fetchFriend(friendId)),
-        editFriend: friend => dispatch(editFriend(friend)),
-        deleteFriend: friendId => dispatch(deleteFriend(friendId))
-    }
-}
+      fetchFriend: friendId => dispatch(fetchFriend(friendId)),
+      deleteFriend: friendId => dispatch(deleteFriend(friendId)),
+      openModal: modal => dispatch(openModal(modal))
+    };
+};
 
 export default connect(msp, mdp)(FriendShow);
