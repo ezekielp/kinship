@@ -38,7 +38,7 @@ class FriendsIndex extends React.Component {
                   <li>
                     <div 
                     onClick={()=>this.props.openModal({type: "make-a-friend"})}
-                    className="friend-card-container friend-create-link-card">
+                    className="friend-card-outer-container friend-card-container friend-create-link-card">
                       <div className="friend-create-link-card-text">
                         Add a Friend
                       </div>

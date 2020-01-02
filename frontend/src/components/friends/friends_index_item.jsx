@@ -16,15 +16,52 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     let ageLi = <div></div>;
     if (friend.dateOfBirth) {
       ageLi = (
-        <li>
-          <span>{ageFromDOB(new Date(friend.dateOfBirth))}</span>years old
+        <li className="friend-show-li">
+          <div className="friend-show-tag friend-show-age-tag">age</div>
+          <div className="friend-show-text">
+            {ageFromDOB(new Date(friend.dateOfBirth))} years old
+          </div>
         </li>
       );
     }
 
-    let currentCityLi = <div></div>;
+    let birthdayLi = <></>;
+    if (friend.dateOfBirth) {
+      const { dateOfBirth } = friend;
+      const DOB = new Date(dateOfBirth);
+      const dateOptions = { month: "long" };
+      const birthMonth = new Intl.DateTimeFormat("en-US", dateOptions).format(
+        DOB
+      );
+      const birthDay = DOB.getUTCDate();
+      const birthYear = DOB.getUTCFullYear();
+
+      birthdayLi = (
+        <li className="friend-show-li">
+          <div className="friend-show-div">
+            <span className="friend-show-tag friend-show-birthday-tag">
+              birthday
+            </span>
+          </div>
+          <div className="friend-show-text">
+            {birthMonth} {birthDay}, {birthYear}
+          </div>
+        </li>
+      );
+    }    
+
+    let currentCityLi = <></>;
     if (friend.currentCity) {
-      currentCityLi = <li>Lives in <span>{friend.currentCity}</span></li>
+      currentCityLi = (
+        <li className="friend-show-li">
+          <div className="friend-show-tag friend-show-location-tag">
+            location
+          </div>
+          <div className="friend-show-text">
+            <span>{friend.currentCity}</span>
+          </div>
+        </li>
+      );
     }
 
     const summaryInfo = (
@@ -32,27 +69,33 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     )
 
     return (
-      <Link to={`/friends/${friend._id}`}>
-        <div className="friend-card-container">
-          <ul>
-            <li className="friend-index-item-header">
-              <p className="friend-index-item-name">{limitChars(friend.name, 15)}</p>
-              <i className="fas fa-edit"
-                onClick={(e) => {
-                e.preventDefault();
-                openModal({type: 'edit-a-friend', friendId: friend._id});
-              }}></i>
-              <i className="fas fa-times"
-                onClick={(e) => {
+      <div className="friend-card-outer-container">
+        <Link to={`/friends/${friend._id}`}>
+          <div className="friend-card-container">
+            <ul>
+              <li className="friend-index-item-header">
+                <p className="friend-index-item-name">{limitChars(friend.name, 15)}</p>
+                <i className="fas fa-edit"
+                  onClick={(e) => {
                   e.preventDefault();
-                  deleteFriend(friend._id);
-              }}></i>
-            </li>
-            {ageLi}
-            {currentCityLi}
-          </ul>
-        </div>
-      </Link>
+                  openModal({type: 'edit-a-friend', friendId: friend._id});
+                }}></i>
+                <i className="fas fa-times"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    deleteFriend(friend._id);
+                }}></i>
+              </li>
+              {ageLi}
+              {birthdayLi}
+              {currentCityLi}
+            </ul>
+            <div className="friend-card-click-for-details">
+              click for more details
+            </div>
+          </div>
+        </Link>
+      </div>
     );
 }
 
