@@ -86,9 +86,11 @@
     align-items: center;
     height: 40px;
     font-size: 19px;
-    /* text-overflow:ellipsis; */
-    white-space:nowrap;
-    /* overflow-x: hidden; */
+    background-color: #3a3535d8;
+    color: white;
+    white-space: nowrap;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 .friend-index-item-header > p {

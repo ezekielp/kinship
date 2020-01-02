@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 115, 21, 0.8);
+    background-color: #3a3535d8;
     z-index: 5;
 }
 
@@ -31,7 +31,7 @@
 .logout-confirmation-container span{
   color: #f4f4f4;
   font-size: 24px;
-  background-color: #3a3535;
+  /* background-color: #3a3535; */
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 50px;
@@ -50,6 +50,10 @@
   border-radius: 5px;
   font-weight: bold;
   font-size: 24px;
+}
+
+.logout-confirmation-container button:hover{
+  cursor: pointer;
 }
 
 

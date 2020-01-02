@@ -132,20 +132,20 @@ class SessionForm extends React.Component {
 							onClick={() => this.transitionOut('signup')}
 							className="signup-session-button"
 						>
-							Get Started!
+							Get Started
 						</button>
 						<span>Already have an account?</span>
 						<button
 							onClick={() => this.transitionOut('login')}
 							className="login-session-button"
 						>
-							Login!
+							Login
 						</button>
 						<button
 							onClick={() => this.demoLogin()}
 							className="demo-login-button"
 						>
-							Demo-Login!
+							Demo-Login
 						</button>
 					</div>
 				</div>
@@ -169,10 +169,10 @@ class SessionForm extends React.Component {
 			return (
 				<div className="right-side">
 					<div className={td5}>
-						<button className={td3}>Get Started!</button>
+						<button className={td3}>Get Started</button>
 						<span className={td7}>Already have an account?</span>
-						<button className={td4}>Login!</button>
-						<button className={td6}>Demo-Login!</button>
+						<button className={td4}>Login</button>
+						<button className={td6}>Demo-Login</button>
 					</div>
 				</div>
 			);
@@ -205,7 +205,7 @@ class SessionForm extends React.Component {
 						<input
 							type="submit"
 							className="session-submit-button phase-in"
-							value="Login!"
+							value="Login"
 						/>
 						<button
 							onClick={() => this.transitionOut(null)}

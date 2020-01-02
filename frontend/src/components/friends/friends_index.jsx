@@ -23,6 +23,7 @@ class FriendsIndex extends React.Component {
                   friend={friend}
                   openModal={openModal}
                   deleteFriend={deleteFriend}
+                  className={`card-number-${idx}`}
                   />
       })
 
