@@ -103,7 +103,7 @@ class FriendShow extends React.Component {
         const { friend } = this.props;
 
         let siblingsLi = <></>;
-        if (friend.siblings) {
+        if (friend.siblings[0] !== "") {
             let { siblings } = friend;
             let siblingsText;
             if (siblings.length === 1) {
@@ -119,10 +119,6 @@ class FriendShow extends React.Component {
                   siblings
                 </div>
                 <div className="friend-show-text">{siblingsText}</div>
-                {/* <span className="friend-show-siblings-tag">siblings</span>
-                <span className="friend-show-siblings-text">
-                  {siblingsText}
-                </span> */}
               </li>
             );
         }
@@ -133,16 +129,25 @@ class FriendShow extends React.Component {
       const { friend } = this.props;
 
       let hobbiesLi = <></>;
-      if (friend.hobbies) {
+      if (friend.hobbies[0] !== "") {
         const { hobbies } = friend;
-        const hobbiesText = hobbies.map(hobby => {
-          return hobby.slice(0, 1).toUpperCase() + hobby.slice(1).toLowerCase();
-        }).join("  |  ");
+        const hobbiesText = hobbies
+          .map(hobby => {
+            return (
+              hobby.slice(0, 1).toUpperCase() + hobby.slice(1).toLowerCase()
+            );
+          })
+          .join("  |  ");
         hobbiesLi = (
-          <li>
-            <span className="friend-show-hobbies-tag">hobbies</span>
-            {hobbiesText}
-          </li>
+          <>
+            <hr className="friend-show-divider-line"/>
+            <li className="friend-show-li">
+              <div className="friend-show-hobbies-tag friend-show-tag">
+                hobbies
+              </div>
+              <div className="friend-show-text">{hobbiesText}</div>
+            </li>
+          </>
         );
       }
 
@@ -170,7 +175,6 @@ class FriendShow extends React.Component {
                   {this.renderCurrentCity()}
                   {/* <hr className="friend-show-divider-line"/> */}
                   {this.renderSiblings()}
-                  <hr className="friend-show-divider-line"/>
                   {this.renderHobbies()}
                 </ul>
               </div>
