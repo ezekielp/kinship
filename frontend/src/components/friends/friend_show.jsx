@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
 import { withRouter, Link } from 'react-router-dom';
+import { monthNames } from '../../util/text_util';
 
 class FriendShow extends React.Component {
     constructor(props) {
@@ -63,7 +64,7 @@ class FriendShow extends React.Component {
         const { dateOfBirth } = friend;
         const DOB = new Date(dateOfBirth);
         const dateOptions = { month: 'long' };
-        const birthMonth = new Intl.DateTimeFormat('en-US', dateOptions).format(DOB);
+        const birthMonth = monthNames[DOB.getUTCMonth()];
         const birthDay = DOB.getUTCDate();
         const birthYear = DOB.getUTCFullYear();
 

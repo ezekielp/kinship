@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { limitChars } from '../../util/text_util';
+import { limitChars, monthNames } from '../../util/text_util';
 
 const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
 
@@ -26,13 +26,12 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     }
 
     let birthdayLi = <></>;
+    
     if (friend.dateOfBirth) {
       const { dateOfBirth } = friend;
       const DOB = new Date(dateOfBirth);
       const dateOptions = { month: "long" };
-      const birthMonth = new Intl.DateTimeFormat("en-US", dateOptions).format(
-        DOB
-      );
+      const birthMonth = monthNames[DOB.getUTCMonth()];
       const birthDay = DOB.getUTCDate();
       const birthYear = DOB.getUTCFullYear();
 

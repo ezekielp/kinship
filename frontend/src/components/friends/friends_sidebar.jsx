@@ -1,5 +1,6 @@
 import React from 'react';
 import './friends.css';
+import { monthNames } from '../../util/text_util';
 
 class FriendsSidebar extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class FriendsSidebar extends React.Component {
     }
 
     birthdayWithinOneMonth(DOB) {
+        // if (!DOB) return false;
         const oneMonthInMilliseconds = 30 * 24 * 60 * 60 * 1000;
         const today = new Date();
         const oneMonthFromNow = new Date(today.getTime() + oneMonthInMilliseconds);
@@ -19,9 +21,8 @@ class FriendsSidebar extends React.Component {
         const currentMonth = today.getMonth();
         const currentDate = today.getDate();
         const nextMonth = oneMonthFromNow.getMonth();
-        const birthdayMonth = birthday.getMonth();
-        const birthdayDate = birthday.getDate();
-
+        const birthdayMonth = birthday.getUTCMonth();
+        const birthdayDate = birthday.getUTCDate();
         if (birthdayMonth === currentMonth) {
             return true;
         } else if ((birthdayMonth === nextMonth) && (birthdayDate <= currentDate)) {
@@ -34,10 +35,7 @@ class FriendsSidebar extends React.Component {
         const { dateOfBirth } = friend;
         const DOB = new Date(dateOfBirth);
         const dateOptions = { month: "long" };
-        const birthMonth = new Intl.DateTimeFormat(
-            "en-US",
-            dateOptions
-        ).format(DOB);
+        const birthMonth = monthNames[DOB.getUTCMonth()];
         const birthDay = DOB.getUTCDate();
         return `${birthMonth} ${birthDay}`;
     }
@@ -71,6 +69,7 @@ class FriendsSidebar extends React.Component {
                 <div className="friends-sidebar-birthdays-container">
                     <h3 className="friends-sidebar-birthdays-header">Upcoming birthdays</h3>
                     {this.renderUpcomingBirthdays()}
+                    <div></div>
                 </div>
             </div>
         )

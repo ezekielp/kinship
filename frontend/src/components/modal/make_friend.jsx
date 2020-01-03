@@ -10,6 +10,14 @@ class MakeAFriend extends React.Component {
 		super(props);
 	}
 
+	componentDidMount() {
+		document.body.className = "modal-open";
+	}
+
+	componentWillUnmount() {
+		document.body.className = "";
+	}
+
 	render() {
 		const { modal, formType, friendId, closeModal } = this.props;
 		if (!modal) {
