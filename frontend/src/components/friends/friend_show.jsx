@@ -350,7 +350,7 @@ class FriendShow extends React.Component {
         employmentHistoryLi = (
           <>
             <li className="friend-show-li">
-              <div className="friend-show-div">
+              <div className="friend-show-div" id="friend-show-previous-jobs-div">
                 <span className="friend-show-employmentHistory-tag friend-show-tag">
                   previous jobs
                 </span>
