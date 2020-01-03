@@ -18,8 +18,11 @@ class FriendShow extends React.Component {
         this.renderFamily = this.renderFamily.bind(this);
         this.renderNotes = this.renderNotes.bind(this);        
         this.renderUndergradSchool = this.renderUndergradSchool.bind(this);
-        this.renderGradSchool = this.renderGradSchool.bind(this);        
-        this.renderEducation = this.renderEducation.bind(this);        
+        this.renderGradSchool = this.renderGradSchool.bind(this);
+        this.renderEducation = this.renderEducation.bind(this);
+        this.renderCurrentEmploymentStatus = this.renderCurrentEmploymentStatus.bind(this);
+        this.renderEmploymentHistory = this.renderEmploymentHistory.bind(this);
+        this.renderEmployment = this.renderEmployment.bind(this);
     }
 
     componentDidMount() {
@@ -312,6 +315,79 @@ class FriendShow extends React.Component {
       );
     }
 
+    renderCurrentEmploymentStatus() {
+      const { friend } = this.props;
+
+      let currentEmploymentStatusLi = <></>;
+      if (friend.currentEmploymentStatus && friend.currentEmploymentStatus !== "") {
+        const { currentEmploymentStatus } = friend;
+        currentEmploymentStatusLi = (
+          <>
+            <li className="friend-show-li">
+              <div className="friend-show-div">
+                <span className="friend-show-currentEmploymentStatus-tag friend-show-tag">
+                  current status
+                </span>
+              </div>
+              <div className="friend-show-text">{currentEmploymentStatus}</div>
+            </li>
+          </>
+        );
+      }
+
+      return currentEmploymentStatusLi;
+    }
+
+    renderEmploymentHistory() {
+      const { friend } = this.props;
+
+      let employmentHistoryLi = <></>;
+      if (
+        friend.employmentHistory &&
+        friend.employmentHistory !== ""
+      ) {
+        const { employmentHistory } = friend;
+        employmentHistoryLi = (
+          <>
+            <li className="friend-show-li">
+              <div className="friend-show-div">
+                <span className="friend-show-employmentHistory-tag friend-show-tag">
+                  previous jobs
+                </span>
+              </div>
+              <div className="friend-show-text">{employmentHistory}</div>
+            </li>
+          </>
+        );
+      }
+
+      return employmentHistoryLi;
+    }
+
+    renderEmployment() {
+      const { friend } = this.props;
+
+      let dividerOrNot = <></>;
+      let employmentHeader = <></>;
+      if (
+        (friend.currentEmploymentStatus &&
+          (friend.currentEmploymentStatus !== "")) ||
+        (friend.employmentHistory && (friend.employmentHistory !== ""))
+      ) {
+        dividerOrNot = <hr className="friend-show-divider-line" />;
+        employmentHeader = <h4 className="friend-show-header">Employment</h4>;
+      }
+
+      return (
+        <>
+          {dividerOrNot}
+          {employmentHeader}
+          {this.renderCurrentEmploymentStatus()}
+          {this.renderEmploymentHistory()}
+        </>
+      );      
+    }
+
     renderHobbies() {
       const { friend } = this.props;
 
@@ -399,6 +475,7 @@ class FriendShow extends React.Component {
                   {this.renderHometown()}
                   {this.renderFamily()}
                   {this.renderEducation()}
+                  {this.renderEmployment()}
                   {this.renderHobbies()}
                   {this.renderNotes()}
                 </ul>
