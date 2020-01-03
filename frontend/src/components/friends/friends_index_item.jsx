@@ -16,7 +16,7 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     let ageLi = <div></div>;
     if (friend.dateOfBirth) {
       ageLi = (
-        <li className="friend-show-li">
+        <li className="friend-index-item-li">
           <div className="friend-show-tag friend-show-age-tag">age</div>
           <div className="friend-show-text">
             {ageFromDOB(new Date(friend.dateOfBirth))} years old
@@ -36,7 +36,7 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
       const birthYear = DOB.getUTCFullYear();
 
       birthdayLi = (
-        <li className="friend-show-li">
+        <li className="friend-index-item-li">
           <div className="friend-show-div">
             <span className="friend-show-tag friend-show-birthday-tag">
               birthday
@@ -52,7 +52,7 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     let currentCityLi = <></>;
     if (friend.currentCity) {
       currentCityLi = (
-        <li className="friend-show-li">
+        <li className="friend-index-item-li">
           <div className="friend-show-tag friend-show-location-tag">
             location
           </div>
