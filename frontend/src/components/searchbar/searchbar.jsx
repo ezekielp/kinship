@@ -8,7 +8,7 @@ class Searchbar extends React.Component {
 		this.state={
 			queryString: "",
 			queryResult: null
-		}
+		};
 
 		this.clearQuery = this.clearQuery.bind(this);
 		this.updateQuery = this.updateQuery.bind(this);
@@ -19,13 +19,13 @@ class Searchbar extends React.Component {
 		this.setState({
 			queryString: "",
 			queryResult: null
-		})
+		});
 	}
 
 	updateQuery(event){
 		this.setState({
 			queryString: event.currentTarget.value
-		})
+		});
 	}
 
 	resetQuery(){
@@ -38,12 +38,12 @@ class Searchbar extends React.Component {
 				let queryResult = [];
 				this.props.friends.forEach((friend)=>{
 					if (friend.name.toLowerCase().includes(this.state.queryString.toLowerCase())){
-						queryResult.push(friend)
+						queryResult.push(friend);
 					}
-				})
+				});
 				this.setState({
 					queryResult: (queryResult.length > 0) ? (queryResult) : null
-				})
+				});
 			} else {
 				this.setState({queryResult: null});
 			}

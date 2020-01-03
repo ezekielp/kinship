@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Searchbar from '../searchbar/searchbar_container';
 import "./navbar.css";
+import { limitChars } from '../../util/text_util';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -39,8 +40,10 @@ class Navbar extends React.Component {
               onClick={() => this.handleLogout()}
             >
               Logout
+              <span>{limitChars(this.props.email, 17)}</span>
             </div>
-          </div>
+              
+            </div>
         );
     }
 }

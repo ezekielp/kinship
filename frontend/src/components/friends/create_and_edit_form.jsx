@@ -91,22 +91,22 @@ class CreateEditForm extends React.Component {
                 // input: 0,
             }, () => this.setState({
                 dateOfBirth_show: this.state.dateOfBirth ? true : undefined,
-                children_show: this.state.children_show ? true : undefined,
-                siblings_show: this.state.siblings_show ? true : undefined,
-                pets_show: this.state.pets_show ? true : undefined,
-                parents_show: this.state.parents_show ? true : undefined,
-                hobbies_show: this.state.hobbies_show ? true : undefined,
-                currentCity_show: this.state.currentCity_show ? true : undefined,
-                currentCityYears_show: this.state.currentCityYears_show ? true : undefined,
-                pastCity_show: this.state.pastCity_show ? true : undefined,
-                pastCityYears_show: this.state.pastCityYears_show ? true : undefined,
-                undergradSchool_show: this.state.undergradSchool_show ? true : undefined,
-                undergradSchoolYears_show: this.state.undergradSchoolYears_show ? true : undefined,
-                gradSchool_show: this.state.gradSchool_show ? true : undefined,
-                gradSchoolYears_show: this.state.gradSchoolYears_show ? true : undefined,
-                employmentHistory_show: this.state.employmentHistory_show ? true : undefined,
-                currentEmploymentStatus_show: this.state.currentEmploymentStatus_show ? true : undefined,
-                notes_show: this.state.notes_show ? true : undefined
+                children_show: this.state.children ? true : undefined,
+                siblings_show: this.state.siblings ? true : undefined,
+                pets_show: this.state.pets ? true : undefined,
+                parents_show: this.state.parents ? true : undefined,
+                hobbies_show: this.state.hobbies ? true : undefined,
+                currentCity_show: this.state.currentCity ? true : undefined,
+                currentCityYears_show: this.state.currentCityYears ? true : undefined,
+                pastCity_show: this.state.pastCity ? true : undefined,
+                pastCityYears_show: this.state.pastCityYears ? true : undefined,
+                undergradSchool_show: this.state.undergradSchool ? true : undefined,
+                undergradSchoolYears_show: this.state.undergradSchoolYears ? true : undefined,
+                gradSchool_show: this.state.gradSchool ? true : undefined,
+                gradSchoolYears_show: this.state.gradSchoolYears ? true : undefined,
+                employmentHistory_show: this.state.employmentHistory ? true : undefined,
+                currentEmploymentStatus_show: this.state.currentEmploymentStatus ? true : undefined,
+                notes_show: this.state.notes ? true : undefined
             }) )
 
             // let newState = this.props.friend
@@ -199,7 +199,7 @@ class CreateEditForm extends React.Component {
         if (this.state[category] || this.state[inputFieldCategory]) {
             // if (Array.isArray(this.state[inputFieldCategory])) {
             //     return this.returnListItems(inputFieldCategory)
-            if (inputFieldCategory === "notes" || inputFieldCategory === "employmentHistory"  ) {
+            if (inputFieldCategory === "notes" || inputFieldCategory === "employmentHistory") {
             // } else if (inputFieldCategory === "notes") {
                 return (
                     <div className="input-container">

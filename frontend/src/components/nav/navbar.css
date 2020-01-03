@@ -35,4 +35,35 @@
     border-radius: 5px;
     padding: 5px;
     background-color: #3a3535;
+    position: relative;
+}
+
+.navbar-logout-btn > span { 
+    background-color: white;
+    color: black;
+    padding: 0 10px;
+    height: 30px;
+    display: none;
+    position: absolute;
+    right: 65px;
+    top: 0;
+    animation: user-email 2s;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.navbar-logout-btn:hover > span { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.navbar-logout-btn:hover {
+    background-color: grey;
+}
+
+@keyframes user-email {
+  from {width: 0px}
+  to {width: 160px;}
 }

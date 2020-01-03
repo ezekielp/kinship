@@ -39,8 +39,7 @@ class FriendsSidebar extends React.Component {
             dateOptions
         ).format(DOB);
         const birthDay = DOB.getUTCDate();
-        const birthYear = DOB.getUTCFullYear();
-        return `${birthMonth} ${birthDay}, ${birthYear}`;
+        return `${birthMonth} ${birthDay}`;
     }
 
     renderUpcomingBirthdays() {
@@ -49,7 +48,8 @@ class FriendsSidebar extends React.Component {
         
         const friendBirthdayLis = friendsToRender.map((friend, idx) => {
             return (
-                <li key={idx}>
+                <li key={idx} 
+                    className={`friends-sidebar-birthdays-item ${idx%2 === 0 ? "friends-sidebar-item-white" : "friends-sidebar-item-orange"}`}>
                     <div>{friend.name}</div>
                     <div>{this.parseBirthday(friend)}</div>
                 </li>
