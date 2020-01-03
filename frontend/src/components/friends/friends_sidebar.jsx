@@ -48,7 +48,8 @@ class FriendsSidebar extends React.Component {
         
         const friendBirthdayLis = friendsToRender.map((friend, idx) => {
             return (
-                <li key={idx}>
+                <li key={idx} 
+                    className={`friends-sidebar-birthdays-item ${idx%2 === 0 ? "friends-sidebar-item-white" : "friends-sidebar-item-orange"}`}>
                     <div>{friend.name}</div>
                     <div>{this.parseBirthday(friend)}</div>
                 </li>
