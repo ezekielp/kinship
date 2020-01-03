@@ -112,5 +112,6 @@
     padding-top: 10px;
 }
 
-
-
+.modal-open {
+    overflow: hidden;
+}
