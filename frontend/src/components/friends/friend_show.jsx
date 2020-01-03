@@ -454,19 +454,32 @@ class FriendShow extends React.Component {
                 <ul>
                   <li id="friend-show-name-text">
                     {friend.name}
-                    <div className="friend-show-name-buttons-container">
-                      <span className="view-all-friends-wrapper">
-                        <Link className="view-all-friends" to="/friends"> Back</Link>
-                      </span>
-                      <div onClick={(e) => {
-                        e.preventDefault();
-                        openModal({ type: 'edit-a-friend', friendId: friend._id })
-                      }}>Edit</div>
-                      <div onClick={(e) => {
-                        e.preventDefault();
-                        deleteFriend(friend._id);
-                        history.push('/friends');
-                      }}>Delete</div>
+                      <div className="friend-show-name-buttons-container">
+                      <Link className="view-all-friends" to="/friends">
+                        <span className="view-all-friends-wrapper">
+                          Back
+                        </span>
+                      </Link>
+                      <div
+                        onClick={e => {
+                          e.preventDefault();
+                          openModal({
+                            type: "edit-a-friend",
+                            friendId: friend._id
+                          });
+                        }}
+                      >
+                        Edit
+                      </div>
+                      <div
+                        onClick={e => {
+                          e.preventDefault();
+                          deleteFriend(friend._id);
+                          history.push("/friends");
+                        }}
+                      >
+                        Delete
+                      </div>
                     </div>
                   </li>
                   {this.renderAge()}
