@@ -256,7 +256,7 @@ class SessionForm extends React.Component {
 						<input
 							type="submit"
 							className="session-submit-button phase-in"
-							value="Signup!"
+							value="Signup"
 						/>
 						<button
 							onClick={() => this.transitionOut(null)}
