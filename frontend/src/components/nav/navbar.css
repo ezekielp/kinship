@@ -29,20 +29,48 @@
     color: #FF7314;
 }
 
-.navbar-logo-ship {
+.hidden-email-container{
+    position: relative;
+    width: 240px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: teal; */
+    margin-right: 35px;
+    border-radius: 5px;
 }
 
 .navbar-logout-btn {
-    margin-right: 25px;
+    width: 60px;
+    /* margin-right: 25px; */
     cursor: pointer;
     color: #f4f4f4;
     border-radius: 5px;
     padding: 5px;
     background-color: #3a3535;
     position: relative;
+    z-index: 1;
 }
 
-.navbar-logout-btn > span { 
+.hidden-email{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    width: 100%;
+    padding: 5px;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.hidden-email-container:hover > .hidden-email{
+    transform: translateX(10%);
+}
+
+/* .navbar-logout-btn > span { 
     background-color: white;
     color: black;
     padding: 0 10px;
@@ -56,6 +84,8 @@
     border-bottom-left-radius: 5px;
     transform: translateY(0%);
 }
+.navbar-logo-ship {
+}
 
 .navbar-logout-btn:hover > span { 
     display: flex;
@@ -63,7 +93,7 @@
     justify-content: center;
     overflow-x: hidden;
     transform: translateY(-100%);
-}
+} */
 
 .navbar-logout-btn:hover {
     background-color: grey;
