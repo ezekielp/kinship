@@ -182,26 +182,28 @@ class SessionForm extends React.Component {
 				<div className="right-side">
 					<form className="session-container" onSubmit={this.handleSubmit}>
             {errors}
-						<label className="phase-in" htmlFor="email-input">
-							Email
-						</label>
-						<input
-							className="phase-in"
-							id="email-input"
-							type="text"
-							ref={(email) => this.inputEmail = email}
-							onChange={this.update('email')}
-						/>
-						<label className="phase-in" htmlFor="password-input">
-							Password
-						</label>
-						<input
-							className="phase-in"
-							id="password-input"
-							type="password"
-							ref={(password) => this.inputPassword = password}
-							onChange={this.update('password')}
-						/>
+						<div className="session-input-container">
+							<div className="session-input-field-container">
+								<input
+									className="phase-in session-input-field"
+									type="text"
+									ref={(email) => this.inputEmail = email}
+									onChange={this.update('email')}
+									placeholder="Email"
+								/>
+								<label className="phase-in input-label" />
+							</div>
+							<div className="session-input-field-container">
+								<input
+									className="phase-in session-input-field"
+									type="password"
+									ref={(password) => this.inputPassword = password}
+									onChange={this.update('password')}
+									placeholder="Password"
+								/>
+								<label className="phase-in input-label" />
+							</div>
+						</div>
 						<input
 							type="submit"
 							className="session-submit-button phase-in"
@@ -222,37 +224,39 @@ class SessionForm extends React.Component {
 				<div className="right-side">
 					<form className="session-container" onSubmit={this.handleSubmit}>
             {errors}
-						<label className="phase-in" htmlFor="email-input">
-							Email
-						</label>
-						<input
-							className="phase-in"
-							id="email-input"
-							type="text"
-							onChange={this.update('email')}
-						/>
-						<label className="phase-in" htmlFor="password-input">
-							Password
-						</label>
-						<input
-							className="phase-in"
-							id="password-input"
-							type="password"
-							onChange={this.update('password')}
-						/>
-						<label className="phase-in" htmlFor="password-confirmation-input">
-							Confirm Password
-						</label>
-						<input
-							className="phase-in"
-							id="password-confirmation-input"
-							type="password"
-							onChange={this.update('password2')}
-						/>
+						<div className="session-input-container">
+							<div className="session-input-field-container">
+								<input
+									className="phase-in session-input-field"
+									type="text"
+									onChange={this.update('email')}
+									placeholder="Email"
+								/>
+								<label className="phase-in input-label" />
+							</div>
+							<div className="session-input-field-container">
+								<input
+									className="phase-in session-input-field"
+									type="password"
+									onChange={this.update('password')}
+									placeholder="Password"
+								/>
+								<label className="phase-in input-label" />
+							</div>
+							<div className="session-input-field-container">
+								<input
+									className="phase-in session-input-field"
+									type="password"
+									onChange={this.update('password2')}
+									placeholder="Re-enter Password"
+								/>
+								<label className="phase-in input-label" />
+							</div>
+						</div>
 						<input
 							type="submit"
 							className="session-submit-button phase-in"
-							value="Signup!"
+							value="Signup"
 						/>
 						<button
 							onClick={() => this.transitionOut(null)}

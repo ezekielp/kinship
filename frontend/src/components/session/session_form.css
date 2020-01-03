@@ -1,24 +1,66 @@
-#email-input,
-#password-input,
-#password-confirmation-input {
-	width: 200px;
-	border-radius: 10px;
-	padding: 5px;
-	margin: 10px;
-	font-size: 24px;
+.session-input-container{
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
 }
 
-#email-input:focus,
-#password-input:focus,
-#password-confirmation-input:focus {
+.session-input-field-container{ 
+	height: 50px;
+	width: 100%;
+	position: relative;
+}
+
+.session-input-field{
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: 10px;
+	padding-left: 20px;
+	border: none	;
+	font-size: 24px;
+	background-color: rgba(255, 115, 21, 0);
+}
+
+.session-input-field:focus{
 	outline: none;
 }
+
+.input-label{
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	border-bottom: 1px solid black;
+}
+
+.input-label::after{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	height: 100%;
+	width: 100%;
+	border-bottom: 3px solid white;
+	transform: translateX(-100%);
+	transition: all 0.3s ease;
+}
+
+.session-input-field:focus + .input-label::after{
+	transform: translatex(0%);
+}
+
 
 .session-submit-button {
 	width: 200px;
 	padding: 5px;
 	border-radius: 5px;
-	margin-top: 30px;
+	/* margin-top: 20px; */
 	background-color: #3a3535;
   color: #f4f4f4;
 	font-weight: bold;
