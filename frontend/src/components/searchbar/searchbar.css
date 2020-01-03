@@ -31,9 +31,9 @@
     font-weight: bold;
 }
 
-input[type="text"] {
+/* input[type="text"] {
     background-color: #f4f4f4;
-}
+} */
 
 .searchbar-clear-field:hover{
     cursor: pointer;

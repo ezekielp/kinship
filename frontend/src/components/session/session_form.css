@@ -1,79 +1,66 @@
-.input-container {
-	width: 240px;
-	height: 60px;
-	border-radius: 10px;
-	padding: 0;
-	/* margin: 10px; */
-	font-size: 24px;
+.session-input-container{
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.session-input-field-container{ 
+	height: 50px;
+	width: 100%;
 	position: relative;
-	/* overflow: hidden; */
 }
 
+.session-input-field{
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: 10px;
+	padding-left: 20px;
+	border: none	;
+	font-size: 24px;
+	background-color: rgba(255, 115, 21, 0);
+}
 
-.input-container-label{
+.session-input-field:focus{
+	outline: none;
+}
+
+.input-label{
+	position: absolute;
+	bottom: 0px;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	position: absolute;
 	pointer-events: none;
-	color: white;
-	top: 0;
-	left: 0;
+	border-bottom: 1px solid black;
 }
 
-.input-container-label::after{
+.input-label::after{
 	content: "";
-	height: 100%;
-	width: 100%;
 	position: absolute;
 	left: 0;
-	/* bottom: -26px; */
+	bottom: -1px;
+	height: 100%;
+	width: 100%;
 	border-bottom: 3px solid white;
 	transform: translateX(-100%);
 	transition: all 0.3s ease;
 }
 
-.input-container input:focus + .input-container-label::after{
-	transform: translateX(0%);
+.session-input-field:focus + .input-label::after{
+	transform: translatex(0%);
 }
 
-.input-span-title{
-	position: absolute;
-	/* bottom: -26px; */
-	transition: all 0.3s ease;
-}
-
-
-#email-input,
-#password-input,
-#password-confirmation-input {
-	width: 100%;
-	height: 100%;
-	background-color: rgba(255, 115, 21, 0);
-	border: none;
-	border-bottom: 1px solid black;
-	/* border-radius: 10px; */
-	padding-top: 40px;
-	padding-left: 10px;
-	/* margin: 10px; */
-	font-size: 24px;
-	margin-top: 10px;
-}
-
-#email-input:focus,
-#password-input:focus,
-#password-confirmation-input:focus {
-	outline: none;
-}
-
-.input-container input:focus + .input-span-title{
-	transform: translateY(-50%);
-}
 
 .session-submit-button {
 	width: 200px;
 	padding: 5px;
 	border-radius: 5px;
-	margin-top: 40px;
+	/* margin-top: 20px; */
 	background-color: #3a3535;
   color: #f4f4f4;
 	font-weight: bold;
