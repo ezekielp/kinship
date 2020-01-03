@@ -314,18 +314,22 @@
 .friend-show-li {
     display: flex;
     align-items: center;
+}
+
+.friend-index-item-li {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 .friend-show-text {
     margin-top: 3px;
-    text-align: right;
 }
 
 .friend-show-tag {
     padding: 3px 6px 6px 8px;
-    height: 29px;
-    box-sizing: border-box;
+    /* height: 29px;
+    box-sizing: border-box; */
 }
 
 .friend-show-header {
