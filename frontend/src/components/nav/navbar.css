@@ -50,10 +50,11 @@
     display: none;
     position: absolute;
     right: 65px;
-    top: 0;
-    animation: user-email 2s;
+    top: 30px;
+    transition: all 0.3s ease;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    transform: translateY(0%);
 }
 
 .navbar-logout-btn:hover > span { 
@@ -61,13 +62,14 @@
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+    transform: translateY(-100%);
 }
 
 .navbar-logout-btn:hover {
     background-color: grey;
 }
 
-@keyframes user-email {
+/* @keyframes user-email {
   from {width: 0px}
   to {width: 160px;}
-}
+} */
