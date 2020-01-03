@@ -329,6 +329,8 @@ class CreateEditForm extends React.Component {
                     {this.inputField("pastCityYears_show")}
                     {this.inputField("undergradSchool_show")}
                     {this.inputField("undergradSchoolYears_show")}
+                    {this.inputField("gradSchool_show")}
+                    {this.inputField("gradSchoolYears_show")}
                     {this.inputField("currentEmploymentStatus_show")}
                     {this.inputField("employmentHistory_show")}
                     {this.inputField("notes_show")}
