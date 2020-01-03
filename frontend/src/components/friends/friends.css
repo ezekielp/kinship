@@ -333,3 +333,25 @@
 .friends-sidebar-birthdays-item > div:first-of-type { 
     font-weight: 600;
 }
+
+.view-all-friends-wrapper {
+    width: 100px;
+    height: 35px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.view-all-friends-wrapper:hover {
+    background-color: rgb(58,53,52);
+    border: 2px solid rgb(190, 190, 190);
+    color: white;
+    cursor: pointer;
+}
