@@ -5,7 +5,8 @@ import Navbar from './navbar';
 
 const msp = state => {
     return {
-        loggedIn: state.session.isAuthenticated
+        loggedIn: state.session.isAuthenticated,
+        email: state.session.user.email
     }
 }
 

@@ -11,8 +11,15 @@
     font-size: 18px;
 }
 
-.searchbar-input-field:focus{
+.searchbar-input-field:focus {
     outline: none;
+    animation: searchbar-input 2s;
+    width: 400px;
+}
+
+.searchbar-input-field:not(:focus){
+    animation: searchbar-input-notfocus 2s;
+    width: 240px;
 }
 
 .searchbar-clear-field{
@@ -39,9 +46,10 @@ input[type="text"] {
     top: 40px;
     left: 10px;
     border-radius: 10px;
-    width: 240px;
+    width: 400px;
     padding: 5px;
     border: 1px solid #3a3535;
+    z-index: 10;
 }
 
 .friend-search-result-item{
@@ -55,4 +63,14 @@ input[type="text"] {
 
 .friend-search-result-item:hover{
     cursor: pointer;
+}
+
+@keyframes searchbar-input {
+  from {width: 240px}
+  to {width: 400px}
+}
+
+@keyframes searchbar-input-notfocus {
+  from {width: 400px}
+  to {width: 240px}
 }

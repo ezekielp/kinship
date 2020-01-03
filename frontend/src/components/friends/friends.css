@@ -138,6 +138,7 @@
 .friend-card-click-for-details {
     text-align: center;
     opacity: 50%;
+    display: none;
 }
 
 
@@ -151,12 +152,16 @@
     /* box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.75) */
 }
 
-.friend-create-link-card:hover {
+.friend-create-link-card:hover, .friend-card-container:hover {
     text-align: center;
     cursor: pointer;
     transition: 0.5s;
     transform: scale(1.025);
-    box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.75)
+    box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.75);
+}
+
+.friend-card-container:hover .friend-card-click-for-details {
+    display: block;
 }
 
 .friend-create-link-card-text {
@@ -310,4 +315,21 @@
 
 .friend-show-header {
     font-size: 21px;
+}
+
+.friends-sidebar-birthdays-item {
+    width: 90%;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.friends-sidebar-item-white {
+    background-color: white;
+}
+.friends-sidebar-item-orange {
+    background-color: #d6d6d6;
+}
+.friends-sidebar-birthdays-item > div:first-of-type { 
+    font-weight: 600;
 }
