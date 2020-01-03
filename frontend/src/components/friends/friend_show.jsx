@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class FriendShow extends React.Component {
     constructor(props) {
@@ -379,6 +379,9 @@ class FriendShow extends React.Component {
                   <li id="friend-show-name-text">
                     {friend.name}
                     <div className="friend-show-name-buttons-container">
+                      <span className="view-all-friends-wrapper">
+                        <Link className="view-all-friends" to="/friends"> Back</Link>
+                      </span>
                       <div onClick={(e) => {
                         e.preventDefault();
                         openModal({ type: 'edit-a-friend', friendId: friend._id })
