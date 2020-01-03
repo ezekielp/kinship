@@ -190,11 +190,9 @@ class SessionForm extends React.Component {
 							ref={(email) => this.inputEmail = email}
 							onChange={this.update('email')}
 						/>
-						<label className="phase-in" htmlFor="email-input">
-							<span>Email</span>
+						<label className="phase-in input-container-label" htmlFor="email-input">
+							<span className="input-span-title">Email</span>
 						</label>
-						</div>
-						<div className="input-container">
 						<input
 							className="phase-in"
 							id="password-input"
@@ -203,7 +201,7 @@ class SessionForm extends React.Component {
 							onChange={this.update('password')}
 						/>
 						<label className="phase-in" htmlFor="password-input">
-							<span>Password</span>
+							<span className="input-span-title">Password</span>
 						</label>
 						</div>
 						<input
