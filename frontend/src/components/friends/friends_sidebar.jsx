@@ -12,7 +12,7 @@ class FriendsSidebar extends React.Component {
     }
 
     birthdayWithinOneMonth(DOB) {
-        // if (!DOB) return false;
+        if (!DOB) return false;
         const oneMonthInMilliseconds = 30 * 24 * 60 * 60 * 1000;
         const today = new Date();
         const oneMonthFromNow = new Date(today.getTime() + oneMonthInMilliseconds);
@@ -42,7 +42,13 @@ class FriendsSidebar extends React.Component {
 
     renderUpcomingBirthdays() {
         const { friends } = this.props;
-        const friendsToRender = friends.filter(friend => this.birthdayWithinOneMonth(friend.dateOfBirth));
+        const friendsToRender = friends
+          .filter(friend => this.birthdayWithinOneMonth(friend.dateOfBirth))
+          .sort((a, b) => {
+              const startDay = new Date(a.dateOfBirth).getUTCDate();
+              const endDay = new Date(b.dateOfBirth).getUTCDate();
+              return startDay - endDay;
+            });
         
         const friendBirthdayLis = friendsToRender.map((friend, idx) => {
             return (
@@ -69,7 +75,6 @@ class FriendsSidebar extends React.Component {
                 <div className="friends-sidebar-birthdays-container">
                     <h3 className="friends-sidebar-birthdays-header">Upcoming birthdays</h3>
                     {this.renderUpcomingBirthdays()}
-                    <div></div>
                 </div>
             </div>
         )
