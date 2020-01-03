@@ -1,7 +1,7 @@
 {
-  "name": "friend_facts",
+  "name": "Kinship",
   "version": "1.0.0",
-  "description": "FriendFacts app for a-A MERN project",
+  "description": "Kinship app for a-A MERN project",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ezekielp/friendfacts.git"
+    "url": "git+https://github.com/ezekielp/kinship.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ezekielp/friendfacts/issues"
+    "url": "https://github.com/ezekielp/kinship/issues"
   },
-  "homepage": "https://github.com/ezekielp/friendfacts#readme",
+  "homepage": "https://github.com/ezekielp/kinship#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
