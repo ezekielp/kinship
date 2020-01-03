@@ -278,6 +278,9 @@
     cursor: pointer;
 }
 
+#friend-show-previous-jobs-div {
+    min-width: 157px;
+}
 
 .friend-show-age-tag {
     padding: 1px 6px 7px 7px;
