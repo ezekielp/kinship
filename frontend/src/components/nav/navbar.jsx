@@ -34,13 +34,15 @@ class Navbar extends React.Component {
             </Link>
             <Searchbar />
             <div className="dummy-space" />
-            <div className="dummy-space" />
-            <div
-              className="navbar-logout-btn"
-              onClick={() => this.handleLogout()}
-            >
-              Logout
-              <span>{limitChars(this.props.email, 17)}</span>
+            {/* <div className="dummy-space" /> */}
+            <div className="hidden-email-container">
+              <div
+                className="navbar-logout-btn"
+                onClick={() => this.handleLogout()}
+              >
+                Logout
+              </div>
+              <div className="hidden-email">{limitChars(this.props.email, 17)}</div>
             </div>
               
             </div>

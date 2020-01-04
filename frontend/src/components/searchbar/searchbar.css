@@ -9,18 +9,15 @@
     width: 240px;
     height: 20px;
     font-size: 18px;
+    /* transform: scaleX(1); */
+    transition: all 0.3s ease;
 }
 
 .searchbar-input-field:focus {
     outline: none;
-    animation: searchbar-input 2s;
     width: 400px;
 }
 
-.searchbar-input-field:not(:focus){
-    animation: searchbar-input-notfocus 2s;
-    width: 240px;
-}
 
 .searchbar-clear-field{
     position: absolute;
@@ -65,7 +62,7 @@
     cursor: pointer;
 }
 
-@keyframes searchbar-input {
+/* @keyframes searchbar-input {
   from {width: 240px}
   to {width: 400px}
 }
@@ -73,4 +70,4 @@
 @keyframes searchbar-input-notfocus {
   from {width: 400px}
   to {width: 240px}
-}
+} */
