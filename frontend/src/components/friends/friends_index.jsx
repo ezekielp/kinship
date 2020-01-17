@@ -15,8 +15,6 @@ class FriendsIndex extends React.Component {
     render() {
       const { friends, openModal, deleteFriend} = this.props;
 
-      // if (!friends) return null;
-
       let loadingBoxes = [];
       for (let i = 0; i < 9; i++) {
         let loadingBox = (
@@ -50,7 +48,6 @@ class FriendsIndex extends React.Component {
               <FriendsSidebar friends={this.props.friends} />
               <div className="friend-cards-container">
                 <ul>
-                  {/* {friendProfileLis} */}
                   {lisToRender}
                   <li>
                     <div 
