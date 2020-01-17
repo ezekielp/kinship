@@ -65,9 +65,9 @@ class Searchbar extends React.Component {
 			this.state.errors = "Please enter a friend's name";
 		} else if (!this.state.queryResult){
 			this.state.errors = "No such friend was found";
-			this.props.history.push(`/friends/friendless`);
+			this.props.history.push(`/friends/search/${this.state.queryString}`);
 		} else {
-			this.props.history.push(`/friends/${this.state.queryResult[0]._id}`);
+			this.props.history.push(`/friends/search/${this.state.queryString}`);
 		}
 	}
 
