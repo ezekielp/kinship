@@ -24,7 +24,7 @@
   padding: 5px;
   font-size: 12px;
   width: 92%;
-  max-height: 200px;
+  max-height: 20vh;
   overflow-y: scroll;
   box-sizing: border-box;
   background-color: white;
@@ -43,5 +43,27 @@
 
 @keyframes dropdownmove {
   from {max-height: 0px;}
-  to {max-height: 200px;}
+  to {max-height: 20vh;}
+}
+
+@media only screen and (max-height: 710px) {
+  @keyframes dropdownmove {
+    from {max-height: 0px;}
+    to {max-height: 15vh;}
+  }
+
+  .dropdown-items-container {
+    max-height: 15vh;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  @keyframes dropdownmove {
+    from {max-height: 0px;}
+    to {max-height: 10vh;}
+  }
+
+  .dropdown-items-container {
+    max-height: 10vh;
+  }
 }

@@ -8,6 +8,7 @@ import CreateFriendContainer from './friends/create_friend_container';
 import EditFriendContainer from './friends/edit_friend_container';
 import FriendsIndexContainer from './friends/friends_index_container';
 import FriendShowContainer from './friends/friend_show_container';
+import FriendSearch from './friends/friend_search';
 import Modal from './modal/modal';
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
             <ProtectedRoute path="/friends/:friendId/edit" component = {EditFriendContainer} />
             <ProtectedRoute path="/friends/new" component={CreateFriendContainer} />
             <ProtectedRoute exact path="/friends" component={FriendsIndexContainer} />
+            <ProtectedRoute path="/friends/search" component={FriendSearch} />
             <ProtectedRoute exact path = "/friends/:friendId" component = {FriendShowContainer} />
             <AuthRoute path="/" component={LandingPage} />
         </Switch>
