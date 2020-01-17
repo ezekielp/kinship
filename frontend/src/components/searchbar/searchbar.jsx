@@ -60,6 +60,7 @@ class Searchbar extends React.Component {
 	}
 
 	handleSubmit(){
+		this.resetQuery();
 		if (this.state.queryString === ''){
 			this.state.errors = "Please enter a friend's name";
 		} else if (!this.state.queryResult){
