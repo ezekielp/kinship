@@ -7,29 +7,36 @@ class Searchbar extends React.Component {
 		super(props);
 		this.state={
 			queryString: "",
-			queryResult: null
+			queryResult: null,
+			errors: null
 		};
 
 		this.clearQuery = this.clearQuery.bind(this);
 		this.updateQuery = this.updateQuery.bind(this);
 		this.resetQuery = this.resetQuery.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	clearQuery(){
 		this.setState({
 			queryString: "",
-			queryResult: null
+			queryResult: null,
+			errors: null
 		});
 	}
 
 	updateQuery(event){
 		this.setState({
-			queryString: event.currentTarget.value
+			queryString: event.currentTarget.value,
+			errors: null
 		});
 	}
 
 	resetQuery(){
 		this.input.value="";
+		this.setState({
+			errors: null
+		});
 	}
 
 	componentDidUpdate(prevProps, prevState){
@@ -45,8 +52,22 @@ class Searchbar extends React.Component {
 					queryResult: (queryResult.length > 0) ? (queryResult) : null
 				});
 			} else {
-				this.setState({queryResult: null});
+				this.setState({
+					queryResult: null
+				});
 			}
+		}
+	}
+
+	handleSubmit(){
+		this.resetQuery();
+		if (this.state.queryString === ''){
+			this.state.errors = "Please enter a friend's name";
+		} else if (!this.state.queryResult){
+			this.state.errors = "No such friend was found";
+			this.props.history.push(`/friends/friendless`);
+		} else {
+			this.props.history.push(`/friends/${this.state.queryResult[0]._id}`);
 		}
 	}
 
@@ -65,20 +86,20 @@ class Searchbar extends React.Component {
 		null;
 
 		return (
-			<div className="searchbar-container">
+			<form className="searchbar-container" onSubmit={this.handleSubmit}>
 				<div 
 				className="searchbar-clear-field"
-				onClick={this.resetQuery}>X</div>
+				onMouseDown={this.resetQuery}>X</div>
 				<input
 					onChange={this.updateQuery}
 					onBlur={this.clearQuery}
 					ref={(el) => this.input = el}
 					className="searchbar-input-field"
 					type="text"
-					placeholder="Search for a friend.."
+					placeholder="Search for a friend..."
 				/>
 				{queryResult}
-			</div>
+			</form>
 		);
 	}
 }
