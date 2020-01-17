@@ -3,6 +3,7 @@ import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
 import { withRouter, Link } from 'react-router-dom';
 import { monthNames } from '../../util/text_util';
+import FooterContainer from '../footer/footer_container';
 
 class FriendShow extends React.Component {
     constructor(props) {
@@ -495,6 +496,7 @@ class FriendShow extends React.Component {
                 </ul>
               </div>
             </div>
+            <FooterContainer/>
           </div>
         );
     }
