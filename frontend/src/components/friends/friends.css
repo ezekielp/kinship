@@ -67,6 +67,32 @@
     }
 }
 
+.friends-index-loading-box {
+    background-color: #e2e2e2;
+    box-sizing: border-box;
+    height: 250px;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px;
+    animation: 1s linear infinite shimmer2;
+}
+
+@keyframes shimmer2 {
+    0% {
+        opacity: 65%;
+    }
+
+    50% {
+        opacity: 30%;
+    }
+
+    100% {
+        opacity: 65%;
+    }
+}
+
+
 /* .friend-card-container:hover {
     width: 500px;
     height: 500px;
