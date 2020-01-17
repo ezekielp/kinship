@@ -12,40 +12,39 @@ class FriendSearch extends React.Component {
 			queryString: this.props.queryString,
 			queryResult: null
 		};
-	}
-
-	componentDidMount() {
-    let queryResult = [];
-		if (this.state.queryString !== '') {
-			this.props.friends.forEach((friend) => {
-				if (
-					friend.name
-						.toLowerCase()
-						.includes(this.state.queryString.toLowerCase())
-				) {
-					queryResult.push(friend);
-				}
-			});
+  }
+  
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.queryString !== this.props.queryString) {
 			this.setState({
-				queryResult: queryResult.length > 0 ? queryResult : null
+				queryString: this.props.queryString
 			});
-		} else {
-			this.setState({
-				queryResult: null
-			});
-    }
-    debugger
+		}
 	}
 
 	render() {
-		const { friends, openModal, deleteFriend, queryResult } = this.props;
-    console.log(queryResult);
+    const { friends, openModal, deleteFriend } = this.props;
+    let queryResult = [];
+		if (this.state.queryString !== '') {
+				this.props.friends.forEach((friend) => {
+					if (
+						friend.name
+							.toLowerCase()
+							.includes(this.state.queryString.toLowerCase())
+					) {
+						queryResult.push(friend);
+					}
+				});
+					queryResult= queryResult.length > 0 ? queryResult : null;
+			} else {
+					queryResult= null;
+			}
+
 		let friendProfileLis = queryResult ? (
 			<ul>
 				{queryResult.map((friend, idx) => (
-					<li>
+					<li key={idx}>
 						<FriendsIndexItem
-							key={idx}
 							friend={friend}
 							openModal={openModal}
 							deleteFriend={deleteFriend}
@@ -53,18 +52,38 @@ class FriendSearch extends React.Component {
 						/>
 					</li>
 				))}
-				<li>
+				<li key="999">
 					<div
 						onClick={() => this.props.history.push('/friends')}
 						className="friend-card-outer-container friend-card-container friend-create-link-card"
 					>
 						<div className="friend-create-link-card-text">
-							Back to main page
+							Go Back to main page
 						</div>
 					</div>
 				</li>
 			</ul>
-		) : null;
+		) : (
+			<ul>
+				<li key="0">
+					<div className="friend-card-outer-container friend-card-container friend-create-link-card">
+						<div className="friend-create-link-card-text">
+							No Friends Found!
+						</div>
+					</div>
+				</li>
+				<li key="1">
+					<div
+						onClick={() => this.props.history.push('/friends')}
+						className="friend-card-outer-container friend-card-container friend-create-link-card"
+					>
+						<div className="friend-create-link-card-text">
+							Go Back to main page
+						</div>
+					</div>
+				</li>
+			</ul>
+		);
 
 		return (
 			<div>
