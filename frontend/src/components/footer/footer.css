@@ -1,0 +1,47 @@
+.footer {
+    height: 100px;
+    width: 100%;
+    background-color: #D6D6D6;
+    /* z-index: -1; */
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: #3A3535;
+}
+
+.kinship-about-link {
+    margin: 0 5px 0 5px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.kinship-about-link:hover {
+    cursor: pointer;
+    color: #FF7313;
+}
+
+.footer-items-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-line {
+    height: 1px;
+    width: 178.44px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+.favicon {
+    margin-right: 5px;
+}

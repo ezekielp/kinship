@@ -4,6 +4,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import MakeAFriend from './make_friend';
 import TransitionScreen from './transition_screen';
 import LogoutConfirmation from './logout_confirmation';
+import About from './about';
 
 class Modal extends React.Component {
 
@@ -51,6 +52,12 @@ class Modal extends React.Component {
 				background = 'logout-confirmation-background';
 				container = 'logout-confirmation-container';
 				clickEffect = doNothing;
+				break;
+			case 'about':
+				component = <About />;
+				background = 'about-page-background';
+				container = 'about-page-container';
+				clickEffect = closeModal;
 				break;
 			default:
 				return null;

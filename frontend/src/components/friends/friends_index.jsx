@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
 import FriendsIndexItem from './friends_index_item';
+import FooterContainer from '../footer/footer_container';
 
 class FriendsIndex extends React.Component {
     constructor(props) {
@@ -48,6 +49,7 @@ class FriendsIndex extends React.Component {
                 </ul>
               </div>
             </div>
+            <FooterContainer />
           </div>
         );
     }

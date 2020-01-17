@@ -1,0 +1,95 @@
+.about-page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: smooth-in-about-page 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(88, 84, 84, 0.8);
+    z-index: 55;
+}
+
+.about-page-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-page-modal-body {
+    height:600px;
+    width: 500px;
+    background-color: #3A3535;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: phase-in 5s ease;
+    animation: open-up-about-page 2s ease;
+}
+
+.about-us-description {
+    text-align: center;
+    color: #D6D6D6;
+    animation: phase-in 5s ease;
+}
+
+.about-us-title, .co-founder-title{
+    font-weight: 700;
+    font-size: 25px;
+    animation: phase-in 5s ease;
+    color: white;
+}
+.about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: phase-in 5s ease;
+}
+
+.name-link-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    animation: phase-in 5s ease;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    color: #D6D6D6;
+    animation: phase-in 5s ease;
+}
+
+.fa-github:hover, .fa-linkedin:hover, .fa-angellist:hover {
+    color: #FF7313
+}
+
+.name {
+    color: #FF7313
+}
+
+@keyframes smooth-in-about-page{
+    from{
+        background-color: rgba(88, 84, 84, 0);
+    }
+    to{
+        background-color: rgba(88, 84, 84, 0.8);
+    }
+}
+
+@keyframes open-up-about-page{
+    from{
+        width: 50px;
+        height: 60px;
+    }
+    to{
+        width: 500px;
+        height: 600px;
+    }
+}
