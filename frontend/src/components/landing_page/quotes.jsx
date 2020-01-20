@@ -16,8 +16,9 @@ class Quote extends React.Component{
 
     render() {
         const randomQuote = this.state.quotes[Math.floor(Math.random() * this.state.quotes.length)];
+        const currentTagline = "An easy-to-use tool for storing info about friends and family"
         return (
-            <span>{randomQuote}</span>                
+            <span>{currentTagline}</span>                
         )
     }
 }

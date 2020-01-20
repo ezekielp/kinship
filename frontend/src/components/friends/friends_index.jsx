@@ -49,7 +49,6 @@ class FriendsIndex extends React.Component {
               <FriendsSidebar friends={this.props.friends} />
               <div className="friend-cards-container">
                 <ul>
-                  {lisToRender}
                   <li>
                     <div 
                     onClick={()=>this.props.openModal({type: "make-a-friend"})}
@@ -60,6 +59,7 @@ class FriendsIndex extends React.Component {
                       <div className="friend-create-link-card-plus-sign">+</div>
                     </div>
                   </li>
+                  {lisToRender}
                 </ul>
               </div>
             </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
 import FriendsIndexItem from './friends_index_item';
+import FooterContainer from '../footer/footer_container';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -52,7 +53,7 @@ class FriendSearch extends React.Component {
 						/>
 					</li>
 				))}
-				<li key="999">
+				{/* <li key="999">
 					<div
 						onClick={() => this.props.history.push('/friends')}
 						className="friend-card-outer-container friend-card-container friend-create-link-card"
@@ -61,18 +62,20 @@ class FriendSearch extends React.Component {
 							Go Back to main page
 						</div>
 					</div>
-				</li>
+				</li> */}
 			</ul>
 		) : (
 			<ul>
 				<li key="0">
-					<div className="friend-card-outer-container friend-card-container friend-create-link-card">
-						<div className="friend-create-link-card-text">
-							No Friends Found!
-						</div>
+					{/* <div className="friend-card-outer-container friend-card-container friend-create-link-card">
+						<div className="friend-create-link-card-text"> */}
+					<div className="no-friends-found-msg">
+						No friends found!
 					</div>
+						{/* </div>
+					</div> */}
 				</li>
-				<li key="1">
+				{/* <li key="1">
 					<div
 						onClick={() => this.props.history.push('/friends')}
 						className="friend-card-outer-container friend-card-container friend-create-link-card"
@@ -81,7 +84,7 @@ class FriendSearch extends React.Component {
 							Go Back to main page
 						</div>
 					</div>
-				</li>
+				</li> */}
 			</ul>
 		);
 
@@ -90,8 +93,21 @@ class FriendSearch extends React.Component {
 				<NavbarContainer />
 				<div className="friends-below-navbar-container">
 					<FriendsSidebar friends={friends} />
-					<div className="friend-cards-container">{friendProfileLis}</div>
+					<div className="friend-cards-container">
+						<div className="search-results-header-container">
+							<div 
+							onClick={() => this.props.history.push('/friends')}
+							className="back-to-main-button">
+								&lt;&lt; Back to all profiles
+							</div>
+							<div className="search-results-header">
+								Search results
+							</div>
+						</div>
+							{friendProfileLis}
+						</div>
 				</div>
+				<FooterContainer />
 			</div>
 		);
 	}
