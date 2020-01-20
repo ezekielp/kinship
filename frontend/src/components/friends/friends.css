@@ -4,6 +4,7 @@
     display: flex;
     width: 100%;
     margin-top: 60px;
+    min-height: 700px;
 }
 
 
@@ -416,4 +417,27 @@
     border-radius: 10px;
     margin-left: 326px;
     text-align: center;
+}
+
+
+/* SEARCH RESULTS HEADER */
+
+.search-results-header-container {
+    padding-left: 359px;
+}
+
+.back-to-main-button {
+    text-decoration: underline;
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+.search-results-header {
+    font-size: 38px;
+}
+
+.no-friends-found-msg {
+    margin-left: -57px;
+    margin-top: 20px;
+    font-size: 20px;
 }
