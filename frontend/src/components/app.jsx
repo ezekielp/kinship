@@ -9,11 +9,9 @@ import EditFriendContainer from './friends/edit_friend_container';
 import FriendsIndexContainer from './friends/friends_index_container';
 import FriendShowContainer from './friends/friend_show_container';
 import FriendSearch from './friends/friend_search';
-import Modal from './modal/modal';
 
 const App = () => (
     <>
-        <Modal />
         <Switch>
             <ProtectedRoute path="/friends/:friendId/edit" component = {EditFriendContainer} />
             <ProtectedRoute path="/friends/new" component={CreateFriendContainer} />

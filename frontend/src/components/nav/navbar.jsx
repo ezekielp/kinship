@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import Searchbar from '../searchbar/searchbar_container';
 import "./navbar.css";
 import { limitChars } from '../../util/text_util';
+import Modal from '../modal/modal';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ class Navbar extends React.Component {
 
         return (
           <div className="navbar-container">
+            <Modal />
             <Link to="/friends" className="navbar-logo-link">
               <div className="navbar-logo-container">
                 <span className="navbar-logo-kin">kin</span>
