@@ -27,16 +27,17 @@ body {
 
 .motto-catchphrase{
   font-size: 24px;
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 5;
   display: flex;
   justify-content: center;
 	align-items: center;
-  font-size: 24px;
+  font-size: 29px;
   color: #f4f4f4;
   padding: 10px;
+  text-align: center;
 }
 
 .logo-container {

@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
 import FriendsIndexItem from './friends_index_item';
+import FooterContainer from '../footer/footer_container';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -92,6 +93,7 @@ class FriendSearch extends React.Component {
 					<FriendsSidebar friends={friends} />
 					<div className="friend-cards-container">{friendProfileLis}</div>
 				</div>
+				<FooterContainer />
 			</div>
 		);
 	}
