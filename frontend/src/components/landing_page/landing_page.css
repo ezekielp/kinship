@@ -130,7 +130,7 @@ body {
   justify-content: center;
   align-items: center;
   align-self: center;
-  animation: box-out 1s ease reverse;
+  animation: box-out 1.05s ease reverse;
 }
 
 @keyframes box-out{
