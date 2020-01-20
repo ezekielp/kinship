@@ -20,7 +20,7 @@ class About extends React.Component {
                 <div className="co-founders-wrapper">
                     <h2 className="co-founder-title">Co-Founders</h2>
                     <span className="name-link-wrapper">
-                        <h3 className="name">Ezekiel Pfeifer</h3>
+                        <h3 className="name"><a href="https://ezekielp.github.io" target="_blank">Ezekiel Pfeifer</a></h3>
                         <ul className="icons">
                             <li><a href="https://github.com/ezekielp" className="icon brands fab fa-github"></a></li>
                             <li><a href="https://www.linkedin.com/in/ezekielpfeifer/" className="icon brands  fab fa-linkedin"></a></li>
@@ -28,7 +28,7 @@ class About extends React.Component {
                         </ul>
                     </span>
                     <span className="name-link-wrapper">
-                        <h3 className="name">Tae In Ha</h3>
+                        <h3 className="name"><a target="_blank" href="https://taeinha.com/index.html">Tae In Ha</a></h3>
                         <ul className="icons">
                             <li><a href="https://github.com/taeinha" className="icon brands fab fa-github"></a></li>
                             <li><a href="https://www.linkedin.com/in/tae-in-ha/" className="icon brands  fab fa-linkedin"></a></li>
@@ -36,7 +36,7 @@ class About extends React.Component {
                         </ul>
                     </span>
                     <span className="name-link-wrapper">
-                        <h3 className="name">Andrew Lee</h3>
+                        <h3 className="name"><a target="_blank" href="https://applecidera.github.io/">Andrew Lee</a></h3>
                         <ul className="icons">
                             <li><a href="https://github.com/applecidera" className="icon brands fab fa-github"></a></li>
                             <li><a href="https://www.linkedin.com/in/andrew-lee-1301a619b/" className="icon brands  fab fa-linkedin"></a></li>
@@ -44,7 +44,7 @@ class About extends React.Component {
                         </ul>
                     </span>
                     <span className="name-link-wrapper">
-                        <h3 className="name">Kenel Zhao</h3>
+                        <h3 className="name"><a target="_blank" href="https://kzed-1.github.io/">Kenel Zhao</a></h3>
                         <ul className="icons">
                             <li><a href="https://github.com/kzed-1" className="icon brands fab fa-github"></a></li>
                             <li><a href="https://www.linkedin.com/in/kenel-zhao-961575165/" className="icon brands  fab fa-linkedin"></a></li>
