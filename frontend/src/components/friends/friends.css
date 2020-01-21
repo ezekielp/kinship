@@ -55,7 +55,7 @@
     border: 1px solid black;
     padding: 20px;
     border-radius: 10px;
-    animation: loading 3s;
+/*     animation: loading 3s; */
 }
 
 @keyframes loading {
