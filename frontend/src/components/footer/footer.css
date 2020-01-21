@@ -3,7 +3,7 @@
     width: 100%;
     background-color: #D6D6D6;
     /* z-index: -1; */
-    position: sticky;
+    position: fixed;
     bottom: 0px;
     display: flex;
     justify-content: center;

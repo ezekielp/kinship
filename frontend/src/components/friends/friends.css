@@ -111,6 +111,10 @@
     height: 206px;
 }
 
+.friends-card-wrapper {
+    margin-bottom: 100px;
+}
+
 .friend-card-container ul li:not(:first-child) {
     margin-bottom: 15px;
 }
@@ -211,9 +215,8 @@
 
 .friend-show-container {
     width: 100%;
-    min-height: 76vh;
     margin: 40px;
-    height: auto;
+    height:  auto;
 }
 
 .friend-show-container ul {
@@ -224,6 +227,7 @@
     padding: 30px;
     border-radius: 10px;
     margin-left: 326px;
+    margin-bottom: 100px;
 }
 
 #friend-show-name-text {
