@@ -109,7 +109,10 @@
     display: block;
     text-align: center;
     height: 206px;
-    margin-bottom: 170px;
+}
+
+.friends-card-wrapper {
+    margin-bottom: 100px;
 }
 
 .friend-card-container ul li:not(:first-child) {
