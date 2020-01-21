@@ -19,7 +19,7 @@ class FriendsIndex extends React.Component {
       let loadingBoxes = [];
       for (let i = 0; i < 9; i++) {
         let loadingBox = (
-          <li className="friends-index-loading-box" >
+          <li key={i} className="friends-index-loading-box" >
           </li>
         )
         loadingBoxes.push(loadingBox);
@@ -36,7 +36,7 @@ class FriendsIndex extends React.Component {
       })
 
       let lisToRender;
-      if (!friends) {
+      if (!friends[0]) {
         lisToRender = loadingBoxes;
       } else {
         lisToRender = friendProfileLis;
