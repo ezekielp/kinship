@@ -17,10 +17,12 @@
 
 @keyframes smooth-in{
     from{
-        background-color: rgba(255, 115, 21, 0);
+        background-color: #3a3535d8;
+        opacity: 0;
     }
     to{
-        background-color: rgba(255, 115, 21, 0.8);
+        background-color: #3a3535d8;
+        opacity: 1;
     }
 }
 
@@ -32,20 +34,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: open-up 1s ease;
+    animation: open-up-friend 1s ease;
     position: relative;
     padding-top: 80px;
     padding-bottom: 10px;
 }
 
-@keyframes open-up{
-    from{
+@keyframes open-up-friend{
+    0%{
         width: 10%;
         height: 10%;
+        opacity: 0;
     }
-    to{
+    90%{
         width: 652px;
         height: 350px;
+        opacity: 0.8;
+    }
+    100%{
+        width: 652px;
+        height: 350px;
+        opacity: 1;
     }
 }
 
