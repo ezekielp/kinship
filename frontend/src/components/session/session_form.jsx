@@ -50,10 +50,10 @@ class SessionForm extends React.Component {
 
 			if (this.state.formType === 'signup') {
 				this.props.signup(user);
-				this.props.openModal({type: "transition-screen"});
+				// this.props.openModal({type: "transition-screen"});
 			} else {
 				this.props.login(user);
-				this.props.openModal({ type: "transition-screen" });
+				// this.props.openModal({ type: "transition-screen" });
 			}
 		}
 	}
@@ -97,7 +97,7 @@ class SessionForm extends React.Component {
 
 		let inputUser="";
 		let inputPass="";
-		
+
 		for (let i=0; i < username.length; i++){
 			setTimeout(() => {
 				inputUser = inputUser.concat(username[i]);
