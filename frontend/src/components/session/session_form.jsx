@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
 			this.setState({disabled: true});
 			setTimeout(() => {
 				this.setState({disabled: false});
-			}, 1000);
+			}, 950);
 			e.preventDefault();
 			let user = {
 				email: this.state.email,
@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
 					this.setState({
 						formType: formType
 					}),
-				1000
+				950
 			);
 		}
 	}
@@ -97,6 +97,7 @@ class SessionForm extends React.Component {
 
 		let inputUser="";
 		let inputPass="";
+		
 		for (let i=0; i < username.length; i++){
 			setTimeout(() => {
 				inputUser = inputUser.concat(username[i]);
@@ -111,9 +112,6 @@ class SessionForm extends React.Component {
 				}, j*50);
 			}
 		}, 600);
-		setTimeout(() => {
-			this.props.openModal({ type: "transition-screen" });
-		}, 900);
 	}
 
 	render() {
