@@ -2,7 +2,6 @@
     height: 100px;
     width: 100%;
     background-color: #D6D6D6;
-    /* z-index: -1; */
     position: fixed;
     bottom: 0px;
     display: flex;
@@ -44,4 +43,15 @@
 
 .favicon {
     margin-right: 5px;
+}
+
+.our-team-footer-title {
+    font-size: 25px;
+    color: #3A3535;
+    margin-right: 20px;
+}
+
+.our-team-footer-title:hover {
+    cursor: pointer;
+    color: #FF7313;
 }

@@ -54,7 +54,13 @@ class Modal extends React.Component {
 				clickEffect = doNothing;
 				break;
 			case 'about':
-				component = <About />;
+				component = <About type={modal.type}/>;
+				background = 'about-page-background';
+				container = 'about-page-container';
+				clickEffect = closeModal;
+				break;
+			case 'team':
+				component = <About type={modal.type}/>;
 				background = 'about-page-background';
 				container = 'about-page-container';
 				clickEffect = closeModal;

@@ -10,14 +10,16 @@ class Footer extends React.Component {
             <div className="footer">
                 <div className="footer-items-wrapper">
                     
+                    <h1 className="our-team-footer-title" onClick={() => this.props.openModal({type: "team"})}>Our Team</h1>
                     <span>
                         <h1 className="about">
                             About 
                             <p className="kinship-about-link" onClick={() => this.props.openModal({type: "about"})}>
                             <img className="favicon" src="favicon.ico" alt="" />
-                            inship</p> &#9400; 2020
+                            inship</p>
                         </h1>
                     </span>
+                    <h1>&#9400; 2020</h1>
                 </div>
             </div>
         )

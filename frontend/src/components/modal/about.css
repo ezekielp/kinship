@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    animation: smooth-in-about-page 1s ease-in-out;
+    /* animation: smooth-in-about-page 1s ease-in-out; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,59 +19,87 @@
 }
 
 .about-page-modal-body {
-    height:600px;
-    width: 500px;
+    height: 500px;
+    width: 600px;
     background-color: #3A3535;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: phase-in 5s ease;
-    animation: open-up-about-page 2s ease;
+    /* animation: phase-in 5s ease;
+    animation: open-up-about-page 2s ease; */
 }
 
-.about-us-description {
+.about-us-description, .our-team-description {
     text-align: center;
     color: #D6D6D6;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
+    width: 95%
 }
 
-.about-us-title, .co-founder-title{
+.about-us-title, .our-team-title, .co-founder-title{
     font-weight: 700;
     font-size: 25px;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
     color: white;
+    text-align: center;
 }
-.about-us {
+
+.co-founder-title {
+    margin-bottom: 20px;
+    /* animation: phase-in 5s ease; */
+}
+.about-us, .our-team {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
 }
 
 .name-link-wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
 }
 
 .icons {
     display: flex;
     justify-content: space-between;
-    width: 100px;
+    align-items: center;
+    width: 120px;
     color: #D6D6D6;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
 }
 
-.fa-github:hover, .fa-linkedin:hover, .fa-angellist:hover {
+.fa-github:hover, .fa-linkedin:hover, .fa-angellist:hover, .fa-briefcase:hover{
     color: #FF7313
 }
 
 .name {
     color: #FF7313
+}
+
+.profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.profile-pic {
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.all-profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 600px;
 }
 
 @keyframes smooth-in-about-page{
@@ -89,7 +117,7 @@
         height: 60px;
     }
     to{
-        width: 500px;
-        height: 600px;
+        width: 600px;
+        height: 500px;
     }
 }
