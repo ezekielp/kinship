@@ -165,16 +165,16 @@
     opacity: 0%;
 } */
 
-.friend-card-container ul::after:hover {
-    content: "click for more details";
-    text-align: center;
-    opacity: 50%;
-}
-
 .friend-card-click-for-details {
     text-align: center;
     opacity: 50%;
     display: none;
+}
+
+.friend-card-container ul::after:hover {
+    content: "click for more details";
+    text-align: center;
+    display: block;
 }
 
 
