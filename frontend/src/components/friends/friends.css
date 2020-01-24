@@ -167,7 +167,7 @@
 
 .friend-card-click-for-details {
     text-align: center;
-    opacity: 50%;
+    opacity: 0.5;
     display: none;
 }
 
