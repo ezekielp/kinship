@@ -57,7 +57,7 @@ class About extends React.Component {
                                         <li><a target="_blank" href="https://github.com/ezekielp" className="icon brands fab fa-github"></a></li>
                                         <li><a target="_blank" href="https://www.linkedin.com/in/ezekielpfeifer/" className="icon brands  fab fa-linkedin"></a></li>
                                         <li><a target="_blank" href="https://angel.co/ezekiel-pfeifer" className="icon brands fab fa-angellist"></a></li>
-                                        <li><a target="_blank" href=""><i className="icon fa fa-briefcase" aria-hidden="true"></i></a> </li>
+                                        <li><a target="_blank" href="ezekielp.com"><i className="icon fa fa-briefcase" aria-hidden="true"></i></a> </li>
                                     </ul>
                                 </span>
                             </div>
@@ -85,7 +85,7 @@ class About extends React.Component {
                                         <li><a target="_blank" href="https://github.com/applecidera" className="icon brands fab fa-github"></a></li>
                                         <li><a target="_blank" href="https://www.linkedin.com/in/andrew-lee-1301a619b/" className="icon brands  fab fa-linkedin"></a></li>
                                         <li><a target="_blank" href="https://angel.co/andrew-lee-184" className="icon brands fab fa-angellist"></a></li>
-                                        <li><a target="_blank" href=""><i className="icon fa fa-briefcase" aria-hidden="true"></i></a> </li>
+                                        <li><a target="_blank" href="https://applecidera.github.io/"><i className="icon fa fa-briefcase" aria-hidden="true"></i></a> </li>
 
                                     </ul>
                                 </span>
