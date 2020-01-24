@@ -16,12 +16,18 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     let ageLi = <div></div>;
     if (friend.dateOfBirth) {
       ageLi = (
-        <li className="friend-index-item-li">
-          <div className="friend-show-tag friend-show-age-tag">age</div>
-          <div className="friend-show-text">
-            {ageFromDOB(new Date(friend.dateOfBirth))} years old
+        // <li className="friend-index-item-li">
+          // <>
+          <div className="friend-index-item-grid">
+            <div className="friend-show-div">
+              <span className="friend-show-tag friend-show-age-tag">age</span>
+            </div>
+            <div className="friend-show-text">
+              {ageFromDOB(new Date(friend.dateOfBirth))} years old
+            </div>
           </div>
-        </li>
+          // </>
+        // </li>
       );
     }
 
@@ -36,36 +42,42 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
       const birthYear = DOB.getUTCFullYear();
 
       birthdayLi = (
-        <li className="friend-index-item-li">
-          <div className="friend-show-div">
-            <span className="friend-show-tag friend-show-birthday-tag">
-              birthday
-            </span>
+        // <li className="friend-index-item-li">
+          // <>
+          <div className="friend-index-item-grid">
+            <div className="friend-show-div">
+            {/* <div className="friend-show-div"> */}
+              <span className="friend-show-tag friend-show-birthday-tag">
+                birthday
+              </span>
+            </div>
+            <div className="friend-show-text">
+            {/* <div className="friend-show-text"> */}
+              {birthMonth} {birthDay}, {birthYear}
+            </div>
           </div>
-          <div className="friend-show-text">
-            {birthMonth} {birthDay}, {birthYear}
-          </div>
-        </li>
+          // </>
+        // </li>
       );
     }    
 
     let currentCityLi = <></>;
     if (friend.currentCity) {
       currentCityLi = (
-        <li className="friend-index-item-li">
-          <div className="friend-show-tag friend-show-location-tag">
-            location
+        // <li className="friend-index-item-li">
+        <div className="friend-index-item-grid">
+          <div className="friend-show-div">
+            <span className="friend-show-tag friend-show-location-tag">
+              location
+            </span>
           </div>
           <div className="friend-show-text">
-            <span>{friend.currentCity}</span>
+            {friend.currentCity}
           </div>
-        </li>
+        </div>
+        // </li>
       );
     }
-
-    const summaryInfo = (
-      <li></li>
-    )
 
     return (
       <div className="friend-card-outer-container">
@@ -85,9 +97,22 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
                     deleteFriend(friend._id);
                 }}></i>
               </li>
-              {ageLi}
+              {/* <div className="friend-index-item-grid"> */}
+                  {ageLi}
+                  {birthdayLi}
+                  {currentCityLi}
+                  {/* <div className="friend-show-div index-location-tag">
+                    <span className="friend-show-tag friend-show-location-tag">
+                      location
+                    </span>
+                  </div>
+                  <div className="friend-show-text index-location-text">
+                    {friend.currentCity}
+                  </div> */}
+              {/* </div> */}
+              {/* {ageLi}
               {birthdayLi}
-              {currentCityLi}
+              {currentCityLi} */}
             </ul>
             <div className="friend-card-click-for-details">
               click for more details
