@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    animation: smooth-in-about-page 1s ease-in-out;
+    /* animation: smooth-in-about-page 1s ease-in-out; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,42 +27,42 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: phase-in 5s ease;
-    animation: open-up-about-page 2s ease;
+    /* animation: phase-in 5s ease;
+    animation: open-up-about-page 2s ease; */
 }
 
 .about-us-description, .our-team-description {
     text-align: center;
     color: #D6D6D6;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
     width: 95%
 }
 
 .about-us-title, .our-team-title, .co-founder-title{
     font-weight: 700;
     font-size: 25px;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
     color: white;
     text-align: center;
 }
 
 .co-founder-title {
     margin-bottom: 20px;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
 }
 .about-us, .our-team {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
 }
 
 .name-link-wrapper {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
 }
 
 .icons {
@@ -71,7 +71,7 @@
     align-items: center;
     width: 120px;
     color: #D6D6D6;
-    animation: phase-in 5s ease;
+    /* animation: phase-in 5s ease; */
 }
 
 .fa-github:hover, .fa-linkedin:hover, .fa-angellist:hover, .fa-briefcase:hover{
