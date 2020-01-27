@@ -48,7 +48,7 @@ class FriendsIndex extends React.Component {
             <div className="friends-below-navbar-container">
               <FriendsSidebar friends={this.props.friends} />
               <div className="friend-cards-container">
-                <ul className = "friends-card-wrapper">
+                <ul className="friends-card-wrapper">
                   <li>
                     <div 
                     onClick={()=>this.props.openModal({type: "make-a-friend"})}

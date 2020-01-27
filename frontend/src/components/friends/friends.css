@@ -35,15 +35,6 @@
     font-weight: 400;
 }
 
-
-.friend-cards-container ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-    padding-left: 326px;
-}
-
 .friend-card-outer-container {
     margin: 30px;
 }
@@ -55,16 +46,9 @@
     border: 1px solid black;
     padding: 20px;
     border-radius: 10px;
-/*     animation: loading 3s; */
-}
-
-@keyframes loading {
-    0% {
-        opacity: 0%
-    }
-    100% {
-        opacity: 100%
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .friends-index-loading-box {
@@ -92,34 +76,26 @@
     }
 }
 
-
-/* .friend-card-container:hover {
-    width: 500px;
-    height: 500px;
-    z-index: 10;
-    transition: all 3s;
-} */
-
 /* FRIEND INDEX ITEMS */
-
-.friend-card-container ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: block;
-    text-align: center;
-    height: 206px;
-}
 
 .friends-card-wrapper {
     margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-left: 326px;
 }
 
 .friend-card-container ul li:not(:first-child) {
     margin-bottom: 15px;
 }
 
-.friend-index-item-name {
+.friend-index-item-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 45px;
+    margin-bottom: 4px;
 }
 
 .friend-index-item-header {
@@ -169,11 +145,12 @@
     text-align: center;
     opacity: 0.5;
     display: none;
+    margin-top: 11px;
 }
 
 .friend-card-container ul::after:hover {
     content: "click for more details";
-    text-align: center;
+    /* text-align: center; */
     display: block;
 }
 
@@ -189,7 +166,7 @@
 }
 
 .friend-create-link-card:hover, .friend-card-container:hover {
-    text-align: center;
+    /* text-align: center; */
     cursor: pointer;
     transition: 0.5s;
     transform: scale(1.025);
@@ -308,6 +285,7 @@
     animation: float-effect 3s;
     transform: translateY(0px);
     margin-top: 3px;
+    margin: auto 0;
 }
 
 .friend-show-div:hover {
@@ -355,12 +333,12 @@
 
 .friend-show-text {
     margin-top: 3px;
+    margin: auto 0;
+    text-align: center;
 }
 
 .friend-show-tag {
     padding: 3px 6px 6px 8px;
-    /* height: 29px;
-    box-sizing: border-box; */
 }
 
 .friend-show-header {

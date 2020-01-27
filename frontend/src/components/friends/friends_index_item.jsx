@@ -16,12 +16,14 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     let ageLi = <div></div>;
     if (friend.dateOfBirth) {
       ageLi = (
-        <li className="friend-index-item-li">
-          <div className="friend-show-tag friend-show-age-tag">age</div>
-          <div className="friend-show-text">
-            {ageFromDOB(new Date(friend.dateOfBirth))} years old
+          <div className="friend-index-item-grid">
+            <div className="friend-show-div">
+              <span className="friend-show-tag friend-show-age-tag">age</span>
+            </div>
+            <div className="friend-show-text">
+              {ageFromDOB(new Date(friend.dateOfBirth))} years old
+            </div>
           </div>
-        </li>
       );
     }
 
@@ -36,36 +38,34 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
       const birthYear = DOB.getUTCFullYear();
 
       birthdayLi = (
-        <li className="friend-index-item-li">
-          <div className="friend-show-div">
-            <span className="friend-show-tag friend-show-birthday-tag">
-              birthday
-            </span>
+          <div className="friend-index-item-grid">
+            <div className="friend-show-div">
+              <span className="friend-show-tag friend-show-birthday-tag">
+                birthday
+              </span>
+            </div>
+            <div className="friend-show-text">
+              {birthMonth} {birthDay}, {birthYear}
+            </div>
           </div>
-          <div className="friend-show-text">
-            {birthMonth} {birthDay}, {birthYear}
-          </div>
-        </li>
       );
     }    
 
     let currentCityLi = <></>;
     if (friend.currentCity) {
       currentCityLi = (
-        <li className="friend-index-item-li">
-          <div className="friend-show-tag friend-show-location-tag">
-            location
+        <div className="friend-index-item-grid">
+          <div className="friend-show-div">
+            <span className="friend-show-tag friend-show-location-tag">
+              location
+            </span>
           </div>
           <div className="friend-show-text">
-            <span>{friend.currentCity}</span>
+            {friend.currentCity}
           </div>
-        </li>
+        </div>
       );
     }
-
-    const summaryInfo = (
-      <li></li>
-    )
 
     return (
       <div className="friend-card-outer-container">
@@ -85,9 +85,9 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
                     deleteFriend(friend._id);
                 }}></i>
               </li>
-              {ageLi}
-              {birthdayLi}
-              {currentCityLi}
+                  {ageLi}
+                  {birthdayLi}
+                  {currentCityLi}
             </ul>
             <div className="friend-card-click-for-details">
               click for more details
