@@ -113,30 +113,6 @@
     border-top-right-radius: 7px;
 }
 
-.index-age-tag {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.index-age-text {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.index-dob-tag {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-.index-dob-text {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-.index-location-tag {
-    grid-area: 3 / 1 / 4 / 2;
-}
-
-.index-location-text {
-    grid-area: 3 / 2 / 4 / 3;
-}
-
 .friend-index-item-header > p {
     padding: 0 10px;
     display: inline-flex;
