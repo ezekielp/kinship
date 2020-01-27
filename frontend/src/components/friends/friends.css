@@ -76,24 +76,7 @@
     }
 }
 
-
-/* .friend-card-container:hover {
-    width: 500px;
-    height: 500px;
-    z-index: 10;
-    transition: all 3s;
-} */
-
 /* FRIEND INDEX ITEMS */
-
-/* .friend-card-container ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: block;
-    text-align: center;
-    height: 206px;
-} */
 
 .friends-card-wrapper {
     margin-bottom: 100px;
@@ -108,22 +91,12 @@
     margin-bottom: 15px;
 }
 
-.friend-index-item-name {
-}
-
 .friend-index-item-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     height: 45px;
     margin-bottom: 4px;
 }
-
-/* .friend-index-item-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 144px;
-} */
 
 .friend-index-item-header {
     margin: -20px -20px 10px -20px;
@@ -384,15 +357,12 @@
 
 .friend-show-text {
     margin-top: 3px;
-    /* text-align: right; */
     margin: auto 0;
     text-align: center;
 }
 
 .friend-show-tag {
     padding: 3px 6px 6px 8px;
-    /* height: 29px;
-    box-sizing: border-box; */
 }
 
 .friend-show-header {

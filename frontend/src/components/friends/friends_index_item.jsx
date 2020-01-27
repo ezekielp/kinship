@@ -16,8 +16,6 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
     let ageLi = <div></div>;
     if (friend.dateOfBirth) {
       ageLi = (
-        // <li className="friend-index-item-li">
-          // <>
           <div className="friend-index-item-grid">
             <div className="friend-show-div">
               <span className="friend-show-tag friend-show-age-tag">age</span>
@@ -26,8 +24,6 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
               {ageFromDOB(new Date(friend.dateOfBirth))} years old
             </div>
           </div>
-          // </>
-        // </li>
       );
     }
 
@@ -42,29 +38,22 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
       const birthYear = DOB.getUTCFullYear();
 
       birthdayLi = (
-        // <li className="friend-index-item-li">
-          // <>
           <div className="friend-index-item-grid">
             <div className="friend-show-div">
-            {/* <div className="friend-show-div"> */}
               <span className="friend-show-tag friend-show-birthday-tag">
                 birthday
               </span>
             </div>
             <div className="friend-show-text">
-            {/* <div className="friend-show-text"> */}
               {birthMonth} {birthDay}, {birthYear}
             </div>
           </div>
-          // </>
-        // </li>
       );
     }    
 
     let currentCityLi = <></>;
     if (friend.currentCity) {
       currentCityLi = (
-        // <li className="friend-index-item-li">
         <div className="friend-index-item-grid">
           <div className="friend-show-div">
             <span className="friend-show-tag friend-show-location-tag">
@@ -75,7 +64,6 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
             {friend.currentCity}
           </div>
         </div>
-        // </li>
       );
     }
 
@@ -97,22 +85,9 @@ const FriendsIndexItem = ({friend, openModal, deleteFriend}) => {
                     deleteFriend(friend._id);
                 }}></i>
               </li>
-              {/* <div className="friend-index-item-grid"> */}
                   {ageLi}
                   {birthdayLi}
                   {currentCityLi}
-                  {/* <div className="friend-show-div index-location-tag">
-                    <span className="friend-show-tag friend-show-location-tag">
-                      location
-                    </span>
-                  </div>
-                  <div className="friend-show-text index-location-text">
-                    {friend.currentCity}
-                  </div> */}
-              {/* </div> */}
-              {/* {ageLi}
-              {birthdayLi}
-              {currentCityLi} */}
             </ul>
             <div className="friend-card-click-for-details">
               click for more details
