@@ -53,38 +53,14 @@ class FriendSearch extends React.Component {
 						/>
 					</li>
 				))}
-				{/* <li key="999">
-					<div
-						onClick={() => this.props.history.push('/friends')}
-						className="friend-card-outer-container friend-card-container friend-create-link-card"
-					>
-						<div className="friend-create-link-card-text">
-							Go Back to main page
-						</div>
-					</div>
-				</li> */}
 			</ul>
 		) : (
 			<ul>
 				<li key="0">
-					{/* <div className="friend-card-outer-container friend-card-container friend-create-link-card">
-						<div className="friend-create-link-card-text"> */}
 					<div className="no-friends-found-msg">
 						No friends found!
 					</div>
-						{/* </div>
-					</div> */}
 				</li>
-				{/* <li key="1">
-					<div
-						onClick={() => this.props.history.push('/friends')}
-						className="friend-card-outer-container friend-card-container friend-create-link-card"
-					>
-						<div className="friend-create-link-card-text">
-							Go Back to main page
-						</div>
-					</div>
-				</li> */}
 			</ul>
 		);
 
