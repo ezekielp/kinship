@@ -42,7 +42,7 @@ class FriendSearch extends React.Component {
 			}
 
 		let friendProfileLis = queryResult ? (
-			<ul>
+			<ul className="friends-card-wrapper">
 				{queryResult.map((friend, idx) => (
 					<li key={idx}>
 						<FriendsIndexItem
@@ -55,7 +55,7 @@ class FriendSearch extends React.Component {
 				))}
 			</ul>
 		) : (
-			<ul>
+			<ul className="friends-card-wrapper">
 				<li key="0">
 					<div className="no-friends-found-msg">
 						No friends found!
@@ -81,7 +81,7 @@ class FriendSearch extends React.Component {
 							</div>
 						</div>
 							{friendProfileLis}
-						</div>
+					</div>
 				</div>
 				<FooterContainer />
 			</div>
