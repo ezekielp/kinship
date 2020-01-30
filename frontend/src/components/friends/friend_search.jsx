@@ -80,7 +80,7 @@ class FriendSearch extends React.Component {
 								Search results
 							</div>
 						</div>
-							{friendProfileLis}
+						{friendProfileLis}
 					</div>
 				</div>
 				<FooterContainer />
