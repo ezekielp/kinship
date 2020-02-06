@@ -1,11 +1,7 @@
 import React from 'react';
 import Dropdown from '../dropdown/dropdown';
 import './create_edit_form.css';
-import CONVERTFEILDS from '../../util/convert_feilds';
-
-
-
-
+import CONVERTFIELDS from '../../util/convert_fields';
 
 
 class CreateEditForm extends React.Component {

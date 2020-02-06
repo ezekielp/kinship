@@ -1,4 +1,4 @@
-const CONVERTFEILDS = {
+const CONVERTFIELDS = {
     name: "Name",
     dateOfBirth: "Birthday",
     children: "Children",
@@ -19,4 +19,4 @@ const CONVERTFEILDS = {
     notes: "Notes",
 }
 
-export default CONVERTFEILDS;
+export default CONVERTFIELDS;
