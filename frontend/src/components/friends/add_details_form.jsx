@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Dropdown from '../dropdown/dropdown';
 import './create_edit_form.css';
 import CONVERTFIELDS from '../../util/convert_fields';
 
-const AddDetailsForm = (props) => {
+const AddDetailsForm = ({ friend, action, userId }) => {
     const initialState = {
-        _id: "",
-        name: "",
-        user: "",
-        dateOfBirth: "",
-        children: "",
-        siblings: "",
-        pets: "",
-        parents: "",
-        hobbies: "",
-        currentCity: "",
-        currentCityYears: "",
-        pastCity: "",
-        pastCityYears: "",
-        undergradSchool: "",
-        undergradSchoolYears: "",
-        gradSchool: "",
-        gradSchoolYears: "",
-        employmentHistory: "",
-        currentEmploymentStatus: "",
-        notes: "",
+        _id: friend._id,
+        name: friend.name,
+        user: friend.user,
+        dateOfBirth: friend.dateOfBirth,
+        children: friend.children.join(","),
+        siblings: friend.siblings.join(","),
+        pets: friend.pets.join(","),
+        parents: friend.parents.join(","),
+        hobbies: friend.hobbies.join(","),
+        currentCity: friend.currentCity,
+        currentCityYears: friend.currentCityYears,
+        pastCity: friend.pastCity,
+        pastCityYears: friend.pastCityYears,
+        undergradSchool: friend.undergradSchool,
+        undergradSchoolYears: friend.undergradSchoolYears,
+        gradSchool: friend.gradSchool,
+        gradSchoolYears: friend.gradSchoolYears,
+        employmentHistory: friend.employmentHistory,
+        currentEmploymentStatus: friend.currentEmploymentStatus,
+        notes: friend.notes,
         dateOfBirth_show: undefined,
         children_show: undefined,
         siblings_show: undefined,
@@ -44,69 +44,42 @@ const AddDetailsForm = (props) => {
         notes_show: undefined,
     }
     const [state, setState] = useState(initialState);
+
+    useEffect(() => {
+        setState({
+            dateOfBirth_show: state.dateOfBirth ? true : undefined,
+            children_show: state.children ? true : undefined,
+            siblings_show: state.siblings ? true : undefined,
+            pets_show: state.pets ? true : undefined,
+            parents_show: state.parents ? true : undefined,
+            hobbies_show: state.hobbies ? true : undefined,
+            currentCity_show: state.currentCity ? true : undefined,
+            currentCityYears_show: state.currentCityYears ? true : undefined,
+            pastCity_show: state.pastCity ? true : undefined,
+            pastCityYears_show: state.pastCityYears ? true : undefined,
+            undergradSchool_show: state.undergradSchool ? true : undefined,
+            undergradSchoolYears_show: state.undergradSchoolYears ? true : undefined,
+            gradSchool_show: state.gradSchool ? true : undefined,
+            gradSchoolYears_show: state.gradSchoolYears ? true : undefined,
+            employmentHistory_show: state.employmentHistory ? true : undefined,
+            currentEmploymentStatus_show: state.currentEmploymentStatus ? true : undefined,
+            notes_show: state.notes ? true : undefined
+        })
+    }, []);
+
+
+
 }
 
 export default AddDetailsForm;
 
 class CreateEditForm extends React.Component {
 
-    componentDidMount() {
-        const { friend } = this.props;
-        if (this.props.formType === "Update") {
-            this.setState({
-                _id: friend._id,
-                name: friend.name,
-                user: friend.user,
-                dateOfBirth: friend.dateOfBirth,
-                children: friend.children.join(","),
-                siblings: friend.siblings.join(","),
-                pets: friend.pets.join(","),
-                parents: friend.parents.join(","),
-                hobbies: friend.hobbies.join(","),
-                currentCity: friend.currentCity,
-                currentCityYears: friend.currentCityYears,
-                pastCity: friend.pastCity,
-                pastCityYears: friend.pastCityYears,
-                undergradSchool: friend.undergradSchool,
-                undergradSchoolYears: friend.undergradSchoolYears,
-                gradSchool: friend.gradSchool,
-                gradSchoolYears: friend.gradSchoolYears,
-                employmentHistory: friend.employmentHistory,
-                currentEmploymentStatus: friend.currentEmploymentStatus,
-                notes: friend.notes,
-                // input: 0,
-            }, () => this.setState({
-                dateOfBirth_show: this.state.dateOfBirth ? true : undefined,
-                children_show: this.state.children ? true : undefined,
-                siblings_show: this.state.siblings ? true : undefined,
-                pets_show: this.state.pets ? true : undefined,
-                parents_show: this.state.parents ? true : undefined,
-                hobbies_show: this.state.hobbies ? true : undefined,
-                currentCity_show: this.state.currentCity ? true : undefined,
-                currentCityYears_show: this.state.currentCityYears ? true : undefined,
-                pastCity_show: this.state.pastCity ? true : undefined,
-                pastCityYears_show: this.state.pastCityYears ? true : undefined,
-                undergradSchool_show: this.state.undergradSchool ? true : undefined,
-                undergradSchoolYears_show: this.state.undergradSchoolYears ? true : undefined,
-                gradSchool_show: this.state.gradSchool ? true : undefined,
-                gradSchoolYears_show: this.state.gradSchoolYears ? true : undefined,
-                employmentHistory_show: this.state.employmentHistory ? true : undefined,
-                currentEmploymentStatus_show: this.state.currentEmploymentStatus ? true : undefined,
-                notes_show: this.state.notes ? true : undefined
-            }))
-
-        }
-    }
-
-
-
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.currentTarget.value })
         }
     }
-
-
 
     fieldLabel(category) {
         return CONVERTFIELDS[category]
@@ -144,7 +117,6 @@ class CreateEditForm extends React.Component {
             friend["user"] = this.props.userId
             this.props.action(friend)
         }
-        this.props.closeModal()
 
     }
 
