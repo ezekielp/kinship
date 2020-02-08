@@ -25,45 +25,62 @@ const AddDetailsForm = ({ friend, action, userId }) => {
         employmentHistory: friend.employmentHistory,
         currentEmploymentStatus: friend.currentEmploymentStatus,
         notes: friend.notes,
-        dateOfBirth_show: undefined,
-        children_show: undefined,
-        siblings_show: undefined,
-        pets_show: undefined,
-        parents_show: undefined,
-        hobbies_show: undefined,
-        currentCity_show: undefined,
-        currentCityYears_show: undefined,
-        pastCity_show: undefined,
-        pastCityYears_show: undefined,
-        undergradSchool_show: undefined,
-        undergradSchoolYears_show: undefined,
-        gradSchool_show: undefined,
-        gradSchoolYears_show: undefined,
-        employmentHistory_show: undefined,
-        currentEmploymentStatus_show: undefined,
-        notes_show: undefined,
+        // dateOfBirth_show: undefined,
+        // children_show: undefined,
+        // siblings_show: undefined,
+        // pets_show: undefined,
+        // parents_show: undefined,
+        // hobbies_show: undefined,
+        // currentCity_show: undefined,
+        // currentCityYears_show: undefined,
+        // pastCity_show: undefined,
+        // pastCityYears_show: undefined,
+        // undergradSchool_show: undefined,
+        // undergradSchoolYears_show: undefined,
+        // gradSchool_show: undefined,
+        // gradSchoolYears_show: undefined,
+        // employmentHistory_show: undefined,
+        // currentEmploymentStatus_show: undefined,
+        // notes_show: undefined,
     }
     const [state, setState] = useState(initialState);
 
     useEffect(() => {
         setState({
-            dateOfBirth_show: state.dateOfBirth ? true : undefined,
-            children_show: state.children ? true : undefined,
-            siblings_show: state.siblings ? true : undefined,
-            pets_show: state.pets ? true : undefined,
-            parents_show: state.parents ? true : undefined,
-            hobbies_show: state.hobbies ? true : undefined,
-            currentCity_show: state.currentCity ? true : undefined,
-            currentCityYears_show: state.currentCityYears ? true : undefined,
-            pastCity_show: state.pastCity ? true : undefined,
-            pastCityYears_show: state.pastCityYears ? true : undefined,
-            undergradSchool_show: state.undergradSchool ? true : undefined,
-            undergradSchoolYears_show: state.undergradSchoolYears ? true : undefined,
-            gradSchool_show: state.gradSchool ? true : undefined,
-            gradSchoolYears_show: state.gradSchoolYears ? true : undefined,
-            employmentHistory_show: state.employmentHistory ? true : undefined,
-            currentEmploymentStatus_show: state.currentEmploymentStatus ? true : undefined,
-            notes_show: state.notes ? true : undefined
+            dateOfBirth_show: state.dateOfBirth ? true : 1,
+            children_show: state.children ? true : 1,
+            siblings_show: state.siblings ? true : 1,
+            pets_show: state.pets ? true : 1,
+            parents_show: state.parents ? true : 1,
+            hobbies_show: state.hobbies ? true : 1,
+            currentCity_show: state.currentCity ? true : 1,
+            currentCityYears_show: state.currentCityYears ? true : 1,
+            pastCity_show: state.pastCity ? true : 1,
+            pastCityYears_show: state.pastCityYears ? true : 1,
+            undergradSchool_show: state.undergradSchool ? true : 1,
+            undergradSchoolYears_show: state.undergradSchoolYears ? true : 1,
+            gradSchool_show: state.gradSchool ? true : 1,
+            gradSchoolYears_show: state.gradSchoolYears ? true : 1,
+            employmentHistory_show: state.employmentHistory ? true : 1,
+            currentEmploymentStatus_show: state.currentEmploymentStatus ? true : 1,
+            notes_show: state.notes ? true : 1
+            // dateOfBirth_show: state.dateOfBirth ? true : undefined,
+            // children_show: state.children ? true : undefined,
+            // siblings_show: state.siblings ? true : undefined,
+            // pets_show: state.pets ? true : undefined,
+            // parents_show: state.parents ? true : undefined,
+            // hobbies_show: state.hobbies ? true : undefined,
+            // currentCity_show: state.currentCity ? true : undefined,
+            // currentCityYears_show: state.currentCityYears ? true : undefined,
+            // pastCity_show: state.pastCity ? true : undefined,
+            // pastCityYears_show: state.pastCityYears ? true : undefined,
+            // undergradSchool_show: state.undergradSchool ? true : undefined,
+            // undergradSchoolYears_show: state.undergradSchoolYears ? true : undefined,
+            // gradSchool_show: state.gradSchool ? true : undefined,
+            // gradSchoolYears_show: state.gradSchoolYears ? true : undefined,
+            // employmentHistory_show: state.employmentHistory ? true : undefined,
+            // currentEmploymentStatus_show: state.currentEmploymentStatus ? true : undefined,
+            // notes_show: state.notes ? true : undefined
         })
     }, []);
 
@@ -109,7 +126,7 @@ const AddDetailsForm = ({ friend, action, userId }) => {
     const inputField = category => {
         let inputFieldCategory = category.split("_")[0]
 
-        if (state[category] || state[inputFieldCategory]) {
+        if (state[category] === 2) {
             if (inputFieldCategory === "notes" || inputFieldCategory === "employmentHistory") {
                 return (
                     <div className="input-container">
@@ -176,14 +193,15 @@ const AddDetailsForm = ({ friend, action, userId }) => {
     }
 
     const showInput = category => {
-        setState({ [category]: true })
+        setState({ [category]: 2 })
     }
 
     const arrayFields = () => {
         const currentState = Object.assign({}, state)
         const currentStateKeys = Object.keys(currentState)
 
-        return currentStateKeys.filter(key => currentState[key] === undefined);
+        // return currentStateKeys.filter(key => currentState[key] === undefined);
+        return currentStateKeys.filter(key => currentState[key] === 1);
     }
 
     return (
