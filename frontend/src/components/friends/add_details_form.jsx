@@ -3,7 +3,7 @@ import Dropdown from '../dropdown/dropdown';
 import './create_edit_form.css';
 import CONVERTFIELDS from '../../util/convert_fields';
 
-const AddDetailsForm = ({ friend, action, userId }) => {
+const AddDetailsForm = ({ friend, action }) => {
     const initialState = {
         _id: friend._id,
         name: friend.name,
@@ -207,16 +207,6 @@ const AddDetailsForm = ({ friend, action, userId }) => {
     return (
         <div className="add-friend-details-container">
             <form className="edit-friend-form">
-                <div className="input-container">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        className="input"
-                        id="name"
-                        value={state.name}
-                        onChange={handleInput("name")}
-                    />
-                </div>
                 {inputField("dateOfBirth_show")}
                 {inputField("children_show")}
                 {inputField("siblings_show")}
