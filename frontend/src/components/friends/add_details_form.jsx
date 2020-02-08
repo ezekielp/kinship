@@ -92,7 +92,7 @@ const AddDetailsForm = ({ friend, action }) => {
 
     // debugger;
     const handleInput = type => {
-        // debugger;
+        debugger;
         return (e) => {
             setState(prevState => {
                 return { ...prevState, [type]: e.currentTarget.value }
@@ -107,6 +107,7 @@ const AddDetailsForm = ({ friend, action }) => {
     const handleSubmit = e => {
         e.preventDefault();
 
+        debugger;
         const newFriendDetails = {
             _id: state._id,
             name: state.name,
@@ -129,7 +130,8 @@ const AddDetailsForm = ({ friend, action }) => {
             currentEmploymentStatus: state.currentEmploymentStatus,
             notes: state.notes,
         }
-        action(newFriendDetails)
+        debugger;
+        action(newFriendDetails);
 
     }
 
