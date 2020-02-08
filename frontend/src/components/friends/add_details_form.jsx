@@ -106,28 +106,19 @@ const AddDetailsForm = ({ friend, action, userId }) => {
 
     }
 
-
-
-
-}
-
-export default AddDetailsForm;
-
-class CreateEditForm extends React.Component {
-
-    inputField(category) {
+    const inputField = category => {
         let inputFieldCategory = category.split("_")[0]
 
-        if (this.state[category] || this.state[inputFieldCategory]) {
+        if (state[category] || state[inputFieldCategory]) {
             if (inputFieldCategory === "notes" || inputFieldCategory === "employmentHistory") {
                 return (
                     <div className="input-container">
-                        <label htmlFor={inputFieldCategory}>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <label htmlFor={inputFieldCategory}>{fieldLabel(inputFieldCategory) + ":"}</label>
                         <textarea
                             className="input textarea"
                             id={inputFieldCategory}
-                            onChange={this.handleInput(inputFieldCategory)}
-                            value={this.state[inputFieldCategory]}
+                            onChange={handleInput(inputFieldCategory)}
+                            value={state[inputFieldCategory]}
                         />
                     </div>
                 )
@@ -140,28 +131,28 @@ class CreateEditForm extends React.Component {
             ) {
                 return (
                     <div className="input-container">
-                        <label htmlFor={inputFieldCategory}>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <label htmlFor={inputFieldCategory}>{fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="text"
                             className="input"
                             id={inputFieldCategory}
                             placeholder={`separate input by comma`}
-                            onChange={this.handleInput(inputFieldCategory)}
-                            value={this.state[inputFieldCategory]}
+                            onChange={handleInput(inputFieldCategory)}
+                            value={state[inputFieldCategory]}
                         />
                     </div>
                 )
 
             } else if (inputFieldCategory === "dateOfBirth") {
-                const date = (this.state[inputFieldCategory]) ?
-                    this.state[inputFieldCategory].split("T")[0] :
+                const date = (state[inputFieldCategory]) ?
+                    state[inputFieldCategory].split("T")[0] :
                     "";
 
                 return ( // Date of Birth
                     <div className="input-container">
-                        <label>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <label>{fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="date"
                             className="input"
-                            onChange={this.handleInput(inputFieldCategory)}
+                            onChange={handleInput(inputFieldCategory)}
                             value={date}
                         />
                     </div>
@@ -169,12 +160,12 @@ class CreateEditForm extends React.Component {
             } else {
                 return ( // Others
                     <div className="input-container">
-                        <label htmlFor={inputFieldCategory}>{this.fieldLabel(inputFieldCategory) + ":"}</label>
+                        <label htmlFor={inputFieldCategory}>{fieldLabel(inputFieldCategory) + ":"}</label>
                         <input type="text"
                             className="input"
                             id={inputFieldCategory}
-                            onChange={this.handleInput(inputFieldCategory)}
-                            value={this.state[inputFieldCategory]}
+                            onChange={handleInput(inputFieldCategory)}
+                            value={state[inputFieldCategory]}
                         />
                     </div>
                 )
@@ -184,65 +175,64 @@ class CreateEditForm extends React.Component {
         }
     }
 
-    showInput(category) {
-        this.setState({ [category]: true })
+    const showInput = category => {
+        setState({ [category]: true })
     }
 
-    arrayFields() {
-        const currentState = Object.assign({}, this.state)
-        const array = Object.keys(currentState)
+    const arrayFields = () => {
+        const currentState = Object.assign({}, state)
+        const currentStateKeys = Object.keys(currentState)
 
-        return array.filter(ele => currentState[ele] === undefined);
+        return currentStateKeys.filter(key => currentState[key] === undefined);
     }
 
-    render() {
-        return (
-            <div className="create-friend-container">
-                <form className="create-edit-form">
-                    <div className="input-container">
-                        <label htmlFor="name">Name:</label>
-                        <input type="text"
-                            className="input"
-                            id="name"
-                            value={this.state.name}
-                            onChange={this.handleInput("name")}
-                        />
-                    </div>
-                    {this.inputField("dateOfBirth_show")}
-                    {this.inputField("children_show")}
-                    {this.inputField("siblings_show")}
-                    {this.inputField("pets_show")}
-                    {this.inputField("parents_show")}
-                    {this.inputField("hobbies_show")}
-                    {this.inputField("currentCity_show")}
-                    {this.inputField("currentCityYears_show")}
-                    {this.inputField("pastCity_show")}
-                    {this.inputField("pastCityYears_show")}
-                    {this.inputField("undergradSchool_show")}
-                    {this.inputField("undergradSchoolYears_show")}
-                    {this.inputField("gradSchool_show")}
-                    {this.inputField("gradSchoolYears_show")}
-                    {this.inputField("currentEmploymentStatus_show")}
-                    {this.inputField("employmentHistory_show")}
-                    {this.inputField("notes_show")}
+    return (
+        <div className="add-friend-details-container">
+            <form className="edit-friend-form">
+                <div className="input-container">
+                    <label htmlFor="name">Name:</label>
+                    <input
+                        type="text"
+                        className="input"
+                        id="name"
+                        value={state.name}
+                        onChange={handleInput("name")}
+                    />
+                </div>
+                {inputField("dateOfBirth_show")}
+                {inputField("children_show")}
+                {inputField("siblings_show")}
+                {inputField("pets_show")}
+                {inputField("parents_show")}
+                {inputField("hobbies_show")}
+                {inputField("currentCity_show")}
+                {inputField("currentCityYears_show")}
+                {inputField("pastCity_show")}
+                {inputField("pastCityYears_show")}
+                {inputField("undergradSchool_show")}
+                {inputField("undergradSchoolYears_show")}
+                {inputField("gradSchool_show")}
+                {inputField("gradSchoolYears_show")}
+                {inputField("currentEmploymentStatus_show")}
+                {inputField("employmentHistory_show")}
+                {inputField("notes_show")}
 
-                    <div className="dropdown-submit-container-wrapper">
-                        <div className="line"></div>
-                        <div className="dropdown-submit-container">
-                            <Dropdown arr={this.arrayFields()} cb={this.showInput} />
-                            <input type="submit"
-                                value="Submit"
-                                className="submit-button"
-                                onClick={this.handleSubmit}
-                            />
-                        </div>
-                    </div>
-                </form>
-            </div>
-        )
-    }
-
+                <div className="dropdown-submit-container-wrapper">
+                <div className="line"></div>
+                <div className="dropdown-submit-container">
+                    <Dropdown inputFields={arrayFields()} showInput={showInput} />
+                    <input
+                    type="submit"
+                    value="Submit"
+                    className="submit-button"
+                    onClick={handleSubmit}
+                    />
+                </div>
+                </div>
+            </form>
+        </div>
+    );
 
 }
 
-export default CreateEditForm;
+export default AddDetailsForm;

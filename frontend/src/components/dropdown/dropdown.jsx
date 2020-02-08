@@ -28,13 +28,13 @@ class Dropdown extends Component {
   }
 
   _dropdownList() {
-    const { arr, cb } = this.props;
+    const { inputFields, showInput } = this.props;
     if (this.state.showDropdown) {
-      const items = arr.map((el, i) => {
-        const newEl = el.replace("_show", "");
+      const dropdownList = inputFields.map((field, i) => {
+        const newEl = field.replace("_show", "");
         return (
           <section key={i} onClick={() => {
-            cb(el);
+            showInput(field);
             this.hideDropdown();
           }}>
             {CONVERTFIELDS[newEl]}
@@ -44,7 +44,7 @@ class Dropdown extends Component {
 
       return (
         <div className="dropdown-items-container">
-          {items}
+          {dropdownList}
         </div>
       )
     }
