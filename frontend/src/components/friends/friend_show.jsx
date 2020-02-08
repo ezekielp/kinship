@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../nav/navbar_container';
 import FriendsSidebar from './friends_sidebar';
+import AddDetailsFormContainer from './add_details_form_container';
 import { withRouter, Link } from 'react-router-dom';
 import { monthNames } from '../../util/text_util';
 import FooterContainer from '../footer/footer_container';
@@ -25,6 +26,7 @@ class FriendShow extends React.Component {
         this.renderCurrentEmploymentStatus = this.renderCurrentEmploymentStatus.bind(this);
         this.renderEmploymentHistory = this.renderEmploymentHistory.bind(this);
         this.renderEmployment = this.renderEmployment.bind(this);
+        this.renderAddDetailsForm = this.renderAddDetailsForm.bind(this);
     }
 
     componentDidMount() {
@@ -441,6 +443,12 @@ class FriendShow extends React.Component {
       return notesLi;
     }
 
+    renderAddDetailsForm() {
+      if (!this.props.friend) return null;
+      debugger;
+      return <AddDetailsFormContainer friendId={this.props.friend._id} />;
+    }
+
     render() {
 
         if (!this.props.friend) return null;
@@ -456,11 +464,9 @@ class FriendShow extends React.Component {
                 <ul>
                   <li id="friend-show-name-text">
                     {friend.name}
-                      <div className="friend-show-name-buttons-container">
+                    <div className="friend-show-name-buttons-container">
                       <Link className="view-all-friends" to="/friends">
-                        <span className="view-all-friends-wrapper">
-                          Back
-                        </span>
+                        <span className="view-all-friends-wrapper">Back</span>
                       </Link>
                       <div
                         onClick={e => {
@@ -484,6 +490,7 @@ class FriendShow extends React.Component {
                       </div>
                     </div>
                   </li>
+                  {this.renderAddDetailsForm()}
                   {this.renderAge()}
                   {this.renderBirthday()}
                   {this.renderCurrentCity()}
@@ -496,7 +503,7 @@ class FriendShow extends React.Component {
                 </ul>
               </div>
             </div>
-            <FooterContainer/>
+            <FooterContainer />
           </div>
         );
     }
