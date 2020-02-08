@@ -6,7 +6,6 @@ const mapStateToProps = (state, ownProps) => {
   // const friendId = ownProps.match
   //   ? ownProps.match.params.friendId
   //   : ownProps.friendId;
-  debugger;
   return {
     friend: state.entities.friends[ownProps.friendId]
   };

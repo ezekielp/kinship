@@ -1,0 +1,12 @@
+.add-friend-details-container {
+    height: auto;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.new-dropdown-submit-container {
+    display: flex;
+    justify-content: space-between;
+    bottom: 10px;
+    padding-top: 10px;    
+}

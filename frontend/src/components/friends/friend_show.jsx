@@ -445,7 +445,6 @@ class FriendShow extends React.Component {
 
     renderAddDetailsForm() {
       if (!this.props.friend) return null;
-      debugger;
       return <AddDetailsFormContainer friendId={this.props.friend._id} />;
     }
 

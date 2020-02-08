@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Dropdown from '../dropdown/dropdown';
 import './create_edit_form.css';
+import './add_details_form.css';
 import CONVERTFIELDS from '../../util/convert_fields';
 
 const AddDetailsForm = ({ friend, action }) => {
@@ -46,24 +47,29 @@ const AddDetailsForm = ({ friend, action }) => {
     const [state, setState] = useState(initialState);
 
     useEffect(() => {
-        setState({
-            dateOfBirth_show: state.dateOfBirth ? true : 1,
-            children_show: state.children ? true : 1,
-            siblings_show: state.siblings ? true : 1,
-            pets_show: state.pets ? true : 1,
-            parents_show: state.parents ? true : 1,
-            hobbies_show: state.hobbies ? true : 1,
-            currentCity_show: state.currentCity ? true : 1,
-            currentCityYears_show: state.currentCityYears ? true : 1,
-            pastCity_show: state.pastCity ? true : 1,
-            pastCityYears_show: state.pastCityYears ? true : 1,
-            undergradSchool_show: state.undergradSchool ? true : 1,
-            undergradSchoolYears_show: state.undergradSchoolYears ? true : 1,
-            gradSchool_show: state.gradSchool ? true : 1,
-            gradSchoolYears_show: state.gradSchoolYears ? true : 1,
-            employmentHistory_show: state.employmentHistory ? true : 1,
-            currentEmploymentStatus_show: state.currentEmploymentStatus ? true : 1,
-            notes_show: state.notes ? true : 1
+        const updatedValues = {
+          dateOfBirth_show: state.dateOfBirth ? true : 1,
+          children_show: state.children ? true : 1,
+          siblings_show: state.siblings ? true : 1,
+          pets_show: state.pets ? true : 1,
+          parents_show: state.parents ? true : 1,
+          hobbies_show: state.hobbies ? true : 1,
+          currentCity_show: state.currentCity ? true : 1,
+          currentCityYears_show: state.currentCityYears ? true : 1,
+          pastCity_show: state.pastCity ? true : 1,
+          pastCityYears_show: state.pastCityYears ? true : 1,
+          undergradSchool_show: state.undergradSchool ? true : 1,
+          undergradSchoolYears_show: state.undergradSchoolYears ? true : 1,
+          gradSchool_show: state.gradSchool ? true : 1,
+          gradSchoolYears_show: state.gradSchoolYears ? true : 1,
+          employmentHistory_show: state.employmentHistory ? true : 1,
+          currentEmploymentStatus_show: state.currentEmploymentStatus
+            ? true
+            : 1,
+          notes_show: state.notes ? true : 1
+        };
+        setState(prevState => {
+            return {...prevState, ...updatedValues}
             // dateOfBirth_show: state.dateOfBirth ? true : undefined,
             // children_show: state.children ? true : undefined,
             // siblings_show: state.siblings ? true : undefined,
@@ -84,9 +90,13 @@ const AddDetailsForm = ({ friend, action }) => {
         })
     }, []);
 
+    // debugger;
     const handleInput = type => {
+        // debugger;
         return (e) => {
-            setState({ [type]: e.currentTarget.value })
+            setState(prevState => {
+                return { ...prevState, [type]: e.currentTarget.value }
+            })
         }
     }
 
@@ -193,7 +203,9 @@ const AddDetailsForm = ({ friend, action }) => {
     }
 
     const showInput = category => {
-        setState({ [category]: 2 })
+        setState(prevState => {
+            return { ...prevState, [category]: 2 }
+        })
     }
 
     const arrayFields = () => {
@@ -227,7 +239,7 @@ const AddDetailsForm = ({ friend, action }) => {
 
                 <div className="dropdown-submit-container-wrapper">
                 <div className="line"></div>
-                <div className="dropdown-submit-container">
+                <div className="new-dropdown-submit-container">
                     <Dropdown inputFields={arrayFields()} showInput={showInput} />
                     <input
                     type="submit"
