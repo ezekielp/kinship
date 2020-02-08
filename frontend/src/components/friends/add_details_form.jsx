@@ -67,6 +67,46 @@ const AddDetailsForm = ({ friend, action, userId }) => {
         })
     }, []);
 
+    const handleInput = type => {
+        return (e) => {
+            setState({ [type]: e.currentTarget.value })
+        }
+    }
+
+    const fieldLabel = category => {
+        return CONVERTFIELDS[category]
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        const newFriendDetails = {
+            _id: state._id,
+            name: state.name,
+            user: state.user,
+            dateOfBirth: state.dateOfBirth,
+            children: state.children.split(","),
+            siblings: state.siblings.split(","),
+            pets: state.pets.split(","),
+            parents: state.parents.split(","),
+            hobbies: state.hobbies.split(","),
+            currentCity: state.currentCity,
+            currentCityYears: state.currentCityYears,
+            pastCity: state.pastCity,
+            pastCityYears: state.pastCityYears,
+            undergradSchool: state.undergradSchool,
+            undergradSchoolYears: state.undergradSchoolYears,
+            gradSchool: state.gradSchool,
+            gradSchoolYears: state.gradSchoolYears,
+            employmentHistory: state.employmentHistory,
+            currentEmploymentStatus: state.currentEmploymentStatus,
+            notes: state.notes,
+        }
+        action(newFriendDetails)
+
+    }
+
+
 
 
 }
@@ -75,59 +115,11 @@ export default AddDetailsForm;
 
 class CreateEditForm extends React.Component {
 
-    handleInput(type) {
-        return (e) => {
-            this.setState({ [type]: e.currentTarget.value })
-        }
-    }
-
-    fieldLabel(category) {
-        return CONVERTFIELDS[category]
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-
-        let friend = {
-            _id: this.state._id,
-            name: this.state.name,
-            user: this.state.user,
-            dateOfBirth: this.state.dateOfBirth,
-            children: this.state.children.split(","),
-            siblings: this.state.siblings.split(","),
-            pets: this.state.pets.split(","),
-            parents: this.state.parents.split(","),
-            hobbies: this.state.hobbies.split(","),
-            currentCity: this.state.currentCity,
-            currentCityYears: this.state.currentCityYears,
-            pastCity: this.state.pastCity,
-            pastCityYears: this.state.pastCityYears,
-            undergradSchool: this.state.undergradSchool,
-            undergradSchoolYears: this.state.undergradSchoolYears,
-            gradSchool: this.state.gradSchool,
-            gradSchoolYears: this.state.gradSchoolYears,
-            employmentHistory: this.state.employmentHistory,
-            currentEmploymentStatus: this.state.currentEmploymentStatus,
-            notes: this.state.notes,
-        }
-        if (this.props.formType === "Update") {
-            this.props.action(friend)
-        } else {
-            delete friend["_id"]
-            friend["user"] = this.props.userId
-            this.props.action(friend)
-        }
-
-    }
-
     inputField(category) {
         let inputFieldCategory = category.split("_")[0]
 
         if (this.state[category] || this.state[inputFieldCategory]) {
-            // if (Array.isArray(this.state[inputFieldCategory])) {
-            //     return this.returnListItems(inputFieldCategory)
             if (inputFieldCategory === "notes" || inputFieldCategory === "employmentHistory") {
-                // } else if (inputFieldCategory === "notes") {
                 return (
                     <div className="input-container">
                         <label htmlFor={inputFieldCategory}>{this.fieldLabel(inputFieldCategory) + ":"}</label>
@@ -233,8 +225,6 @@ class CreateEditForm extends React.Component {
                     {this.inputField("currentEmploymentStatus_show")}
                     {this.inputField("employmentHistory_show")}
                     {this.inputField("notes_show")}
-                    {/* <div>{this.field()}</div> 
-                    <button onClick={this.addField}>+ Add Field</button> */}
 
                     <div className="dropdown-submit-container-wrapper">
                         <div className="line"></div>
